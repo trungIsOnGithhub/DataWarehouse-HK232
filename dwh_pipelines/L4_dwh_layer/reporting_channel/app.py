@@ -238,7 +238,7 @@ def render_dash_visualizations(postgres_connection):
                 ),
                 
                 dbc.Col(
-             html.H2("Made by SDW 🚀"), align="end"
+             html.H2("DW & DSS HK231"), align="end"
                 )]
                 
              ),

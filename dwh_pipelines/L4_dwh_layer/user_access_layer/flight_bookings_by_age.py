@@ -169,8 +169,6 @@ def query_postgres_dwh(postgres_connection):
             cursor.execute(check_if_schema_exists)
             CREATING_SCHEMA_VAL_CHECK_END_TIME      =   time.time()
 
-            
-
             sql_result = cursor.fetchone()[0]
             if sql_result:
                 root_logger.debug(f"")
@@ -272,9 +270,7 @@ def query_postgres_dwh(postgres_connection):
             root_logger.error(f"==========================================================================================================================================================================")
             root_logger.debug(f"")
 
-
-
-        # Create table if it doesn't exist in Postgres  
+# Create table if it doesn't exist in Postgres  
         CREATING_TABLE_PROCESSING_START_TIME    =   time.time()
         cursor.execute(create_aggregate_tbl)
         CREATING_TABLE_PROCESSING_END_TIME  =   time.time()
@@ -308,12 +304,7 @@ def query_postgres_dwh(postgres_connection):
 
 
         # ======================================= DATA PROFILING METRICS =======================================
-
-
-        # Prepare data profiling metrics 
-
-
-        # --------- A. Table statistics 
+# Prepare data profiling metrics 
         cursor.execute(count_total_no_of_columns_in_table)
         total_columns_in_table = cursor.fetchone()[0]
 
@@ -329,18 +320,13 @@ def query_postgres_dwh(postgres_connection):
         # --------- B. Performance statistics (Python)
         EXECUTION_TIME_FOR_CREATING_SCHEMA                   =   (CREATING_SCHEMA_PROCESSING_END_TIME                -       CREATING_SCHEMA_PROCESSING_START_TIME                   )   * 1000
 
-
         EXECUTION_TIME_FOR_CREATING_SCHEMA_VAL_CHECK         =   (CREATING_SCHEMA_VAL_CHECK_END_TIME                 -       CREATING_SCHEMA_VAL_CHECK_START_TIME                    )   * 1000
-
 
         EXECUTION_TIME_FOR_DROPPING_SCHEMA                   =   (DELETING_SCHEMA_PROCESSING_END_TIME                -       DELETING_SCHEMA_PROCESSING_START_TIME                   )   * 1000
 
-
         EXECUTION_TIME_FOR_DROPPING_SCHEMA_VAL_CHECK         =   (DELETING_SCHEMA_VAL_CHECK_PROCESSING_END_TIME      -       DELETING_SCHEMA_VAL_CHECK_PROCESSING_START_TIME         )   * 1000
 
-
         EXECUTION_TIME_FOR_CREATING_TABLE                    =   (CREATING_TABLE_PROCESSING_END_TIME                 -       CREATING_TABLE_PROCESSING_START_TIME                    )   * 1000
-
 
         EXECUTION_TIME_FOR_CREATING_TABLE_VAL_CHECK          =   (CREATING_TABLE_VAL_CHECK_PROCESSING_END_TIME       -       CREATING_TABLE_VAL_CHECK_PROCESSING_START_TIME          )   * 1000
 
@@ -496,8 +482,7 @@ def query_postgres_dwh(postgres_connection):
     except psycopg2.Error as e:
             root_logger.info(e)
         
-    finally:
-        
+    finally:   
         # Close the cursor if it exists 
         if cursor is not None:
             cursor.close()
@@ -508,8 +493,6 @@ def query_postgres_dwh(postgres_connection):
         if postgres_connection is not None:
             postgres_connection.close()
             root_logger.debug("Session connected to Postgres database closed.")
-
-
 
 query_postgres_dwh(postgres_connection)
 

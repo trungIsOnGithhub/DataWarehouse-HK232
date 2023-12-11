@@ -144,7 +144,6 @@ def load_data_to_dim_dates_table(postgres_connection):
         # total_null_values_in_table      =   0 
         # successful_rows_upload_count    =   0 
         # failed_rows_upload_count        =   0 
-        
 
         # Set up constants
         CURRENT_TIMESTAMP               =   datetime.now()

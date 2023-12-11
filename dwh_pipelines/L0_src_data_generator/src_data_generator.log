@@ -1,0 +1,225 @@
+2023-12-11 23:36:09,111  |  DEBUG  |    
+2023-12-11 23:36:09,111  |  DEBUG  |    
+2023-12-11 23:36:09,111  |  DEBUG  |  Now beginning session for generating data...  
+2023-12-11 23:42:02,045  |  DEBUG  |    
+2023-12-11 23:42:02,045  |  DEBUG  |    
+2023-12-11 23:42:02,045  |  DEBUG  |  Now beginning session for generating data...  
+2023-12-11 23:42:51,588  |  DEBUG  |    
+2023-12-11 23:42:51,588  |  DEBUG  |    
+2023-12-11 23:42:51,588  |  DEBUG  |  Now beginning session for generating data...  
+2023-12-11 23:44:01,950  |  DEBUG  |    
+2023-12-11 23:44:01,950  |  DEBUG  |    
+2023-12-11 23:44:01,950  |  DEBUG  |  Now beginning session for generating data...  
+2023-12-11 23:44:02,760  |  INFO  |  ----------  
+2023-12-11 23:44:02,760  |  INFO  |  ============================ CUSTOMER INFORMATION ============================  
+2023-12-11 23:44:02,760  |  INFO  |                                customer_id  ...                   customer_contact_preference_desc
+0    2ea6ae4b-f027-425e-8784-421460297d84  ...  {'id': 3e1780a2-fee4-4674-8f05-0b31fcdcdab0, '...
+1    8ac15edb-7f1d-45f6-83c6-c44a8f99403a  ...  {'id': a83689e9-1d57-4e3e-b6e0-36969d72d09e, '...
+2    b0eb01cb-f990-45cb-a332-41208a3515e7  ...  {'id': 3070ca52-6755-44f7-b59a-54b5a964041c, '...
+3    c88e7d85-b9d1-42b5-a4c2-74850ac064ae  ...  {'id': deb32d10-dbc1-449b-b7c1-b59fa3ce7833, '...
+4    976329f3-9738-4e29-9688-c169308249e0  ...  {'id': 2aa5eccc-4d28-42d5-917b-5166589ade53, '...
+..                                    ...  ...                                                ...
+995  eae65696-0730-47d4-ac9d-ab72cbba161f  ...  {'id': a83689e9-1d57-4e3e-b6e0-36969d72d09e, '...
+996  cc27fd64-c464-49d0-8cf6-c02dac787119  ...  {'id': 2aa5eccc-4d28-42d5-917b-5166589ade53, '...
+997  98006948-c3e3-41a1-8702-246ca81be314  ...  {'id': 3e1780a2-fee4-4674-8f05-0b31fcdcdab0, '...
+998  d4e9042d-2427-4ca9-9929-5147431ce042  ...  {'id': a83689e9-1d57-4e3e-b6e0-36969d72d09e, '...
+999  4db57956-636e-49f0-becb-75019a9fc854  ...  {'id': a83689e9-1d57-4e3e-b6e0-36969d72d09e, '...
+
+[1000 rows x 19 columns]  
+2023-12-11 23:44:02,865  |  INFO  |  ----------  
+2023-12-11 23:44:02,865  |  INFO  |  ============================ FLIGHT SCHEDULES ============================  
+2023-12-11 23:44:02,865  |  INFO  |                                  flight_id departure_city arrival_city departure_time arrival_time flight_date
+0    1d599663-ac5d-410c-bdec-c56e6671fff1        Bangkok         Maui       22:34:28     01:23:53  2020-04-18
+1    6a88bbe8-7ff2-4906-a710-4b89e88a66b9       Istanbul       Cancun       14:47:15     04:38:39  2021-10-24
+2    a9e07d1a-1040-42d2-bd38-d13232878b52          Paris    Bora Bora       09:08:04     07:26:59  2022-08-22
+3    7f156dac-c4de-49d7-a433-db45189866a1          Tokyo         Maui       15:44:54     07:18:00  2020-12-04
+4    4a4b84b7-861d-459b-a896-5e8fab7d1b97         Phuket       Sydney       18:12:27     04:13:52  2020-07-22
+..                                    ...            ...          ...            ...          ...         ...
+295  f59ce916-2a76-4b63-a37c-16a967a2357f         Sydney    Barcelona       19:01:44     14:07:05  2023-10-14
+296  9ac703a0-28fa-4622-a40c-0775efb808dd          Tokyo         Maui       03:13:37     21:54:15  2020-04-30
+297  38740cfe-4a2d-4fce-b731-2de256547edc        Bangkok     Istanbul       03:18:01     00:36:33  2022-01-29
+298  61f85507-0f18-49ba-8075-6fbfb04df060           Rome    Barcelona       05:25:24     22:06:44  2022-02-06
+299  1743ebaf-c00f-4c99-aa80-7f356aa32a25         Sydney       London       09:34:19     02:38:18  2022-11-19
+
+[300 rows x 6 columns]  
+2023-12-11 23:44:02,905  |  INFO  |  ----------  
+2023-12-11 23:44:02,905  |  INFO  |  ============================ TICKET PRICES ============================  
+2023-12-11 23:44:02,905  |  INFO  |                                 flight_id  ticket_price ticket_price_date
+0   220dd315-2e53-465d-b96f-8456832f189c           189        2020-12-01
+1   5ed4e32b-8e85-498f-98ab-dfff44eec6ed           329        2021-03-11
+2   163d3be6-2939-4fd2-b5b8-6a04089a1679           364        2021-04-22
+3   e2588375-b1a3-477f-a3c2-e24bbfd48817           480        2021-01-01
+4   0af94e3f-cf3a-4c61-876a-9d1d19a2299e           679        2020-09-21
+5   93026b2e-902b-4fee-814a-738f5167179c           641        2021-01-08
+6   b3a28187-33e5-43c6-8de6-ce7ef4fe4e1b           596        2020-08-13
+7   a7e9739a-123d-46c1-b7fc-a95a118097e1           612        2021-04-07
+8   df1686a1-49c5-4edf-b2de-c4203bda4272           395        2021-08-27
+9   64faba6f-d1a8-4165-bb66-b77e5894ac16           684        2020-01-30
+10  7f6134da-a111-4d38-aba2-b0d734800c3a           109        2022-02-15
+11  ccb5dc21-1354-4f7d-8c31-9204aad37025           201        2022-06-14
+12  0991d13d-8d5c-4a43-87b7-3d805d01dd2a            77        2023-12-05
+13  33de162d-551f-4013-88ec-d5afa02410fc           700        2023-08-26
+14  26775264-a40d-4831-810d-756607426504           593        2020-09-24
+15  b235c345-fb80-476f-9c54-dea55cdf7339            92        2020-08-30
+16  1e0bbe73-491d-4eee-bde6-e7a840bea018           314        2022-07-12
+17  7f7bd484-154c-4630-9169-d5353d4352d4           681        2023-02-03
+18  e8b248ce-7d50-4abd-ac04-223fc6aaa05a           557        2020-11-15
+19  b218dcda-ba32-4080-adda-47a1ac39c21b           381        2021-05-27  
+2023-12-11 23:44:05,302  |  INFO  |  ----------  
+2023-12-11 23:44:05,302  |  INFO  |  ============================ FLIGHT BOOKINGS ============================  
+2023-12-11 23:44:05,302  |  INFO  |                           flight_booking_id                           customer_id  ... confirmation_code  checked_in
+0     dbf06af5-751e-463e-aaa8-e7f9c3115ee2  94819b98-ec95-4251-af49-228829a0648f  ...        JMSM8YEE8U         Yes
+1     7ee51112-4139-401e-aedb-430d8ab0a2ef  2adaa78d-2a39-415d-9f2a-3a6d1922195f  ...        VYZSE2UAD9         Yes
+2     ef13dfe3-2906-472e-814c-f8523225b01f  9b6a7ed9-7e86-4e59-a906-9ca0d57bf333  ...        TV0ME5S1JZ          No
+3     734efd8a-6bcb-4547-aa0f-c504fa5de246  ab16d047-9851-4cdc-9786-3ef3098bf857  ...        9D7VOAG4IH          No
+4     39ef4d8e-f1be-45ff-be2a-7d657729413f  95a501e6-c740-4e37-935f-3f7467466fe1  ...        QTAE021Z03         Yes
+...                                    ...                                   ...  ...               ...         ...
+9995  1118b83f-f7ea-43ad-9411-db43e3c3ac26  2ccd66cd-5a82-4fbf-adff-a5d6644feb13  ...        FJ415SFQNH         Yes
+9996  b673fd0f-6118-4ef1-a0e6-dc280a4651e0  3c5676d7-cddb-4f9c-ab05-5f34681227b6  ...        PKG4GMO5T6          No
+9997  c6a369fb-edb8-4c68-b9e5-b920f34e1acc  c4a0269d-5c05-467f-8176-5888e4d44986  ...        IGOKV2QWN1          No
+9998  5c6efa20-be2a-4863-9bfc-372bb486965b  577ecd19-394c-4b21-a53d-d3f16cb7088e  ...        Y3BDH91QEK          No
+9999  c488bd09-60a4-4460-ad7d-1d6036099733  5f61e470-b1b9-46a3-9b64-f30c506cf7a7  ...        CMHD3VZMP4         Yes
+
+[10000 rows x 8 columns]  
+2023-12-11 23:44:05,361  |  INFO  |  ----------  
+2023-12-11 23:44:05,361  |  INFO  |  ============================ CUSTOMER FEEDBACKS ============================  
+2023-12-11 23:44:05,361  |  INFO  |                                feedback_id  ... feedback_date
+0    fe2a1261-4943-41cb-8bbd-7408279249ab  ...    2021-03-17
+1    542b78e5-61dd-488a-b986-721d4b7da838  ...    2020-10-08
+2    984c2a20-cf33-4cc0-89f6-17a7220b3852  ...    2021-10-10
+3    6e1c2a7a-11e7-427f-a518-30d8266d19a9  ...    2021-02-09
+4    42d541fa-58ac-4d83-9411-f1250fa5e766  ...    2020-02-08
+..                                    ...  ...           ...
+195  2f8379a7-d510-43f3-9ae8-bbdf05093d1e  ...    2022-12-09
+196  0d637827-eb9f-47e3-9fb1-f4eb7f7f4eb0  ...    2023-04-02
+197  6258563d-0f11-48d0-ba84-902d9670478c  ...    2023-10-14
+198  8c87eba8-ed71-4b14-9c81-f797e9f1205b  ...    2021-08-09
+199  ec32491b-63b6-4431-8480-4e6e49561079  ...    2023-12-02
+
+[200 rows x 5 columns]  
+2023-12-11 23:44:05,484  |  INFO  |  ----------  
+2023-12-11 23:44:05,484  |  INFO  |  ============================ SALES AGENTS ============================  
+2023-12-11 23:44:05,484  |  INFO  |                                         id first_name last_name  ... commission   nationality seniority_level
+0    2a8bd77e-cad0-4c59-a342-cea428bf1a9d    Monique     Clark  ...   0.120887      Paraguay          Junior
+1    59053b5a-8128-4874-b839-ede9fd66ee88     Sandra    Garcia  ...   0.136874      Thailand          Junior
+2    a4c33ab3-e804-4295-9420-6eed248bacd5   Jonathan      Bell  ...   0.278495        Guinea          Senior
+3    e2c4c072-ea77-47a7-b919-90c9f94b883c      Kiara   Bennett  ...   0.138669       Mayotte       Mid-Level
+4    bfd4ea52-a533-4e1f-8a5d-e283af6657ef    Tiffany    Bailey  ...   0.181457     Venezuela          Senior
+..                                    ...        ...       ...  ...        ...           ...             ...
+295  ecd3cc92-ec45-43c2-be39-4ae1d273f62e     Nathan      Hess  ...   0.240014  Turkmenistan       Mid-Level
+296  42c7035b-1dc7-4113-a65b-954a8291d348       Noah      Soto  ...   0.208749       Uruguay          Junior
+297  7b1e2be0-d4ce-4f05-b6a6-9882f3ec86a6    Barbara  Castillo  ...   0.236908      Tanzania          Senior
+298  2ed9dade-802f-4d4a-80e5-e7e2b121ddfe       John    Vargas  ...   0.115984        Serbia          Junior
+299  ae73e695-307d-4a31-ab58-e1f859f184f6      Amber   Higgins  ...   0.122765         Japan       Mid-Level
+
+[300 rows x 11 columns]  
+2023-12-11 23:44:05,538  |  INFO  |  ----------  
+2023-12-11 23:44:05,538  |  INFO  |  ============================ FLIGHT DESTINATIONS ============================  
+2023-12-11 23:44:05,538  |  INFO  |                                  flight_id departure_city arrival_city
+0    dfcf83e9-5d25-4368-aa78-e4326a2c0b97           Maui     Maldives
+1    44347da5-db64-4c03-b20b-ecc493f658b0        Bangkok       Sydney
+2    04e6f3e0-a8f4-4e97-a471-9d5558ccaba7      Amsterdam       Venice
+3    06e8c9a6-8940-40d6-9bcb-cbc7c50f11f2           Bali       Venice
+4    d15a36e9-6b4f-44df-ba96-328f55e3ba55         Phuket    Serengeti
+..                                    ...            ...          ...
+295  04e6f3e0-a8f4-4e97-a471-9d5558ccaba7           Maui         Rome
+296  a7086433-5e78-4a20-a1ef-5b5f4b237a0f         Sydney     New York
+297  599fdbc3-20f2-4de5-a88c-9c9e66878f21       New York       Phuket
+298  a7e9739a-123d-46c1-b7fc-a95a118097e1           Bali    Serengeti
+299  e270e7b9-a733-495c-8ca6-de56f90d8d62         London        Paris
+
+[300 rows x 3 columns]  
+2023-12-11 23:44:05,752  |  INFO  |  ----------  
+2023-12-11 23:44:05,752  |  INFO  |  ============================ FLIGHT PROMOTIONS & DEALS ============================  
+2023-12-11 23:44:05,753  |  INFO  |                                promotion_id  ... applied_discount
+0     41fdac91-14f4-48ce-8181-c16935d4576f  ...               26
+1     78ece6b9-6bfd-4472-92b6-67726586630a  ...                9
+2     70cee344-079c-44df-b272-d975616ab0f5  ...               38
+3     05324d95-eecf-45de-b7b2-707ef5b9f69e  ...               37
+4     0f87de3b-e771-447a-ae9f-1bfc00837a33  ...               17
+...                                    ...  ...              ...
+5995  853321af-952a-4da9-bf6a-0ea0d9036d62  ...                7
+5996  b61a2ed0-83c9-4763-9e0a-5e576ef5780d  ...               35
+5997  0d2be51f-4394-4a11-844d-524ee3d11666  ...               45
+5998  b1df4c33-49e3-466d-8be9-dfc24a43c297  ...               19
+5999  a4be8d17-174e-4288-9409-d9832aa9baf2  ...               39
+
+[6000 rows x 4 columns]  
+2023-12-11 23:44:07,120  |  INFO  |  ----------  
+2023-12-11 23:44:07,120  |  INFO  |  ============================ FLIGHT TICKET SALES ============================  
+2023-12-11 23:44:07,120  |  INFO  |                           flight_booking_id                           customer_id  ...                promotion_name discount
+0     0991d13d-8d5c-4a43-87b7-3d805d01dd2a  012eca3d-7e8f-440d-98f9-4a08ca340289  ...          Holiday Travel Deals       35
+1     614108e2-c17c-4d94-bad5-07aa2ba146bc  34fac9e0-982b-407a-9949-1dde560860d3  ...          Summer Sizzlers Sale       46
+2     ff6c192d-4d6c-492e-8768-931ea1f2afb0  ac05d00f-de6d-48e8-ab97-5083d6b952e1  ...       Escape the Winter Blues        9
+3     60a83019-f8ed-4493-90bb-9a533c09ee9e  43bf4398-fcd6-42f4-b69e-319124143276  ...     Military Travel Discounts       34
+4     a622612b-0c4e-4769-b602-2aa231ee21dc  062239ab-8b8e-48a9-b2f1-968980aa0a8b  ...       Escape the Winter Blues       12
+...                                    ...                                   ...  ...                           ...      ...
+9995  ea91a9c4-3016-45bf-ac82-9b31d9ce6901  38e4744d-b5cb-4b19-a460-7c86de41b422  ...  Early Bird Booking Discounts       28
+9996  5ed4e32b-8e85-498f-98ab-dfff44eec6ed  8ebc8ce7-855d-4d5a-8cda-feb51fceb2b4  ...          Weekend Escape Deals       27
+9997  bb3680f6-3a03-44b9-a707-9288b9a34221  ba7a1c86-cfea-4d80-87f3-d1feadc19ff8  ...           Luxury Travel Deals       14
+9998  6d63c25a-c479-406f-b12c-8cdc97c85b4b  575e8a70-0092-4e83-bf22-a476ed52f033  ...          Weekend Escape Deals       20
+9999  3fac1591-c120-4a1f-bce9-60d7da9a823a  c905948d-d6ea-4e85-ba45-d1a9b655cc32  ...      Last-Minute Getaway Sale       29
+
+[10000 rows x 12 columns]  
+2023-12-11 23:44:08,309  |  INFO  |  ----------  
+2023-12-11 23:44:08,310  |  INFO  |  ============================ ACCOMMODATION BOOKINGS ============================  
+2023-12-11 23:44:08,310  |  INFO  |                                          id   location room_type  ... payment_method confirmation_code checked_in
+0     32290ad0-58fd-483a-840e-b0f6041628f5     Sydney    Family  ...  Bank transfer        J1DEXBKPHS         No
+1     1bd93478-e26a-48cb-817b-3742331f6170     London    Luxury  ...         PayPal        FZGV7KDGSH        Yes
+2     83d566c6-7806-4ce9-8180-a530d1f19b28       Maui    Double  ...     Debit card        EDXQXHRBX9         No
+3     35042076-c581-4327-abcc-72957497ab7f  Serengeti    Family  ...     Debit card        AZ2INSG0SY        Yes
+4     761432d6-1937-415a-833a-43a70b6e7822     Sydney    Double  ...  Bank transfer        WH7A3R3I32        Yes
+...                                    ...        ...       ...  ...            ...               ...        ...
+3995  8d00ab38-12dd-4c0c-8e0a-c10207fb5fe9  Santorini    Single  ...         PayPal        BTQ1TZB9U3        Yes
+3996  d4b234d1-2737-41d0-9d0d-24fbfe1df214   New York    Single  ...     Debit card        PEZKYF4BL8        Yes
+3997  9f0184ec-3e2a-4d50-bee0-8c1528d88f25  Bora Bora    Family  ...     Debit card        VXWQ2TT1HK         No
+3998  f491f00b-fa72-4ef1-90bc-9a18320e4869     Cancun    Single  ...         PayPal        N9CX9PNALX         No
+3999  88cd77bb-5948-425e-b6e7-058f226673e0      Dubai    Single  ...     Debit card        4GYBX1ODHR        Yes
+
+[4000 rows x 16 columns]  
+2023-12-11 23:44:08,343  |  INFO  |    
+2023-12-11 23:44:08,344  |  INFO  |    
+2023-12-11 23:44:08,344  |  INFO  |  ================================================  
+2023-12-11 23:44:08,344  |  INFO  |                DATA PROFILING METRICS                
+2023-12-11 23:44:08,344  |  INFO  |  ================================================  
+2023-12-11 23:44:08,344  |  INFO  |    
+2023-12-11 23:44:08,344  |  INFO  |  Now calculating statistics for data generated ...  
+2023-12-11 23:44:08,345  |  INFO  |    
+2023-12-11 23:44:08,345  |  INFO  |    
+2023-12-11 23:44:08,345  |  INFO  |    
+2023-12-11 23:44:08,345  |  INFO  |    
+2023-12-11 23:44:08,345  |  INFO  |  1. Execution time for generating CUSTOMER INFO :  855.2899360656738 ms   
+2023-12-11 23:44:08,345  |  INFO  |    
+2023-12-11 23:44:08,345  |  INFO  |    
+2023-12-11 23:44:08,345  |  INFO  |  2. Execution time for generating FLIGHT SCHEDULES  74.86891746520996 ms   
+2023-12-11 23:44:08,345  |  INFO  |    
+2023-12-11 23:44:08,345  |  INFO  |    
+2023-12-11 23:44:08,345  |  INFO  |  3. Execution time for generating TICKET PRICES:  34.91044044494629 ms   
+2023-12-11 23:44:08,346  |  INFO  |    
+2023-12-11 23:44:08,346  |  INFO  |    
+2023-12-11 23:44:08,346  |  INFO  |  4. Execution time for generating FLIGHT BOOKINGS : 2407.3920249938965 ms (2.41 secs)   
+2023-12-11 23:44:08,346  |  INFO  |    
+2023-12-11 23:44:08,346  |  INFO  |    
+2023-12-11 23:44:08,346  |  INFO  |  5. Execution time for generating CUSTOMER FEEDBACKS:  55.39894104003906 ms   
+2023-12-11 23:44:08,346  |  INFO  |    
+2023-12-11 23:44:08,346  |  INFO  |    
+2023-12-11 23:44:08,346  |  INFO  |  6. Execution time for generating SALES AGENTS:  133.71920585632324 ms   
+2023-12-11 23:44:08,346  |  INFO  |    
+2023-12-11 23:44:08,346  |  INFO  |    
+2023-12-11 23:44:08,346  |  INFO  |  7. Execution time for generating FLIGHT DESTINATIONS:  39.52455520629883 ms   
+2023-12-11 23:44:08,347  |  INFO  |    
+2023-12-11 23:44:08,347  |  INFO  |    
+2023-12-11 23:44:08,347  |  INFO  |  8. Execution time for generating FLIGHT PROMOS AND DEALS:  214.41411972045898 ms   
+2023-12-11 23:44:08,347  |  INFO  |    
+2023-12-11 23:44:08,347  |  INFO  |    
+2023-12-11 23:44:08,347  |  INFO  |  9. Execution time for generating FLIGHT TICKET SALES : 1379.9774646759033 ms (1.38 secs)   
+2023-12-11 23:44:08,347  |  INFO  |    
+2023-12-11 23:44:08,347  |  INFO  |    
+2023-12-11 23:44:08,347  |  INFO  |  10. Execution time for generating ACCOMMODATION BOOKINGS : 1198.007583618164 ms (1.2 secs)   
+2023-12-11 23:44:08,347  |  INFO  |    
+2023-12-11 23:44:08,347  |  INFO  |    
+2023-12-11 23:44:08,347  |  DEBUG  |  Successfully completed generating data  
+2023-12-11 23:44:08,347  |  DEBUG  |    
+2023-12-11 23:44:08,348  |  DEBUG  |    
+2023-12-11 23:44:08,348  |  DEBUG  |  Terminating data generation job...  
+2023-12-11 23:44:08,348  |  DEBUG  |  Session ended.  

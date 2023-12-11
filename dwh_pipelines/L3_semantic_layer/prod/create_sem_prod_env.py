@@ -89,11 +89,11 @@ postgres_connection.set_session(autocommit=True)
 
 def create_prod_environment_for_semantic():
         # Set up constants
-        CURRENT_TIMESTAMP               =   datetime.now()
-        dev_schema_name                 =   'dev'
-        prod_schema_name                =   'prod'
-        active_db_name                  =    database
-        data_warehouse_layer            =   'SEMANTIC'
+        CURRENT_TIMESTAMP = datetime.now()
+        dev_schema_name = 'dev'
+        prod_schema_name = 'prod'
+        active_db_name = database
+        data_warehouse_layer = 'SEMANTIC'
         
     
         # Create a cursor object to execute the PG-SQL commands 
