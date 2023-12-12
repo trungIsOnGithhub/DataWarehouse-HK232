@@ -121,9 +121,9 @@ def load_data_to_stg_flight_promotion_deals_table(postgres_connection):
         # Set up constants
         CURRENT_TIMESTAMP               =   datetime.now()
         fdw_extension                   =   'postgres_fdw'
-        foreign_server                  =   'raw_db_server'
+        foreign_server                  =   config['travel_data_filepath']['HOST']
         fdw_user                        =   username
-        src_db_name                     =   'raw_db'
+        src_db_name                     =   config['travel_data_filepath']['RAW_DB']
         src_schema_name                 =   'main'
         active_schema_name              =   'dev'
         active_db_name                  =    database

@@ -1,0 +1,55 @@
+2023-12-12 21:45:15,592  |  INFO  |    
+2023-12-12 21:45:15,592  |  INFO  |  ---------------------------------------------  
+2023-12-12 21:45:15,593  |  INFO  |  Beginning the staging process...  
+2023-12-12 21:45:15,641  |  DEBUG  |    
+2023-12-12 21:45:15,642  |  INFO  |  =================================================================================  
+2023-12-12 21:45:15,642  |  INFO  |  CONNECTION SUCCESS: Managed to connect successfully to the stgdwdss database!!  
+2023-12-12 21:45:15,642  |  INFO  |  Connection details: user=postgres password=xxx dbname=stgdwdss host=localhost port=5432   
+2023-12-12 21:45:15,642  |  INFO  |  =================================================================================  
+2023-12-12 21:45:15,643  |  DEBUG  |    
+2023-12-12 21:45:15,643  |  INFO  |    
+2023-12-12 21:45:15,644  |  INFO  |  Successfully created dev schema.   
+2023-12-12 21:45:15,644  |  INFO  |    
+2023-12-12 21:45:15,647  |  DEBUG  |    
+2023-12-12 21:45:15,647  |  INFO  |  =================================================================================================  
+2023-12-12 21:45:15,648  |  INFO  |  SCHEMA CREATION SUCCESS: Managed to create dev schema in stgdwdss   
+2023-12-12 21:45:15,648  |  INFO  |  Schema name in Postgres: dev   
+2023-12-12 21:45:15,648  |  INFO  |  SQL Query for validation check:     SELECT schema_name from information_schema.schemata WHERE schema_name= 'dev';
+               
+2023-12-12 21:45:15,648  |  INFO  |  =================================================================================================  
+2023-12-12 21:45:15,648  |  DEBUG  |    
+2023-12-12 21:45:15,650  |  INFO  |    
+2023-12-12 21:45:15,650  |  INFO  |  Successfully DROPPED the 'postgres_fdw' extension. Now advancing to re-importing the extension...  
+2023-12-12 21:45:15,651  |  INFO  |    
+2023-12-12 21:45:15,663  |  INFO  |    
+2023-12-12 21:45:15,664  |  INFO  |  Successfully IMPORTED the 'postgres_fdw' extension. Now advancing to creating the foreign server...  
+2023-12-12 21:45:15,664  |  INFO  |    
+2023-12-12 21:45:15,665  |  INFO  |    
+2023-12-12 21:45:15,665  |  INFO  |  Successfully CREATED the 'localhost' foreign server. Now advancing to user mapping stage...  
+2023-12-12 21:45:15,665  |  INFO  |    
+2023-12-12 21:45:15,667  |  INFO  |    
+2023-12-12 21:45:15,667  |  INFO  |  Successfully mapped the 'postgres' fdw user to the 'postgres' local user.   
+2023-12-12 21:45:15,668  |  INFO  |    
+2023-12-12 21:45:15,669  |  INFO  |    
+2023-12-12 21:45:15,669  |  INFO  |  -------------------------------------------------------------------------------------------------------------------------------------------  
+2023-12-12 21:45:15,670  |  INFO  |    
+2023-12-12 21:45:15,670  |  INFO  |  You should now be able to create and interact with the virtual tables that mirror the actual tables from the 'dwdss' database.   
+2023-12-12 21:45:15,671  |  INFO  |    
+2023-12-12 21:45:15,673  |  INFO  |  -------------------------------------------------------------------------------------------------------------------------------------------  
+2023-12-12 21:45:15,677  |  INFO  |    
+2023-12-12 21:45:15,857  |  INFO  |    
+2023-12-12 21:45:15,857  |  INFO  |  Successfully imported the 'raw_customer_info_tbl' table into 'stgdwdss' database .   
+2023-12-12 21:45:15,858  |  INFO  |    
+2023-12-12 21:45:15,866  |  INFO  |    
+2023-12-12 21:45:15,867  |  INFO  |   COMPLETED: Successfully added 0/0 columns to desired SQL columns list. The remaining 0 columns not included were data lineage columns to be added later via ALTER command.   
+2023-12-12 21:45:15,867  |  INFO  |    
+2023-12-12 21:45:15,868  |  INFO  |    
+2023-12-12 21:45:15,868  |  DEBUG  |       SELECT  FROM dev.raw_customer_info_tbl;  
+              
+2023-12-12 21:45:15,868  |  INFO  |    
+2023-12-12 21:45:15,868  |  INFO  |  Successfully IMPORTED the 'raw_customer_info_tbl' virtual table from the 'localhost' server into the 'dev' schema for 'stgdwdss' database. Now advancing to data cleaning stage...  
+2023-12-12 21:45:15,869  |  INFO  |    
+2023-12-12 21:45:15,870  |  INFO  |  cannot access local variable 'temp_df' where it is not associated with a value  
+2023-12-12 21:45:15,870  |  DEBUG  |    
+2023-12-12 21:45:15,870  |  DEBUG  |  Cursor closed successfully.  
+2023-12-12 21:45:15,870  |  DEBUG  |  Session connected to Postgres database closed.  

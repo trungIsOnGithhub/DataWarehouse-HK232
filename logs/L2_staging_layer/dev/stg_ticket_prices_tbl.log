@@ -1,0 +1,259 @@
+2023-12-12 21:15:09,420  |  INFO  |    
+2023-12-12 21:15:09,420  |  INFO  |  ---------------------------------------------  
+2023-12-12 21:15:09,421  |  INFO  |  Beginning the staging process...  
+2023-12-12 21:15:09,465  |  DEBUG  |    
+2023-12-12 21:15:09,466  |  INFO  |  =================================================================================  
+2023-12-12 21:15:09,467  |  INFO  |  CONNECTION SUCCESS: Managed to connect successfully to the stgdwdss database!!  
+2023-12-12 21:15:09,467  |  INFO  |  Connection details: user=postgres password=xxx dbname=stgdwdss host=localhost port=5432   
+2023-12-12 21:15:09,467  |  INFO  |  =================================================================================  
+2023-12-12 21:15:09,468  |  DEBUG  |    
+2023-12-12 21:15:09,469  |  INFO  |    
+2023-12-12 21:15:09,470  |  INFO  |  Successfully created dev schema.   
+2023-12-12 21:15:09,470  |  INFO  |    
+2023-12-12 21:15:09,474  |  DEBUG  |    
+2023-12-12 21:15:09,474  |  INFO  |  =================================================================================================  
+2023-12-12 21:15:09,475  |  INFO  |  SCHEMA CREATION SUCCESS: Managed to create dev schema in stgdwdss   
+2023-12-12 21:15:09,475  |  INFO  |  Schema name in Postgres: dev   
+2023-12-12 21:15:09,475  |  INFO  |  SQL Query for validation check:     SELECT schema_name from information_schema.schemata WHERE schema_name= 'dev';
+               
+2023-12-12 21:15:09,476  |  INFO  |  =================================================================================================  
+2023-12-12 21:15:09,476  |  DEBUG  |    
+2023-12-12 21:15:09,479  |  INFO  |    
+2023-12-12 21:15:09,479  |  INFO  |  Successfully DROPPED the 'postgres_fdw' extension. Now advancing to re-importing the extension...  
+2023-12-12 21:15:09,480  |  INFO  |    
+2023-12-12 21:15:09,491  |  INFO  |    
+2023-12-12 21:15:09,492  |  INFO  |  Successfully IMPORTED the 'postgres_fdw' extension. Now advancing to creating the foreign server...  
+2023-12-12 21:15:09,493  |  INFO  |    
+2023-12-12 21:15:09,495  |  INFO  |    
+2023-12-12 21:15:09,498  |  INFO  |  Successfully CREATED the 'localhost' foreign server. Now advancing to user mapping stage...  
+2023-12-12 21:15:09,505  |  INFO  |    
+2023-12-12 21:15:09,512  |  INFO  |    
+2023-12-12 21:15:09,521  |  INFO  |  Successfully mapped the 'postgres' fdw user to the 'postgres' local user.   
+2023-12-12 21:15:09,526  |  INFO  |    
+2023-12-12 21:15:09,530  |  INFO  |    
+2023-12-12 21:15:09,537  |  INFO  |  -------------------------------------------------------------------------------------------------------------------------------------------  
+2023-12-12 21:15:09,537  |  INFO  |    
+2023-12-12 21:15:09,538  |  INFO  |  You should now be able to create and interact with the virtual tables that mirror the actual tables from the 'dwdss' database.   
+2023-12-12 21:15:09,539  |  INFO  |    
+2023-12-12 21:15:09,541  |  INFO  |  -------------------------------------------------------------------------------------------------------------------------------------------  
+2023-12-12 21:15:09,543  |  INFO  |    
+2023-12-12 21:15:09,661  |  INFO  |    
+2023-12-12 21:15:09,661  |  INFO  |  Successfully imported the 'raw_ticket_prices_tbl' table into 'stgdwdss' database .   
+2023-12-12 21:15:09,662  |  INFO  |    
+2023-12-12 21:15:09,677  |  INFO  |   1:    Added column 'flight_id' to desired columns list...    
+2023-12-12 21:15:09,677  |  INFO  |   2:    Added column 'ticket_price' to desired columns list...    
+2023-12-12 21:15:09,678  |  INFO  |   3:    Added column 'ticket_price_date' to desired columns list...    
+2023-12-12 21:15:09,678  |  INFO  |    
+2023-12-12 21:15:09,678  |  INFO  |   COMPLETED: Successfully added 3/9 columns to desired SQL columns list. The remaining 6 columns not included were data lineage columns to be added later via ALTER command.   
+2023-12-12 21:15:09,678  |  INFO  |    
+2023-12-12 21:15:09,679  |  INFO  |    
+2023-12-12 21:15:09,679  |  DEBUG  |       SELECT flight_id, ticket_price, ticket_price_date FROM dev.raw_ticket_prices_tbl;  
+              
+2023-12-12 21:15:09,681  |  INFO  |    
+2023-12-12 21:15:09,681  |  INFO  |  Successfully IMPORTED the 'raw_ticket_prices_tbl' virtual table from the 'localhost' server into the 'dev' schema for 'stgdwdss' database. Now advancing to data cleaning stage...  
+2023-12-12 21:15:09,682  |  INFO  |    
+2023-12-12 21:15:09,748  |  DEBUG  |    
+2023-12-12 21:15:09,749  |  ERROR  |  ==========================================================================================================================================================================  
+2023-12-12 21:15:09,749  |  ERROR  |  TABLE DELETION FAILURE: Unable to delete stg_ticket_prices_tbl. This table may have objects that depend on it (use DROP TABLE ... CASCADE to resolve) or it doesn't exist.   
+2023-12-12 21:15:09,750  |  ERROR  |  SQL Query for validation check:     SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'stg_ticket_prices_tbl' );
+           
+2023-12-12 21:15:09,751  |  ERROR  |  ==========================================================================================================================================================================  
+2023-12-12 21:15:09,751  |  DEBUG  |    
+2023-12-12 21:15:09,758  |  DEBUG  |    
+2023-12-12 21:15:09,759  |  INFO  |  =============================================================================================================================================================================  
+2023-12-12 21:15:09,759  |  INFO  |  TABLE CREATION SUCCESS: Managed to create stg_ticket_prices_tbl table in stgdwdss.    
+2023-12-12 21:15:09,760  |  INFO  |  SQL Query for validation check:         SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'stg_ticket_prices_tbl' );
+           
+2023-12-12 21:15:09,768  |  INFO  |  =============================================================================================================================================================================  
+2023-12-12 21:15:09,769  |  DEBUG  |    
+2023-12-12 21:15:09,794  |  DEBUG  |    
+2023-12-12 21:15:09,796  |  INFO  |  =============================================================================================================================================================================  
+2023-12-12 21:15:09,799  |  INFO  |  DATA LINEAGE FIELDS CREATION SUCCESS: Managed to create data lineage columns in dev.stg_ticket_prices_tbl.    
+2023-12-12 21:15:09,800  |  INFO  |  SQL Query for validation check:          
+                                                                    SELECT * 
+                                                                    FROM    information_schema.columns 
+                                                                    WHERE   table_name      = 'stg_ticket_prices_tbl' 
+                                                                        AND table_schema = 'dev'
+                                                                        AND     (column_name    = 'created_at'
+                                                                        OR      column_name     = 'updated_at' 
+                                                                        OR      column_name     = 'source_system' 
+                                                                        OR      column_name     = 'source_file' 
+                                                                        OR      column_name     = 'load_timestamp' 
+                                                                        OR      column_name     = 'dwh_layer');
+                                                                              
+           
+2023-12-12 21:15:09,802  |  INFO  |  =============================================================================================================================================================================  
+2023-12-12 21:15:09,811  |  DEBUG  |    
+2023-12-12 21:15:09,813  |  INFO  |  Rows before SQL insert in Postgres: 0   
+2023-12-12 21:15:09,814  |  DEBUG  |    
+2023-12-12 21:15:09,815  |  DEBUG  |  ---------------------------------  
+2023-12-12 21:15:09,816  |  INFO  |  INSERT SUCCESS: Uploaded ticket_prices record no 1   
+2023-12-12 21:15:09,816  |  DEBUG  |  ---------------------------------  
+2023-12-12 21:15:09,818  |  DEBUG  |  ---------------------------------  
+2023-12-12 21:15:09,818  |  INFO  |  INSERT SUCCESS: Uploaded ticket_prices record no 2   
+2023-12-12 21:15:09,819  |  DEBUG  |  ---------------------------------  
+2023-12-12 21:15:09,821  |  DEBUG  |  ---------------------------------  
+2023-12-12 21:15:09,822  |  INFO  |  INSERT SUCCESS: Uploaded ticket_prices record no 3   
+2023-12-12 21:15:09,822  |  DEBUG  |  ---------------------------------  
+2023-12-12 21:15:09,826  |  DEBUG  |  ---------------------------------  
+2023-12-12 21:15:09,827  |  INFO  |  INSERT SUCCESS: Uploaded ticket_prices record no 4   
+2023-12-12 21:15:09,827  |  DEBUG  |  ---------------------------------  
+2023-12-12 21:15:09,829  |  DEBUG  |  ---------------------------------  
+2023-12-12 21:15:09,830  |  INFO  |  INSERT SUCCESS: Uploaded ticket_prices record no 5   
+2023-12-12 21:15:09,830  |  DEBUG  |  ---------------------------------  
+2023-12-12 21:15:09,833  |  DEBUG  |  ---------------------------------  
+2023-12-12 21:15:09,833  |  INFO  |  INSERT SUCCESS: Uploaded ticket_prices record no 6   
+2023-12-12 21:15:09,834  |  DEBUG  |  ---------------------------------  
+2023-12-12 21:15:09,835  |  DEBUG  |  ---------------------------------  
+2023-12-12 21:15:09,836  |  INFO  |  INSERT SUCCESS: Uploaded ticket_prices record no 7   
+2023-12-12 21:15:09,836  |  DEBUG  |  ---------------------------------  
+2023-12-12 21:15:09,837  |  DEBUG  |  ---------------------------------  
+2023-12-12 21:15:09,837  |  INFO  |  INSERT SUCCESS: Uploaded ticket_prices record no 8   
+2023-12-12 21:15:09,837  |  DEBUG  |  ---------------------------------  
+2023-12-12 21:15:09,839  |  DEBUG  |  ---------------------------------  
+2023-12-12 21:15:09,839  |  INFO  |  INSERT SUCCESS: Uploaded ticket_prices record no 9   
+2023-12-12 21:15:09,840  |  DEBUG  |  ---------------------------------  
+2023-12-12 21:15:09,842  |  DEBUG  |  ---------------------------------  
+2023-12-12 21:15:09,842  |  INFO  |  INSERT SUCCESS: Uploaded ticket_prices record no 10   
+2023-12-12 21:15:09,842  |  DEBUG  |  ---------------------------------  
+2023-12-12 21:15:09,843  |  DEBUG  |  ---------------------------------  
+2023-12-12 21:15:09,843  |  INFO  |  INSERT SUCCESS: Uploaded ticket_prices record no 11   
+2023-12-12 21:15:09,843  |  DEBUG  |  ---------------------------------  
+2023-12-12 21:15:09,844  |  DEBUG  |  ---------------------------------  
+2023-12-12 21:15:09,845  |  INFO  |  INSERT SUCCESS: Uploaded ticket_prices record no 12   
+2023-12-12 21:15:09,845  |  DEBUG  |  ---------------------------------  
+2023-12-12 21:15:09,845  |  DEBUG  |  ---------------------------------  
+2023-12-12 21:15:09,846  |  INFO  |  INSERT SUCCESS: Uploaded ticket_prices record no 13   
+2023-12-12 21:15:09,846  |  DEBUG  |  ---------------------------------  
+2023-12-12 21:15:09,847  |  DEBUG  |  ---------------------------------  
+2023-12-12 21:15:09,851  |  INFO  |  INSERT SUCCESS: Uploaded ticket_prices record no 14   
+2023-12-12 21:15:09,852  |  DEBUG  |  ---------------------------------  
+2023-12-12 21:15:09,853  |  DEBUG  |  ---------------------------------  
+2023-12-12 21:15:09,853  |  INFO  |  INSERT SUCCESS: Uploaded ticket_prices record no 15   
+2023-12-12 21:15:09,854  |  DEBUG  |  ---------------------------------  
+2023-12-12 21:15:09,855  |  DEBUG  |  ---------------------------------  
+2023-12-12 21:15:09,855  |  INFO  |  INSERT SUCCESS: Uploaded ticket_prices record no 16   
+2023-12-12 21:15:09,855  |  DEBUG  |  ---------------------------------  
+2023-12-12 21:15:09,857  |  DEBUG  |  ---------------------------------  
+2023-12-12 21:15:09,857  |  INFO  |  INSERT SUCCESS: Uploaded ticket_prices record no 17   
+2023-12-12 21:15:09,858  |  DEBUG  |  ---------------------------------  
+2023-12-12 21:15:09,859  |  DEBUG  |  ---------------------------------  
+2023-12-12 21:15:09,860  |  INFO  |  INSERT SUCCESS: Uploaded ticket_prices record no 18   
+2023-12-12 21:15:09,861  |  DEBUG  |  ---------------------------------  
+2023-12-12 21:15:09,863  |  DEBUG  |  ---------------------------------  
+2023-12-12 21:15:09,863  |  INFO  |  INSERT SUCCESS: Uploaded ticket_prices record no 19   
+2023-12-12 21:15:09,864  |  DEBUG  |  ---------------------------------  
+2023-12-12 21:15:09,865  |  DEBUG  |  ---------------------------------  
+2023-12-12 21:15:09,865  |  INFO  |  INSERT SUCCESS: Uploaded ticket_prices record no 20   
+2023-12-12 21:15:09,866  |  DEBUG  |  ---------------------------------  
+2023-12-12 21:15:09,866  |  INFO  |  Rows after SQL insert in Postgres: 20   
+2023-12-12 21:15:09,867  |  DEBUG  |    
+2023-12-12 21:15:09,867  |  WARNING  |    
+2023-12-12 21:15:09,867  |  WARNING  |    
+2023-12-12 21:15:09,868  |  WARNING  |  ================================================  
+2023-12-12 21:15:09,868  |  WARNING  |             SENSITIVE COLUMN IDENTIFICATION                
+2023-12-12 21:15:09,869  |  WARNING  |  ================================================  
+2023-12-12 21:15:09,869  |  WARNING  |    
+2023-12-12 21:15:09,869  |  ERROR  |  IMPORTANT NOTE: Invest time in understanding the underlying data fields to avoid highlighting the incorrect fields or omitting fields containing confidential information.            
+2023-12-12 21:15:09,870  |  ERROR  |    
+2023-12-12 21:15:09,870  |  ERROR  |        Involving the relevant stakeholders in the process of identifying sensitive data fields from the source data is a crucial step to protecting confidential information.   
+2023-12-12 21:15:09,870  |  ERROR  |    
+2023-12-12 21:15:09,871  |  ERROR  |        Neglecting this step could expose customers and the wider company to serious harm (e.g. cybersecurity hacks, data breaches, unauthorized access to sensitive data), so approach this task with the utmost care.   
+2023-12-12 21:15:09,871  |  WARNING  |    
+2023-12-12 21:15:09,871  |  WARNING  |    
+2023-12-12 21:15:09,871  |  WARNING  |  Now beginning the sensitive column identification stage ...  
+2023-12-12 21:15:09,872  |  WARNING  |    
+2023-12-12 21:15:09,872  |  ERROR  |  There are no sensitive columns for the 'stg_ticket_prices_tbl' table   
+2023-12-12 21:15:09,872  |  WARNING  |    
+2023-12-12 21:15:09,872  |  WARNING  |  1 : 'None'    
+2023-12-12 21:15:09,872  |  WARNING  |    
+2023-12-12 21:15:09,873  |  WARNING  |  Now terminating the sensitive column identification stage ...  
+2023-12-12 21:15:09,873  |  WARNING  |  Sensitive column identification stage ended.   
+2023-12-12 21:15:09,873  |  WARNING  |    
+2023-12-12 21:15:09,873  |  WARNING  |    
+2023-12-12 21:15:09,873  |  WARNING  |    
+2023-12-12 21:15:09,882  |  INFO  |    
+2023-12-12 21:15:09,882  |  INFO  |    
+2023-12-12 21:15:09,882  |  INFO  |  ================================================  
+2023-12-12 21:15:09,883  |  INFO  |                DATA PROFILING METRICS                
+2023-12-12 21:15:09,883  |  INFO  |  ================================================  
+2023-12-12 21:15:09,883  |  INFO  |    
+2023-12-12 21:15:09,883  |  INFO  |  Now calculating table statistics...  
+2023-12-12 21:15:09,884  |  INFO  |    
+2023-12-12 21:15:09,884  |  INFO  |    
+2023-12-12 21:15:09,885  |  INFO  |  Table name:                                  stg_ticket_prices_tbl   
+2023-12-12 21:15:09,885  |  INFO  |  Schema name:                                 dev   
+2023-12-12 21:15:09,886  |  INFO  |  Database name:                               stgdwdss   
+2023-12-12 21:15:09,886  |  INFO  |  Data warehouse layer:                        STAGING   
+2023-12-12 21:15:09,886  |  INFO  |    
+2023-12-12 21:15:09,887  |  INFO  |    
+2023-12-12 21:15:09,887  |  INFO  |  Number of rows in table:                     20   
+2023-12-12 21:15:09,887  |  INFO  |  Number of columns in table:                  9   
+2023-12-12 21:15:09,887  |  INFO  |    
+2023-12-12 21:15:09,887  |  INFO  |  Successful records uploaded total :          20 / 20     
+2023-12-12 21:15:09,888  |  INFO  |  Failed/Errored records uploaded total:       0 / 20         
+2023-12-12 21:15:09,888  |  INFO  |    
+2023-12-12 21:15:09,888  |  INFO  |  Successful records uploaded % :              100.0      
+2023-12-12 21:15:09,889  |  INFO  |  Failed/Errored records uploaded %:           0.0         
+2023-12-12 21:15:09,889  |  INFO  |    
+2023-12-12 21:15:09,890  |  INFO  |  Number of unique records:                    20 / 20  
+2023-12-12 21:15:09,891  |  INFO  |  Number of duplicate records:                 0 / 20  
+2023-12-12 21:15:09,891  |  INFO  |    
+2023-12-12 21:15:09,891  |  INFO  |  Unique records %:                            100.0   
+2023-12-12 21:15:09,892  |  INFO  |  Duplicate records %:                         0.0   
+2023-12-12 21:15:09,892  |  INFO  |    
+2023-12-12 21:15:09,893  |  INFO  |  Column name: flight_id,  Column no: 1,  Number of NULL values: 0   
+2023-12-12 21:15:09,894  |  INFO  |  Column name: ticket_price,  Column no: 2,  Number of NULL values: 0   
+2023-12-12 21:15:09,895  |  INFO  |  Column name: ticket_price_date,  Column no: 3,  Number of NULL values: 0   
+2023-12-12 21:15:09,897  |  INFO  |  Column name: created_at,  Column no: 4,  Number of NULL values: 0   
+2023-12-12 21:15:09,898  |  INFO  |  Column name: updated_at,  Column no: 5,  Number of NULL values: 0   
+2023-12-12 21:15:09,898  |  INFO  |  Column name: source_system,  Column no: 6,  Number of NULL values: 0   
+2023-12-12 21:15:09,899  |  INFO  |  Column name: source_file,  Column no: 7,  Number of NULL values: 0   
+2023-12-12 21:15:09,900  |  INFO  |  Column name: load_timestamp,  Column no: 8,  Number of NULL values: 0   
+2023-12-12 21:15:09,900  |  INFO  |  Column name: dwh_layer,  Column no: 9,  Number of NULL values: 0   
+2023-12-12 21:15:09,900  |  INFO  |    
+2023-12-12 21:15:09,901  |  INFO  |  ================================================  
+2023-12-12 21:15:09,901  |  INFO  |    
+2023-12-12 21:15:09,901  |  INFO  |  Now calculating performance statistics (from a Python standpoint)...  
+2023-12-12 21:15:09,902  |  INFO  |    
+2023-12-12 21:15:09,903  |  INFO  |    
+2023-12-12 21:15:09,903  |  INFO  |  1. Execution time for CREATING schema: 1.9979476928710938 ms   
+2023-12-12 21:15:09,903  |  INFO  |    
+2023-12-12 21:15:09,903  |  INFO  |    
+2023-12-12 21:15:09,904  |  INFO  |  2. Execution time for CREATING schema (VAL CHECK): 2.9985904693603516 ms   
+2023-12-12 21:15:09,904  |  INFO  |    
+2023-12-12 21:15:09,904  |  INFO  |    
+2023-12-12 21:15:09,904  |  INFO  |  3. Execution time for DELETING schema:  0.0 ms   
+2023-12-12 21:15:09,904  |  INFO  |    
+2023-12-12 21:15:09,904  |  INFO  |    
+2023-12-12 21:15:09,905  |  INFO  |  4. Execution time for DELETING schema (VAL CHECK):  1.993417739868164 ms   
+2023-12-12 21:15:09,905  |  INFO  |    
+2023-12-12 21:15:09,906  |  INFO  |    
+2023-12-12 21:15:09,907  |  INFO  |  5. Execution time for CREATING table:  3.999471664428711 ms   
+2023-12-12 21:15:09,914  |  INFO  |    
+2023-12-12 21:15:09,915  |  INFO  |    
+2023-12-12 21:15:09,915  |  INFO  |  6. Execution time for CREATING table (VAL CHECK):  1.9986629486083984 ms   
+2023-12-12 21:15:09,915  |  INFO  |    
+2023-12-12 21:15:09,915  |  INFO  |    
+2023-12-12 21:15:09,916  |  INFO  |  7. Execution time for ADDING data lineage:  6.996870040893555 ms   
+2023-12-12 21:15:09,916  |  INFO  |    
+2023-12-12 21:15:09,916  |  INFO  |    
+2023-12-12 21:15:09,916  |  INFO  |  8. Execution time for ADDING data lineage (VAL CHECK):  17.9898738861084 ms   
+2023-12-12 21:15:09,916  |  INFO  |    
+2023-12-12 21:15:09,916  |  INFO  |    
+2023-12-12 21:15:09,917  |  INFO  |  9. Execution time for INSERTING rows to table:  53.96842956542969 ms   
+2023-12-12 21:15:09,917  |  INFO  |    
+2023-12-12 21:15:09,917  |  INFO  |    
+2023-12-12 21:15:09,917  |  INFO  |  10. Execution time for COUNTING uploaded rows to table:  0.0 ms   
+2023-12-12 21:15:09,917  |  INFO  |    
+2023-12-12 21:15:09,918  |  INFO  |    
+2023-12-12 21:15:09,918  |  INFO  |    
+2023-12-12 21:15:09,918  |  INFO  |  ================================================  
+2023-12-12 21:15:09,918  |  DEBUG  |    
+2023-12-12 21:15:09,918  |  INFO  |  DATA VALIDATION SUCCESS: All general DQ checks passed!   
+2023-12-12 21:15:09,918  |  DEBUG  |    
+2023-12-12 21:15:09,919  |  INFO  |  Now saving changes made by SQL statements to Postgres DB....  
+2023-12-12 21:15:09,919  |  INFO  |  Saved successfully, now terminating cursor and current session....  
+2023-12-12 21:15:09,919  |  DEBUG  |    
+2023-12-12 21:15:09,919  |  DEBUG  |  Cursor closed successfully.  
+2023-12-12 21:15:09,920  |  DEBUG  |  Session connected to Postgres database closed.  

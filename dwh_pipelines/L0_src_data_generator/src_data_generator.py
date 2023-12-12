@@ -223,7 +223,7 @@ def generate_travel_data():
 
 
    # Write dataframe to JSON file
-  with open(f'{os.getcwd()}/{DATASETS_LOCATION_PATH}/customer_info.json', 'a') as customer_info_file:
+  with open(f'{os.getcwd()}{os.sep}{DATASETS_LOCATION_PATH}{os.sep}customer_info.json', 'a') as customer_info_file:
       customer_info_df_to_json = customer_info_df.to_json(orient="records", default_handler=str)
       customer_info_df_to_json = json.loads(customer_info_df_to_json)
       customer_info_file.write(json.dumps(customer_info_df_to_json, indent=4, sort_keys=True)) 
@@ -316,7 +316,7 @@ def generate_travel_data():
   ticket_prices_df = pd.DataFrame(load_ticket_prices_via_generator())
 
   # Write dataframe to JSON file
-  with open(f'{os.getcwd()}/{DATASETS_LOCATION_PATH}/ticket_prices.json', 'a') as ticket_prices_file:
+  with open(f'{os.getcwd()}{os.sep}{DATASETS_LOCATION_PATH}{os.sep}ticket_prices.json', 'a') as ticket_prices_file:
       ticket_prices_df_to_json = ticket_prices_df.to_json(orient="records", default_handler=str)
       ticket_prices_df_to_json = json.loads(ticket_prices_df_to_json)
       ticket_prices_file.write(json.dumps(ticket_prices_df_to_json, indent=4, sort_keys=True)) 
@@ -357,7 +357,7 @@ def generate_travel_data():
   flight_bookings_df = pd.DataFrame(load_ticket_prices_via_generator())
 
   # Write dataframe to JSON file
-  with open(f'{os.getcwd()}/{DATASETS_LOCATION_PATH}/flight_bookings.json', 'a') as flight_bookings_file:
+  with open(f'{os.getcwd()}{os.sep}{DATASETS_LOCATION_PATH}{os.sep}flight_bookings.json', 'a') as flight_bookings_file:
       flight_bookings_df_to_json = flight_bookings_df.to_json(orient="records", default_handler=str)
       flight_bookings_df_to_json = json.loads(flight_bookings_df_to_json)
       flight_bookings_file.write(json.dumps(flight_bookings_df_to_json, indent=4, sort_keys=True)) 
@@ -399,7 +399,7 @@ def generate_travel_data():
   customer_feedbacks_df = pd.DataFrame(load_customer_feedbacks_via_generator())
 
   # Write dataframe to JSON file
-  with open(f'{os.getcwd()}/{DATASETS_LOCATION_PATH}/customer_feedbacks.json', 'a') as customer_feedbacks_file:
+  with open(f'{os.getcwd()}{os.sep}{DATASETS_LOCATION_PATH}{os.sep}customer_feedbacks.json', 'a') as customer_feedbacks_file:
       customer_feedbacks_df_to_json = customer_feedbacks_df.to_json(orient="records", default_handler=str)
       customer_feedbacks_df_to_json = json.loads(customer_feedbacks_df_to_json)
       customer_feedbacks_file.write(json.dumps(customer_feedbacks_df_to_json, indent=4, sort_keys=True)) 
@@ -454,7 +454,7 @@ def generate_travel_data():
 
 
   # # Write dataframe to JSON file 
-  with open(f'{os.getcwd()}/{DATASETS_LOCATION_PATH}/sales_agents.json', 'a') as sales_agents_file:
+  with open(f'{os.getcwd()}{os.sep}{DATASETS_LOCATION_PATH}{os.sep}sales_agents.json', 'a') as sales_agents_file:
     sales_agents_file_df_to_json = sales_agents_df.to_json(orient="records")
     sales_agents_file.write(json.dumps(json.loads(sales_agents_file_df_to_json), indent=4, sort_keys=True)) 
 
@@ -491,7 +491,7 @@ def generate_travel_data():
   flight_destinations_df = pd.DataFrame(load_flight_destinations_via_generator())
 
   # Write dataframe to JSON file
-  with open(f'{os.getcwd()}/{DATASETS_LOCATION_PATH}/flight_destinations.json', 'a') as flight_destinations_file:
+  with open(f'{os.getcwd()}{os.sep}{DATASETS_LOCATION_PATH}{os.sep}flight_destinations.json', 'a') as flight_destinations_file:
       flight_destinations_df_to_json = flight_destinations_df.to_json(orient="records", default_handler=str)
       flight_destinations_df_to_json = json.loads(flight_destinations_df_to_json)
       flight_destinations_file.write(json.dumps(flight_destinations_df_to_json, indent=4, sort_keys=True)) 
@@ -528,7 +528,7 @@ def generate_travel_data():
   flight_promotion_deals_df = pd.DataFrame(load_flight_promotion_deals_via_generator())
 
     # Write dataframe to JSON file
-  with open(f'{os.getcwd()}/{DATASETS_LOCATION_PATH}/flight_promotion_deals.json', 'a') as flight_promotion_deals_file:
+  with open(f'{os.getcwd()}{os.sep}{DATASETS_LOCATION_PATH}{os.sep}flight_promotion_deals.json', 'a') as flight_promotion_deals_file:
       flight_promotion_deals_df_to_json = flight_promotion_deals_df.to_json(orient="records", default_handler=str)
       flight_promotion_deals_df_to_json = json.loads(flight_promotion_deals_df_to_json)
       flight_promotion_deals_file.write(json.dumps(flight_promotion_deals_df_to_json, indent=4, sort_keys=True)) 
@@ -574,7 +574,7 @@ def generate_travel_data():
   flight_ticket_sales_df = pd.DataFrame(load_flight_ticket_sales_via_generator())
 
   # Write dataframe to JSON file
-  with open(f'{os.getcwd()}/{DATASETS_LOCATION_PATH}/flight_ticket_sales.json', 'a') as flight_ticket_sales_file:
+  with open(f'{os.getcwd()}{os.sep}{DATASETS_LOCATION_PATH}{os.sep}flight_ticket_sales.json', 'a') as flight_ticket_sales_file:
       flight_ticket_sales_df_to_json = flight_ticket_sales_df.to_json(orient="records", default_handler=str)
       flight_ticket_sales_df_to_json = json.loads(flight_ticket_sales_df_to_json)
       flight_ticket_sales_file.write(json.dumps(flight_ticket_sales_df_to_json, indent=4, sort_keys=True)) 
@@ -630,7 +630,7 @@ def generate_travel_data():
   accommodation_bookings_df = pd.DataFrame(load_accommodation_bookings_via_generator())
 
   # Write dataframe to JSON file
-  with open(f'{os.getcwd()}/{DATASETS_LOCATION_PATH}/accommodation_bookings.json', 'a') as accommodation_bookings_file:
+  with open(f'{os.getcwd()}{os.sep}{DATASETS_LOCATION_PATH}{os.sep}accommodation_bookings.json', 'a') as accommodation_bookings_file:
       accommodation_bookings_df_to_json = accommodation_bookings_df.to_json(orient="records", default_handler=str)
       accommodation_bookings_df_to_json = json.loads(accommodation_bookings_df_to_json)
       accommodation_bookings_file.write(json.dumps(accommodation_bookings_df_to_json, indent=4, sort_keys=True)) 

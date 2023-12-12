@@ -1,7 +1,6 @@
 import os 
 import json
-import time 
-import random
+import time
 import psycopg2
 import pandas as pd
 import configparser
@@ -47,12 +46,9 @@ console_handler.setFormatter(console_handler_log_formatter)
 # Add the file handler 
 root_logger.addHandler(file_handler)
 
-
 # Only add the console handler if the script is running directly from this location 
 if __name__=="__main__":
     root_logger.addHandler(console_handler)
-
-
 
 
 # ================================================ CONFIG ================================================
@@ -91,24 +87,24 @@ postgres_connection.set_session(autocommit=True)
 
 
 
-def load_data_to_dim_customers_table(postgres_connection)
+def load_data_to_stg_customers_table(postgres_connection):
 # LOGIC
     try:
         CURRENT_TIMESTAMP = datetime.now()
         fdw_extension = 'postgres_fdw'
-        foreign_server = 'dwh_db_server'
+        foreign_server = config['travel_data_filepath']['HOST']
         fdw_user = username
-        src_db_name = 'semantic_db'
-        src_schema_name = 'prod'
-        active_schema_name = 'live'
+        src_db_name = config['travel_data_filepath']['STAGING_DB']
+        src_schema_name = 'dev'
+        active_schema_name = 'main'
         active_db_name = database
 
-        src_table_1 = 'dim_customer_feedbacks_tbl' 
-        src_table_2 = 'dim_customer_info_tbl'
+        src_table_1 = 'stg_customer_feedbacks_tbl' 
+        src_table_2 = 'stg_customer_info_tbl'
 
-        table_name = 'dim_customers_tbl'
+        table_name = 'stg_customers_tbl'
         data_warehouse_layer = 'DWH - DATAMART'
-        source_system                   =   ['CRM', 'ERP', 'Mobile App', 'Website', '3rd party apps', 'Company database']
+        source_system                   =   ['CRM', 'ERP', 'Mobile App', 'Website', 'Company database']
         row_counter                     =   0 
         column_index                    =   0 
         total_null_values_in_table      =   0 
@@ -252,12 +248,12 @@ def load_data_to_dim_customers_table(postgres_connection)
         # ================================================== LOAD MDM DATA TO DWH TABLE =======================================
 
 # Set up SQL statements for table deletion and validation check  
-        delete_dim_customers_tbl_if_exists = f'''DROP TABLE IF EXISTS {active_schema_name}.{table_name} CASCADE;'''
+        delete_stg_customers_tbl_if_exists = f'''DROP TABLE IF EXISTS {active_schema_name}.{table_name} CASCADE;'''
 
-# check_if_dim_customers_tbl_is_deleted = f'''SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = '{table_name}' );'''
+        check_if_stg_customers_tbl_is_deleted = f'''SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = '{table_name}' );'''
 
 # Set up SQL statements for table creation and validation check 
-        create_dim_customers_tbl = f'''                CREATE TABLE IF NOT EXISTS {active_schema_name}.{table_name} as 
+        create_stg_customers_tbl = f'''                CREATE TABLE IF NOT EXISTS {active_schema_name}.{table_name} as 
                                                                 SELECT
                                                                         i.customer_sk ,
                                                                         i.customer_id ,
@@ -283,15 +279,15 @@ def load_data_to_dim_customers_table(postgres_connection)
                                                                         f.feedback_id,
                                                                         f.feedback_date,
                                                                         f.feedback_text
-                                                                    FROM live.dim_customer_info_tbl i
-                                                                    LEFT JOIN live.dim_customer_feedbacks_tbl f ON i.customer_id = f.customer_id;
+                                                                    FROM dev.stg_customer_info_tbl i
+                                                                    LEFT JOIN dev.stg_customer_feedbacks_tbl f ON i.customer_id = f.customer_id;
         '''
 
-        check_if_dim_customers_tbl_exists = f'''SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = '{table_name}' );'''
+        check_if_stg_customers_tbl_exists = f'''SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = '{table_name}' );'''
 
 
 # Set up SQL statements for adding data lineage and validation check 
-        add_data_lineage_to_dim_customers_tbl  =   f'''ALTER TABLE {active_schema_name}.{table_name}
+        add_data_lineage_to_stg_customers_tbl  =   f'''ALTER TABLE {active_schema_name}.{table_name}
                                                                                 ADD COLUMN  created_at                  TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
                                                                                 ADD COLUMN  updated_at                  TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
                                                                                 ADD COLUMN  source_system               VARCHAR(255),
@@ -371,13 +367,13 @@ def load_data_to_dim_customers_table(postgres_connection)
 
 
 # Delete table if it exists in Postgres
-        DELETING_SCHEMA_PROCESSING_START_TIME   =   time.time()
-        cursor.execute(delete_dim_customers_tbl_if_exists)
-        DELETING_SCHEMA_PROCESSING_END_TIME     =   time.time()
+        # DELETING_SCHEMA_PROCESSING_START_TIME   =   time.time()
+        # cursor.execute(delete_stg_customers_tbl_if_exists)
+        # DELETING_SCHEMA_PROCESSING_END_TIME     =   time.time()
 
         
         DELETING_SCHEMA_VAL_CHECK_PROCESSING_START_TIME     =   time.time()
-        cursor.execute(check_if_dim_customers_tbl_is_deleted)
+        cursor.execute(check_if_stg_customers_tbl_is_deleted)
         DELETING_SCHEMA_VAL_CHECK_PROCESSING_END_TIME       =   time.time()
 
 
@@ -386,14 +382,14 @@ def load_data_to_dim_customers_table(postgres_connection)
             root_logger.debug(f"")
             root_logger.info(f"=============================================================================================================================================================================")
             root_logger.info(f"TABLE DELETION SUCCESS: Managed to drop {table_name} table in {active_db_name}. Now advancing to recreating table... ")
-            root_logger.info(f"SQL Query for validation check:  {check_if_dim_customers_tbl_is_deleted} ")
+            root_logger.info(f"SQL Query for validation check:  {check_if_stg_customers_tbl_is_deleted} ")
             root_logger.info(f"=============================================================================================================================================================================")
             root_logger.debug(f"")
         else:
             root_logger.debug(f"")
             root_logger.error(f"==========================================================================================================================================================================")
             root_logger.error(f"TABLE DELETION FAILURE: Unable to delete {table_name}. This table may have objects that depend on it (use DROP TABLE ... CASCADE to resolve) or it doesn't exist. ")
-            root_logger.error(f"SQL Query for validation check:  {check_if_dim_customers_tbl_is_deleted} ")
+            root_logger.error(f"SQL Query for validation check:  {check_if_stg_customers_tbl_is_deleted} ")
             root_logger.error(f"==========================================================================================================================================================================")
             root_logger.debug(f"")
 
@@ -401,12 +397,12 @@ def load_data_to_dim_customers_table(postgres_connection)
 
         # Create table if it doesn't exist in Postgres  
         CREATING_TABLE_PROCESSING_START_TIME    =   time.time()
-        cursor.execute(create_dim_customers_tbl)
+        cursor.execute(create_stg_customers_tbl)
         CREATING_TABLE_PROCESSING_END_TIME  =   time.time()
 
         
         CREATING_TABLE_VAL_CHECK_PROCESSING_START_TIME  =   time.time()
-        cursor.execute(check_if_dim_customers_tbl_exists)
+        cursor.execute(check_if_stg_customers_tbl_exists)
         CREATING_TABLE_VAL_CHECK_PROCESSING_END_TIME    =   time.time()
 
 
@@ -415,14 +411,14 @@ def load_data_to_dim_customers_table(postgres_connection)
             root_logger.debug(f"")
             root_logger.info(f"=============================================================================================================================================================================")
             root_logger.info(f"TABLE CREATION SUCCESS: Managed to create {table_name} table in {active_db_name}.  ")
-            root_logger.info(f"SQL Query for validation check:  {check_if_dim_customers_tbl_exists} ")
+            root_logger.info(f"SQL Query for validation check:  {check_if_stg_customers_tbl_exists} ")
             root_logger.info(f"=============================================================================================================================================================================")
             root_logger.debug(f"")
         else:
             root_logger.debug(f"")
             root_logger.error(f"==========================================================================================================================================================================")
             root_logger.error(f"TABLE CREATION FAILURE: Unable to create {table_name}... ")
-            root_logger.error(f"SQL Query for validation check:  {check_if_dim_customers_tbl_exists} ")
+            root_logger.error(f"SQL Query for validation check:  {check_if_stg_customers_tbl_exists} ")
             root_logger.error(f"==========================================================================================================================================================================")
             root_logger.debug(f"")
 
@@ -430,7 +426,7 @@ def load_data_to_dim_customers_table(postgres_connection)
 
         # Add data lineage to table 
         ADDING_DATA_LINEAGE_PROCESSING_START_TIME   =   time.time()
-        cursor.execute(add_data_lineage_to_dim_customers_tbl)
+        cursor.execute(add_data_lineage_to_stg_customers_tbl)
         ADDING_DATA_LINEAGE_PROCESSING_END_TIME     =   time.time()
 
         
@@ -682,5 +678,5 @@ def load_data_to_dim_customers_table(postgres_connection)
             # root_logger.debug("")
             root_logger.debug("Session connected to Postgres database closed.")
 
-load_data_to_dim_customers_table(postgres_connection)
+load_data_to_stg_customers_table(postgres_connection)
 

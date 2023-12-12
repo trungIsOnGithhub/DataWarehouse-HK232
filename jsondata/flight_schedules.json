@@ -1,0 +1,2400 @@
+[{
+     "flight_id": "5cde8a50-aacf-4695-8986-184f06ab9d82",
+     "departure_city": "Venice",
+     "arrival_city": "Bali",
+     "departure_time": "04:04:55",
+     "arrival_time": "16:21:18",
+     "flight_date": "2021-06-29"
+},
+{
+     "flight_id": "30b96f04-99aa-4b8b-b659-f2cafbc10fcd",
+     "departure_city": "Serengeti",
+     "arrival_city": "Santorini",
+     "departure_time": "03:04:46",
+     "arrival_time": "01:28:53",
+     "flight_date": "2022-08-08"
+},
+{
+     "flight_id": "d94299f8-abaf-4e04-8040-f05256fc6dfc",
+     "departure_city": "Amsterdam",
+     "arrival_city": "Bangkok",
+     "departure_time": "14:08:54",
+     "arrival_time": "12:55:09",
+     "flight_date": "2021-05-11"
+},
+{
+     "flight_id": "211e9952-41e9-431a-a8d3-1e1a763b66b1",
+     "departure_city": "Bali",
+     "arrival_city": "Maui",
+     "departure_time": "01:01:58",
+     "arrival_time": "17:48:55",
+     "flight_date": "2020-02-28"
+},
+{
+     "flight_id": "acc2b6bb-50cc-472c-bfce-66159bd64c6e",
+     "departure_city": "Maui",
+     "arrival_city": "Santorini",
+     "departure_time": "13:46:34",
+     "arrival_time": "06:24:08",
+     "flight_date": "2023-03-26"
+},
+{
+     "flight_id": "680591eb-f82a-461c-bc87-a2e459e9f657",
+     "departure_city": "Barcelona",
+     "arrival_city": "Paris",
+     "departure_time": "20:08:57",
+     "arrival_time": "04:05:39",
+     "flight_date": "2022-06-22"
+},
+{
+     "flight_id": "48bf1082-5c01-4652-baa7-3f268cd7ba52",
+     "departure_city": "Santorini",
+     "arrival_city": "Phuket",
+     "departure_time": "23:12:15",
+     "arrival_time": "10:27:01",
+     "flight_date": "2022-08-29"
+},
+{
+     "flight_id": "cf5dca2e-fa9b-49d5-bc7d-b8ad30648462",
+     "departure_city": "Istanbul",
+     "arrival_city": "Sydney",
+     "departure_time": "00:14:18",
+     "arrival_time": "16:51:20",
+     "flight_date": "2021-11-11"
+},
+{
+     "flight_id": "15120a6b-a303-4a96-984e-871eeb87a8fb",
+     "departure_city": "Serengeti",
+     "arrival_city": "Tokyo",
+     "departure_time": "09:17:16",
+     "arrival_time": "00:52:21",
+     "flight_date": "2021-09-23"
+},
+{
+     "flight_id": "ec9a1ecc-601d-4f7f-a08c-537b0ddc2946",
+     "departure_city": "Tokyo",
+     "arrival_city": "Paris",
+     "departure_time": "09:45:33",
+     "arrival_time": "20:23:30",
+     "flight_date": "2020-09-24"
+},
+{
+     "flight_id": "e2290849-6edc-4f8b-83cc-5c64a70019a7",
+     "departure_city": "Bora Bora",
+     "arrival_city": "New York",
+     "departure_time": "15:12:12",
+     "arrival_time": "01:06:53",
+     "flight_date": "2021-03-01"
+},
+{
+     "flight_id": "6d465cde-da27-43b2-be12-7d6db5b6ab38",
+     "departure_city": "Serengeti",
+     "arrival_city": "New York",
+     "departure_time": "14:54:51",
+     "arrival_time": "05:47:48",
+     "flight_date": "2020-08-12"
+},
+{
+     "flight_id": "2006691b-96c8-41f1-bf92-89c8330aee38",
+     "departure_city": "Bangkok",
+     "arrival_city": "Cancun",
+     "departure_time": "07:09:03",
+     "arrival_time": "02:31:13",
+     "flight_date": "2020-02-17"
+},
+{
+     "flight_id": "ad1da0f9-b536-471b-8a02-72efa28e6453",
+     "departure_city": "Bali",
+     "arrival_city": "Sydney",
+     "departure_time": "12:30:05",
+     "arrival_time": "12:53:55",
+     "flight_date": "2022-11-19"
+},
+{
+     "flight_id": "b7575e45-2a08-41ef-9d47-2e496eba7fb4",
+     "departure_city": "Santorini",
+     "arrival_city": "Cancun",
+     "departure_time": "06:20:27",
+     "arrival_time": "11:06:42",
+     "flight_date": "2020-04-24"
+},
+{
+     "flight_id": "1766d6a8-29ba-469a-bb3f-ea8ef0dd28df",
+     "departure_city": "Barcelona",
+     "arrival_city": "Rome",
+     "departure_time": "04:06:08",
+     "arrival_time": "10:17:34",
+     "flight_date": "2022-01-31"
+},
+{
+     "flight_id": "4bedb28d-cb18-478c-abce-080cdf11b034",
+     "departure_city": "Maldives",
+     "arrival_city": "Cancun",
+     "departure_time": "03:16:27",
+     "arrival_time": "17:16:52",
+     "flight_date": "2020-11-09"
+},
+{
+     "flight_id": "a26ff87b-8cf1-49d0-9377-9faa644e94a9",
+     "departure_city": "Cancun",
+     "arrival_city": "Bangkok",
+     "departure_time": "17:11:14",
+     "arrival_time": "03:30:38",
+     "flight_date": "2023-10-20"
+},
+{
+     "flight_id": "cdcbecfc-5084-492b-af43-6ab59c6625d5",
+     "departure_city": "Sydney",
+     "arrival_city": "Bora Bora",
+     "departure_time": "17:17:00",
+     "arrival_time": "23:45:48",
+     "flight_date": "2020-12-20"
+},
+{
+     "flight_id": "e0ee7f1d-440f-422b-b621-8810d99e267f",
+     "departure_city": "Maldives",
+     "arrival_city": "Istanbul",
+     "departure_time": "05:32:30",
+     "arrival_time": "03:59:51",
+     "flight_date": "2021-11-07"
+},
+{
+     "flight_id": "93002300-b7ed-4c07-bf21-8fd759916dab",
+     "departure_city": "Bali",
+     "arrival_city": "Bora Bora",
+     "departure_time": "16:45:45",
+     "arrival_time": "23:56:56",
+     "flight_date": "2020-05-01"
+},
+{
+     "flight_id": "31629aff-96ae-4c26-aa5e-2edf1ea44a5a",
+     "departure_city": "Sydney",
+     "arrival_city": "Serengeti",
+     "departure_time": "06:03:50",
+     "arrival_time": "00:34:34",
+     "flight_date": "2022-12-23"
+},
+{
+     "flight_id": "381dffd5-c51d-4493-bd39-48da5d3aee27",
+     "departure_city": "London",
+     "arrival_city": "Dubai",
+     "departure_time": "02:05:20",
+     "arrival_time": "01:03:16",
+     "flight_date": "2023-01-01"
+},
+{
+     "flight_id": "f88d6b88-7708-4f88-99ab-13b0d8f7fc1d",
+     "departure_city": "Maui",
+     "arrival_city": "Dubai",
+     "departure_time": "03:47:45",
+     "arrival_time": "19:48:22",
+     "flight_date": "2020-01-30"
+},
+{
+     "flight_id": "5969ab65-e6e6-4b36-996a-2cc59c6f1c99",
+     "departure_city": "Tokyo",
+     "arrival_city": "London",
+     "departure_time": "14:30:44",
+     "arrival_time": "01:27:02",
+     "flight_date": "2022-06-11"
+},
+{
+     "flight_id": "dd2f281c-6d35-4ada-9e2a-f2d63ee207f0",
+     "departure_city": "Prague",
+     "arrival_city": "Prague",
+     "departure_time": "01:31:00",
+     "arrival_time": "00:10:38",
+     "flight_date": "2023-06-30"
+},
+{
+     "flight_id": "79ba8e15-d976-42ed-aeef-5699ebdc2055",
+     "departure_city": "Bora Bora",
+     "arrival_city": "Rome",
+     "departure_time": "10:33:18",
+     "arrival_time": "05:00:57",
+     "flight_date": "2022-11-17"
+},
+{
+     "flight_id": "fba20430-cda4-4ecb-a9a4-846a775a97ac",
+     "departure_city": "Barcelona",
+     "arrival_city": "London",
+     "departure_time": "11:41:59",
+     "arrival_time": "20:38:24",
+     "flight_date": "2022-07-16"
+},
+{
+     "flight_id": "7f5d0a80-6908-4efc-8516-deed3bf453ea",
+     "departure_city": "Phuket",
+     "arrival_city": "Maldives",
+     "departure_time": "13:29:41",
+     "arrival_time": "20:38:54",
+     "flight_date": "2021-09-21"
+},
+{
+     "flight_id": "67f3c3ff-9047-4bb2-b2a9-530a96898da6",
+     "departure_city": "Paris",
+     "arrival_city": "Amsterdam",
+     "departure_time": "02:46:40",
+     "arrival_time": "03:37:05",
+     "flight_date": "2022-05-09"
+},
+{
+     "flight_id": "bcd3e6aa-1b76-42b5-b939-f87d30c6c02d",
+     "departure_city": "Cancun",
+     "arrival_city": "Prague",
+     "departure_time": "13:41:23",
+     "arrival_time": "11:20:06",
+     "flight_date": "2021-12-13"
+},
+{
+     "flight_id": "2f47a460-2060-44c7-9d1b-7ba12c453b28",
+     "departure_city": "Tokyo",
+     "arrival_city": "Venice",
+     "departure_time": "04:58:26",
+     "arrival_time": "09:29:45",
+     "flight_date": "2021-05-12"
+},
+{
+     "flight_id": "5bb54061-bbeb-4414-9327-7a7962f9b2d4",
+     "departure_city": "Serengeti",
+     "arrival_city": "Serengeti",
+     "departure_time": "18:15:44",
+     "arrival_time": "20:15:06",
+     "flight_date": "2022-08-19"
+},
+{
+     "flight_id": "17e69ab4-ef3c-4eb5-89ca-d778d477d258",
+     "departure_city": "Paris",
+     "arrival_city": "Bali",
+     "departure_time": "03:55:46",
+     "arrival_time": "02:01:33",
+     "flight_date": "2023-08-06"
+},
+{
+     "flight_id": "d25fa2dc-3008-440a-b360-85dcf633123d",
+     "departure_city": "London",
+     "arrival_city": "Bora Bora",
+     "departure_time": "07:29:51",
+     "arrival_time": "07:06:22",
+     "flight_date": "2023-01-09"
+},
+{
+     "flight_id": "ffd823d9-9f7f-45ad-a2bc-2a2e6cd04ef6",
+     "departure_city": "Santorini",
+     "arrival_city": "Prague",
+     "departure_time": "15:09:28",
+     "arrival_time": "09:09:24",
+     "flight_date": "2022-12-13"
+},
+{
+     "flight_id": "9e93c797-dd3b-43ab-a433-cc9d89f2be94",
+     "departure_city": "Tokyo",
+     "arrival_city": "Santorini",
+     "departure_time": "02:02:45",
+     "arrival_time": "21:01:17",
+     "flight_date": "2021-11-22"
+},
+{
+     "flight_id": "33ce46ca-054d-4955-bb48-4afeb4590fc1",
+     "departure_city": "London",
+     "arrival_city": "Amsterdam",
+     "departure_time": "06:40:37",
+     "arrival_time": "15:42:09",
+     "flight_date": "2021-03-03"
+},
+{
+     "flight_id": "c9ee8091-6d0b-4c49-a6c2-e563c5730df7",
+     "departure_city": "Sydney",
+     "arrival_city": "Amsterdam",
+     "departure_time": "02:16:49",
+     "arrival_time": "15:02:08",
+     "flight_date": "2021-09-22"
+},
+{
+     "flight_id": "3c2e47bc-f23c-4024-bda0-e2eb0f47073e",
+     "departure_city": "Bora Bora",
+     "arrival_city": "London",
+     "departure_time": "20:52:32",
+     "arrival_time": "18:01:36",
+     "flight_date": "2020-06-19"
+},
+{
+     "flight_id": "74ba35c6-5cbe-4d2c-85d7-5fa83372b464",
+     "departure_city": "Bali",
+     "arrival_city": "Bangkok",
+     "departure_time": "01:00:10",
+     "arrival_time": "11:06:02",
+     "flight_date": "2023-01-09"
+},
+{
+     "flight_id": "2b4135d4-61d8-4c54-bff2-e7a7f5d03edd",
+     "departure_city": "Tokyo",
+     "arrival_city": "Serengeti",
+     "departure_time": "03:11:24",
+     "arrival_time": "04:51:11",
+     "flight_date": "2021-11-10"
+},
+{
+     "flight_id": "251efb34-22be-464c-b4b3-0d33c837b582",
+     "departure_city": "Maui",
+     "arrival_city": "Paris",
+     "departure_time": "09:30:30",
+     "arrival_time": "20:40:13",
+     "flight_date": "2022-04-12"
+},
+{
+     "flight_id": "98bc1d54-a03b-495b-b343-96ec79eb2abc",
+     "departure_city": "Bangkok",
+     "arrival_city": "Maui",
+     "departure_time": "18:30:09",
+     "arrival_time": "09:36:31",
+     "flight_date": "2020-05-08"
+},
+{
+     "flight_id": "679ef8db-524b-41df-8f66-a118a904b3aa",
+     "departure_city": "Bangkok",
+     "arrival_city": "Tokyo",
+     "departure_time": "18:29:06",
+     "arrival_time": "03:23:42",
+     "flight_date": "2023-03-13"
+},
+{
+     "flight_id": "def7dc5a-0683-41d0-98be-8ce869067c1c",
+     "departure_city": "Istanbul",
+     "arrival_city": "Phuket",
+     "departure_time": "18:34:09",
+     "arrival_time": "06:06:43",
+     "flight_date": "2022-10-01"
+},
+{
+     "flight_id": "7462523f-7635-4026-ade4-135a97a53461",
+     "departure_city": "Istanbul",
+     "arrival_city": "Santorini",
+     "departure_time": "03:32:31",
+     "arrival_time": "16:50:55",
+     "flight_date": "2022-07-11"
+},
+{
+     "flight_id": "82aea471-6ef1-44a2-acb8-1a2a11994022",
+     "departure_city": "Dubai",
+     "arrival_city": "Prague",
+     "departure_time": "18:40:39",
+     "arrival_time": "09:50:34",
+     "flight_date": "2023-06-26"
+},
+{
+     "flight_id": "a71ff33b-b00d-4fb2-adb3-4c5469936cda",
+     "departure_city": "Bali",
+     "arrival_city": "Tokyo",
+     "departure_time": "06:11:40",
+     "arrival_time": "23:23:13",
+     "flight_date": "2022-02-02"
+},
+{
+     "flight_id": "a8b08834-d495-4974-b3ba-144d8b64b7f5",
+     "departure_city": "London",
+     "arrival_city": "Santorini",
+     "departure_time": "20:21:35",
+     "arrival_time": "06:59:40",
+     "flight_date": "2020-09-18"
+},
+{
+     "flight_id": "348237ca-0f56-488f-af51-381e18ef7d9f",
+     "departure_city": "Maui",
+     "arrival_city": "Tokyo",
+     "departure_time": "22:44:28",
+     "arrival_time": "11:05:30",
+     "flight_date": "2020-11-29"
+},
+{
+     "flight_id": "1e13ef9c-0c73-4e3c-9bc2-d5cc941fa839",
+     "departure_city": "Barcelona",
+     "arrival_city": "Phuket",
+     "departure_time": "06:14:29",
+     "arrival_time": "16:32:54",
+     "flight_date": "2023-02-12"
+},
+{
+     "flight_id": "f192bab1-e099-4750-8221-c13c0d1e345f",
+     "departure_city": "Paris",
+     "arrival_city": "Amsterdam",
+     "departure_time": "12:52:15",
+     "arrival_time": "20:05:15",
+     "flight_date": "2023-09-09"
+},
+{
+     "flight_id": "aa0aa3d0-b916-46c5-9173-a8061c856cee",
+     "departure_city": "Venice",
+     "arrival_city": "Amsterdam",
+     "departure_time": "23:45:19",
+     "arrival_time": "15:50:37",
+     "flight_date": "2020-02-02"
+},
+{
+     "flight_id": "1e75d15e-e05b-4d5d-b7c3-4c13c4106ce8",
+     "departure_city": "Bora Bora",
+     "arrival_city": "Rome",
+     "departure_time": "14:53:57",
+     "arrival_time": "17:18:43",
+     "flight_date": "2023-09-28"
+},
+{
+     "flight_id": "efcdb427-d9ce-4877-acff-1ed4a444e709",
+     "departure_city": "Bora Bora",
+     "arrival_city": "Rome",
+     "departure_time": "12:01:03",
+     "arrival_time": "11:36:52",
+     "flight_date": "2021-10-21"
+},
+{
+     "flight_id": "59b78bad-f564-4749-9d58-3e0e1f90df8b",
+     "departure_city": "Maldives",
+     "arrival_city": "Cancun",
+     "departure_time": "23:26:47",
+     "arrival_time": "06:41:37",
+     "flight_date": "2020-04-16"
+},
+{
+     "flight_id": "c812e380-4520-4322-a78b-46fa0f6e9e61",
+     "departure_city": "Serengeti",
+     "arrival_city": "London",
+     "departure_time": "21:19:23",
+     "arrival_time": "03:41:22",
+     "flight_date": "2023-09-15"
+},
+{
+     "flight_id": "17d03ada-ef9d-4940-aa9b-95c83170143d",
+     "departure_city": "London",
+     "arrival_city": "Bali",
+     "departure_time": "01:10:31",
+     "arrival_time": "15:57:00",
+     "flight_date": "2023-07-24"
+},
+{
+     "flight_id": "f2cc0e6d-c2ab-4bb1-aef2-d7fe4f35398b",
+     "departure_city": "Phuket",
+     "arrival_city": "London",
+     "departure_time": "03:52:51",
+     "arrival_time": "19:55:47",
+     "flight_date": "2022-05-06"
+},
+{
+     "flight_id": "9b3f6ba6-82ac-4f5c-ac30-01c755c0151d",
+     "departure_city": "Cancun",
+     "arrival_city": "Tokyo",
+     "departure_time": "03:14:07",
+     "arrival_time": "00:36:51",
+     "flight_date": "2022-02-28"
+},
+{
+     "flight_id": "0a658bd9-00a1-42f0-900a-4647b79b910c",
+     "departure_city": "Maui",
+     "arrival_city": "Bora Bora",
+     "departure_time": "18:05:39",
+     "arrival_time": "15:07:55",
+     "flight_date": "2020-02-03"
+},
+{
+     "flight_id": "1db28107-78bf-4846-a91c-209d0e3ef7f5",
+     "departure_city": "New York",
+     "arrival_city": "Barcelona",
+     "departure_time": "01:03:00",
+     "arrival_time": "08:09:36",
+     "flight_date": "2020-12-08"
+},
+{
+     "flight_id": "8f4a022b-1adb-4d4e-b5ab-055dcf610098",
+     "departure_city": "Serengeti",
+     "arrival_city": "Maui",
+     "departure_time": "05:38:06",
+     "arrival_time": "19:01:43",
+     "flight_date": "2023-10-21"
+},
+{
+     "flight_id": "f0f2b186-4063-424f-9100-369bfd21fd0a",
+     "departure_city": "Paris",
+     "arrival_city": "London",
+     "departure_time": "00:21:39",
+     "arrival_time": "02:02:36",
+     "flight_date": "2022-05-01"
+},
+{
+     "flight_id": "c5790d4a-8829-47a6-a702-9e79530d9949",
+     "departure_city": "Maui",
+     "arrival_city": "London",
+     "departure_time": "14:46:47",
+     "arrival_time": "03:21:40",
+     "flight_date": "2022-11-27"
+},
+{
+     "flight_id": "0513e77d-26e6-4de1-aef3-7eba21099c66",
+     "departure_city": "Bali",
+     "arrival_city": "Paris",
+     "departure_time": "19:05:36",
+     "arrival_time": "13:07:44",
+     "flight_date": "2021-02-17"
+},
+{
+     "flight_id": "4a182720-fb64-40f5-b1a0-06fb708c6b67",
+     "departure_city": "Phuket",
+     "arrival_city": "Barcelona",
+     "departure_time": "20:55:08",
+     "arrival_time": "23:46:53",
+     "flight_date": "2021-06-25"
+},
+{
+     "flight_id": "080e3953-0172-407c-8f44-48da683dc4b3",
+     "departure_city": "Amsterdam",
+     "arrival_city": "Tokyo",
+     "departure_time": "12:14:18",
+     "arrival_time": "03:55:34",
+     "flight_date": "2020-11-21"
+},
+{
+     "flight_id": "5e0214da-1f43-456f-8479-419ea788c07d",
+     "departure_city": "Amsterdam",
+     "arrival_city": "Phuket",
+     "departure_time": "19:08:14",
+     "arrival_time": "09:53:36",
+     "flight_date": "2021-08-19"
+},
+{
+     "flight_id": "9db19f1b-c500-458f-a56d-3aeb74c5722d",
+     "departure_city": "Santorini",
+     "arrival_city": "Sydney",
+     "departure_time": "08:58:54",
+     "arrival_time": "03:33:32",
+     "flight_date": "2021-04-04"
+},
+{
+     "flight_id": "d1bd173b-f5f9-4a67-8b03-c4396416302c",
+     "departure_city": "Tokyo",
+     "arrival_city": "Bali",
+     "departure_time": "04:08:53",
+     "arrival_time": "18:17:08",
+     "flight_date": "2020-03-15"
+},
+{
+     "flight_id": "c59428ce-35b5-4982-9b61-6e00488acc4f",
+     "departure_city": "Serengeti",
+     "arrival_city": "Maldives",
+     "departure_time": "05:42:17",
+     "arrival_time": "02:12:19",
+     "flight_date": "2021-03-10"
+},
+{
+     "flight_id": "342ac5e0-dbcd-4443-9764-95df1e608899",
+     "departure_city": "Phuket",
+     "arrival_city": "Cancun",
+     "departure_time": "05:23:38",
+     "arrival_time": "03:27:13",
+     "flight_date": "2022-06-16"
+},
+{
+     "flight_id": "e859da84-2d29-4caf-802d-3bbe63a7bda4",
+     "departure_city": "Maldives",
+     "arrival_city": "Barcelona",
+     "departure_time": "16:59:33",
+     "arrival_time": "10:17:42",
+     "flight_date": "2022-06-28"
+},
+{
+     "flight_id": "7b7f2961-09a0-4de6-933c-bbd990ceaedb",
+     "departure_city": "Istanbul",
+     "arrival_city": "Cancun",
+     "departure_time": "09:48:38",
+     "arrival_time": "11:04:02",
+     "flight_date": "2023-07-28"
+},
+{
+     "flight_id": "b9b0d4c8-31b2-4c88-8652-26a57f6665be",
+     "departure_city": "Bali",
+     "arrival_city": "Venice",
+     "departure_time": "20:51:53",
+     "arrival_time": "13:31:56",
+     "flight_date": "2021-08-29"
+},
+{
+     "flight_id": "3b563adb-97c6-4496-9b79-6d41f1a43501",
+     "departure_city": "Bora Bora",
+     "arrival_city": "Amsterdam",
+     "departure_time": "00:56:32",
+     "arrival_time": "13:20:34",
+     "flight_date": "2023-07-01"
+},
+{
+     "flight_id": "5017775c-e6c7-46ed-a7e3-c9431c3a8982",
+     "departure_city": "Prague",
+     "arrival_city": "Paris",
+     "departure_time": "04:42:56",
+     "arrival_time": "19:24:50",
+     "flight_date": "2022-10-11"
+},
+{
+     "flight_id": "31f89f1c-96e3-4627-b557-4f4ecd182b9b",
+     "departure_city": "Phuket",
+     "arrival_city": "Amsterdam",
+     "departure_time": "17:07:56",
+     "arrival_time": "13:24:07",
+     "flight_date": "2020-01-15"
+},
+{
+     "flight_id": "68a1a2fa-037b-4824-9de9-0de80559789f",
+     "departure_city": "New York",
+     "arrival_city": "London",
+     "departure_time": "04:40:20",
+     "arrival_time": "08:05:17",
+     "flight_date": "2020-02-15"
+},
+{
+     "flight_id": "8d5d56ec-6a26-46f2-bef3-8c553eedbbef",
+     "departure_city": "Paris",
+     "arrival_city": "Sydney",
+     "departure_time": "08:48:38",
+     "arrival_time": "01:43:35",
+     "flight_date": "2022-03-12"
+},
+{
+     "flight_id": "d48a88d3-4141-41fc-8213-9ffb923d842f",
+     "departure_city": "Sydney",
+     "arrival_city": "Bangkok",
+     "departure_time": "02:01:11",
+     "arrival_time": "10:35:36",
+     "flight_date": "2022-09-12"
+},
+{
+     "flight_id": "0f540969-3747-4419-8118-ae89bad3098a",
+     "departure_city": "Rome",
+     "arrival_city": "Tokyo",
+     "departure_time": "17:05:23",
+     "arrival_time": "00:25:28",
+     "flight_date": "2020-08-03"
+},
+{
+     "flight_id": "574d3428-017d-4976-beab-94a16fe5c3a6",
+     "departure_city": "New York",
+     "arrival_city": "Rome",
+     "departure_time": "06:35:39",
+     "arrival_time": "04:01:54",
+     "flight_date": "2022-12-11"
+},
+{
+     "flight_id": "a637bec1-09de-4b46-afd2-ea842bb2b815",
+     "departure_city": "Maui",
+     "arrival_city": "Phuket",
+     "departure_time": "01:23:41",
+     "arrival_time": "09:11:41",
+     "flight_date": "2022-04-17"
+},
+{
+     "flight_id": "442a78b1-fd08-4ab7-b574-398f7c936ab5",
+     "departure_city": "Bangkok",
+     "arrival_city": "Amsterdam",
+     "departure_time": "21:53:46",
+     "arrival_time": "13:28:28",
+     "flight_date": "2022-06-02"
+},
+{
+     "flight_id": "f9927c9c-5caf-43ee-bab0-5745c764f888",
+     "departure_city": "Barcelona",
+     "arrival_city": "Phuket",
+     "departure_time": "20:26:47",
+     "arrival_time": "05:22:31",
+     "flight_date": "2022-11-14"
+},
+{
+     "flight_id": "a2bebb41-a633-4fb1-b5c8-d245b6b22c25",
+     "departure_city": "Maui",
+     "arrival_city": "London",
+     "departure_time": "02:07:36",
+     "arrival_time": "20:06:53",
+     "flight_date": "2021-01-13"
+},
+{
+     "flight_id": "3df1f998-964a-496d-a987-4506e53b8026",
+     "departure_city": "Rome",
+     "arrival_city": "Barcelona",
+     "departure_time": "09:33:00",
+     "arrival_time": "16:04:59",
+     "flight_date": "2022-04-15"
+},
+{
+     "flight_id": "d719365c-5e01-4a6c-8623-d6f21a91fcd3",
+     "departure_city": "Prague",
+     "arrival_city": "Maui",
+     "departure_time": "04:12:08",
+     "arrival_time": "21:06:07",
+     "flight_date": "2022-03-21"
+},
+{
+     "flight_id": "56451219-2b36-4a34-b240-aba13742e5ce",
+     "departure_city": "London",
+     "arrival_city": "Phuket",
+     "departure_time": "13:41:43",
+     "arrival_time": "17:12:34",
+     "flight_date": "2020-02-26"
+},
+{
+     "flight_id": "37a14bf7-e404-4d6b-ab69-8a37ab46e2f8",
+     "departure_city": "Maui",
+     "arrival_city": "Serengeti",
+     "departure_time": "13:36:09",
+     "arrival_time": "17:28:24",
+     "flight_date": "2020-08-30"
+},
+{
+     "flight_id": "d178d7ca-d170-43a4-9543-a1dfe2b92b3c",
+     "departure_city": "Maui",
+     "arrival_city": "Amsterdam",
+     "departure_time": "15:08:25",
+     "arrival_time": "10:50:53",
+     "flight_date": "2021-10-29"
+},
+{
+     "flight_id": "97916b0d-449c-48ed-bbbd-95a767cfe077",
+     "departure_city": "New York",
+     "arrival_city": "Bangkok",
+     "departure_time": "11:07:45",
+     "arrival_time": "13:59:48",
+     "flight_date": "2020-10-09"
+},
+{
+     "flight_id": "a2d3edaf-cab2-4e24-ae8a-9a7a2e638419",
+     "departure_city": "Paris",
+     "arrival_city": "Serengeti",
+     "departure_time": "22:19:42",
+     "arrival_time": "20:04:48",
+     "flight_date": "2021-05-02"
+},
+{
+     "flight_id": "130c9464-3529-488c-8ef3-aedf1967ef0e",
+     "departure_city": "Sydney",
+     "arrival_city": "Maldives",
+     "departure_time": "21:43:19",
+     "arrival_time": "13:04:05",
+     "flight_date": "2022-06-19"
+},
+{
+     "flight_id": "252e9104-8941-430c-8dc5-6d7b066cf0f0",
+     "departure_city": "Istanbul",
+     "arrival_city": "Tokyo",
+     "departure_time": "02:22:57",
+     "arrival_time": "23:20:32",
+     "flight_date": "2023-02-02"
+},
+{
+     "flight_id": "61e40301-2c2f-4324-a9ca-89b26848e1f1",
+     "departure_city": "Paris",
+     "arrival_city": "Paris",
+     "departure_time": "13:32:27",
+     "arrival_time": "21:37:43",
+     "flight_date": "2021-07-15"
+},
+{
+     "flight_id": "e598d94a-9334-41aa-b3bc-db9a0b156004",
+     "departure_city": "Prague",
+     "arrival_city": "Bangkok",
+     "departure_time": "14:57:41",
+     "arrival_time": "20:13:26",
+     "flight_date": "2020-02-13"
+},
+{
+     "flight_id": "462bfa72-bc10-4f45-bcf8-6c75c0d2e6a3",
+     "departure_city": "New York",
+     "arrival_city": "Sydney",
+     "departure_time": "08:58:48",
+     "arrival_time": "15:56:28",
+     "flight_date": "2020-09-19"
+},
+{
+     "flight_id": "0d4e1c5d-2e98-4da8-9feb-4ce21ef04769",
+     "departure_city": "London",
+     "arrival_city": "Bora Bora",
+     "departure_time": "06:10:26",
+     "arrival_time": "08:02:42",
+     "flight_date": "2022-01-08"
+},
+{
+     "flight_id": "54c9df92-326b-4ff6-bed4-7ba7622de10e",
+     "departure_city": "Maui",
+     "arrival_city": "Phuket",
+     "departure_time": "16:10:43",
+     "arrival_time": "13:44:12",
+     "flight_date": "2023-10-27"
+},
+{
+     "flight_id": "ea0ca1e6-9d9f-4154-8c1b-a9f6b2b86445",
+     "departure_city": "Venice",
+     "arrival_city": "Dubai",
+     "departure_time": "20:18:59",
+     "arrival_time": "02:41:10",
+     "flight_date": "2022-01-10"
+},
+{
+     "flight_id": "565fb5ea-1f3f-4ae1-9559-e31b7b6ffa47",
+     "departure_city": "Serengeti",
+     "arrival_city": "New York",
+     "departure_time": "22:38:20",
+     "arrival_time": "18:02:28",
+     "flight_date": "2021-08-06"
+},
+{
+     "flight_id": "d34d82af-5891-4a4d-9032-81e6ed5f292f",
+     "departure_city": "Prague",
+     "arrival_city": "Bangkok",
+     "departure_time": "13:51:29",
+     "arrival_time": "22:09:35",
+     "flight_date": "2020-01-26"
+},
+{
+     "flight_id": "c3de8ebc-43b6-4476-b284-5bf8a5ac7c85",
+     "departure_city": "Barcelona",
+     "arrival_city": "Venice",
+     "departure_time": "08:55:38",
+     "arrival_time": "05:41:02",
+     "flight_date": "2021-07-07"
+},
+{
+     "flight_id": "e4c11eda-2969-498c-942e-35bdc6b52c24",
+     "departure_city": "New York",
+     "arrival_city": "Rome",
+     "departure_time": "12:44:23",
+     "arrival_time": "19:28:36",
+     "flight_date": "2020-02-15"
+},
+{
+     "flight_id": "7b928592-77ee-48bf-bb23-c7b7eacbbb55",
+     "departure_city": "London",
+     "arrival_city": "Bora Bora",
+     "departure_time": "18:33:46",
+     "arrival_time": "08:26:56",
+     "flight_date": "2020-09-08"
+},
+{
+     "flight_id": "7665aed2-3c55-47e4-b967-0ca69b701c29",
+     "departure_city": "Sydney",
+     "arrival_city": "Bangkok",
+     "departure_time": "13:41:22",
+     "arrival_time": "10:44:53",
+     "flight_date": "2023-05-05"
+},
+{
+     "flight_id": "88ed78fa-9fe5-4f2e-9c7c-e55266df4a84",
+     "departure_city": "Dubai",
+     "arrival_city": "Santorini",
+     "departure_time": "13:49:24",
+     "arrival_time": "06:24:30",
+     "flight_date": "2021-06-12"
+},
+{
+     "flight_id": "88842385-6fc2-48d8-90bf-bcaa3a7ac548",
+     "departure_city": "Paris",
+     "arrival_city": "Serengeti",
+     "departure_time": "04:59:13",
+     "arrival_time": "13:34:37",
+     "flight_date": "2020-11-13"
+},
+{
+     "flight_id": "cd520687-df3f-42c7-9802-5d9de7f40c83",
+     "departure_city": "Bora Bora",
+     "arrival_city": "Rome",
+     "departure_time": "15:03:11",
+     "arrival_time": "14:15:23",
+     "flight_date": "2023-09-30"
+},
+{
+     "flight_id": "5efe0959-b542-4b3e-907e-9acbf732771b",
+     "departure_city": "Amsterdam",
+     "arrival_city": "Venice",
+     "departure_time": "00:29:16",
+     "arrival_time": "18:31:20",
+     "flight_date": "2020-03-02"
+},
+{
+     "flight_id": "e2f409a7-07cb-4389-8595-b34247c795a8",
+     "departure_city": "Rome",
+     "arrival_city": "Tokyo",
+     "departure_time": "09:09:41",
+     "arrival_time": "11:18:30",
+     "flight_date": "2022-08-09"
+},
+{
+     "flight_id": "700eb5f8-3bf0-4fc8-9583-6b10242581c3",
+     "departure_city": "Cancun",
+     "arrival_city": "Phuket",
+     "departure_time": "01:20:16",
+     "arrival_time": "10:25:26",
+     "flight_date": "2022-04-16"
+},
+{
+     "flight_id": "e16c44c6-e17a-4f00-8219-d23ca9a4109c",
+     "departure_city": "Serengeti",
+     "arrival_city": "Rome",
+     "departure_time": "06:44:27",
+     "arrival_time": "04:44:07",
+     "flight_date": "2022-07-16"
+},
+{
+     "flight_id": "6c7fcd24-07e1-45f3-83f3-f45b667afb3a",
+     "departure_city": "Maui",
+     "arrival_city": "London",
+     "departure_time": "09:55:55",
+     "arrival_time": "17:55:47",
+     "flight_date": "2022-01-25"
+},
+{
+     "flight_id": "a28febd1-1268-469f-bac2-782501f9820f",
+     "departure_city": "Santorini",
+     "arrival_city": "Maldives",
+     "departure_time": "01:30:00",
+     "arrival_time": "23:43:08",
+     "flight_date": "2022-10-11"
+},
+{
+     "flight_id": "ee12d964-67fd-4a49-927a-87ca64ae5253",
+     "departure_city": "Serengeti",
+     "arrival_city": "Amsterdam",
+     "departure_time": "09:33:42",
+     "arrival_time": "12:32:49",
+     "flight_date": "2022-01-20"
+},
+{
+     "flight_id": "7745896e-1a27-4627-8f10-7bbdbf5f1d85",
+     "departure_city": "Sydney",
+     "arrival_city": "Paris",
+     "departure_time": "08:43:19",
+     "arrival_time": "10:42:27",
+     "flight_date": "2021-01-09"
+},
+{
+     "flight_id": "04c5ae55-64fc-4ed8-8032-f73bfc123b2a",
+     "departure_city": "Maui",
+     "arrival_city": "Maui",
+     "departure_time": "02:24:44",
+     "arrival_time": "11:45:12",
+     "flight_date": "2023-06-24"
+},
+{
+     "flight_id": "3cbde0e7-79f9-40ea-b6fc-fc61b7e6224a",
+     "departure_city": "Santorini",
+     "arrival_city": "Bali",
+     "departure_time": "02:20:09",
+     "arrival_time": "14:09:19",
+     "flight_date": "2023-04-21"
+},
+{
+     "flight_id": "e27ef73b-b1a2-49b4-9fcc-0ab67735db1a",
+     "departure_city": "Santorini",
+     "arrival_city": "Amsterdam",
+     "departure_time": "20:47:58",
+     "arrival_time": "14:15:30",
+     "flight_date": "2022-09-22"
+},
+{
+     "flight_id": "6e6d7a8e-68ed-41aa-980b-3b5ca7ee37f4",
+     "departure_city": "Venice",
+     "arrival_city": "London",
+     "departure_time": "18:47:07",
+     "arrival_time": "23:02:40",
+     "flight_date": "2022-07-29"
+},
+{
+     "flight_id": "39808a41-061d-4730-bbf0-1b1f734c26cf",
+     "departure_city": "Santorini",
+     "arrival_city": "Prague",
+     "departure_time": "09:11:36",
+     "arrival_time": "03:49:13",
+     "flight_date": "2020-12-22"
+},
+{
+     "flight_id": "00fac434-4543-46c2-b709-15b9eb16285d",
+     "departure_city": "Santorini",
+     "arrival_city": "Dubai",
+     "departure_time": "14:43:22",
+     "arrival_time": "13:34:05",
+     "flight_date": "2023-06-27"
+},
+{
+     "flight_id": "55b94b60-a1fa-461a-9589-4d307ec26826",
+     "departure_city": "Santorini",
+     "arrival_city": "Rome",
+     "departure_time": "15:07:06",
+     "arrival_time": "04:38:51",
+     "flight_date": "2021-11-16"
+},
+{
+     "flight_id": "21fce990-d819-4466-856b-655151fa2142",
+     "departure_city": "Venice",
+     "arrival_city": "Dubai",
+     "departure_time": "14:54:12",
+     "arrival_time": "06:19:08",
+     "flight_date": "2020-08-27"
+},
+{
+     "flight_id": "8eda1c1b-c39f-4605-9f03-4245c42707a8",
+     "departure_city": "Paris",
+     "arrival_city": "Maldives",
+     "departure_time": "10:09:47",
+     "arrival_time": "05:26:12",
+     "flight_date": "2022-01-23"
+},
+{
+     "flight_id": "3c36d264-58a8-4ffb-993c-c9d3acc7de81",
+     "departure_city": "Phuket",
+     "arrival_city": "Serengeti",
+     "departure_time": "20:12:18",
+     "arrival_time": "17:25:14",
+     "flight_date": "2021-04-23"
+},
+{
+     "flight_id": "1c4c7525-b573-4402-8e71-e5646e18b716",
+     "departure_city": "Phuket",
+     "arrival_city": "Maui",
+     "departure_time": "04:04:05",
+     "arrival_time": "05:58:19",
+     "flight_date": "2021-08-20"
+},
+{
+     "flight_id": "c280c561-2975-46d1-9eb1-4b91eddab554",
+     "departure_city": "Maui",
+     "arrival_city": "Bali",
+     "departure_time": "00:01:55",
+     "arrival_time": "05:52:20",
+     "flight_date": "2023-01-03"
+},
+{
+     "flight_id": "028f6201-0d3b-42b6-9870-6945c259e606",
+     "departure_city": "Amsterdam",
+     "arrival_city": "Maui",
+     "departure_time": "04:36:06",
+     "arrival_time": "14:46:57",
+     "flight_date": "2022-04-02"
+},
+{
+     "flight_id": "f2c694a4-41ad-4c33-a0fc-c6baf12e5fe8",
+     "departure_city": "Venice",
+     "arrival_city": "Paris",
+     "departure_time": "01:27:33",
+     "arrival_time": "00:58:44",
+     "flight_date": "2021-05-08"
+},
+{
+     "flight_id": "caec6bc6-d747-4295-80e1-d47a615574b8",
+     "departure_city": "Maui",
+     "arrival_city": "Amsterdam",
+     "departure_time": "07:22:44",
+     "arrival_time": "17:10:24",
+     "flight_date": "2023-08-16"
+},
+{
+     "flight_id": "b9d054c6-2d11-4e78-8919-e162df8f4546",
+     "departure_city": "Amsterdam",
+     "arrival_city": "Dubai",
+     "departure_time": "06:25:28",
+     "arrival_time": "11:22:05",
+     "flight_date": "2023-05-20"
+},
+{
+     "flight_id": "1e422de2-b24d-4777-b6a9-85c03f18de7e",
+     "departure_city": "Bali",
+     "arrival_city": "Sydney",
+     "departure_time": "09:56:30",
+     "arrival_time": "20:43:18",
+     "flight_date": "2022-10-16"
+},
+{
+     "flight_id": "305ffc60-4615-49e3-ba2b-7103b67da1e5",
+     "departure_city": "Santorini",
+     "arrival_city": "Serengeti",
+     "departure_time": "21:37:46",
+     "arrival_time": "22:24:19",
+     "flight_date": "2020-04-20"
+},
+{
+     "flight_id": "e127d488-5d35-481c-818e-0cd8b6ee1dc5",
+     "departure_city": "Rome",
+     "arrival_city": "Bora Bora",
+     "departure_time": "06:59:32",
+     "arrival_time": "21:26:26",
+     "flight_date": "2021-06-29"
+},
+{
+     "flight_id": "ddc2863f-c71d-48f0-925f-e37236b15bdf",
+     "departure_city": "Bali",
+     "arrival_city": "Tokyo",
+     "departure_time": "01:13:28",
+     "arrival_time": "13:49:45",
+     "flight_date": "2023-03-06"
+},
+{
+     "flight_id": "d0ddfb17-0697-4641-9bbf-4b40529ced51",
+     "departure_city": "Bora Bora",
+     "arrival_city": "Istanbul",
+     "departure_time": "19:49:30",
+     "arrival_time": "07:33:52",
+     "flight_date": "2021-12-04"
+},
+{
+     "flight_id": "21adde8d-51f6-440b-bbfc-dacba15a1d8e",
+     "departure_city": "Dubai",
+     "arrival_city": "Bali",
+     "departure_time": "04:00:39",
+     "arrival_time": "13:03:45",
+     "flight_date": "2023-01-18"
+},
+{
+     "flight_id": "b5368de4-5795-449b-be0b-a0b5ab2be404",
+     "departure_city": "Rome",
+     "arrival_city": "Santorini",
+     "departure_time": "08:02:15",
+     "arrival_time": "18:13:04",
+     "flight_date": "2021-02-26"
+},
+{
+     "flight_id": "2747ec87-da15-4601-bf98-09b8fadee9fc",
+     "departure_city": "Istanbul",
+     "arrival_city": "Sydney",
+     "departure_time": "12:43:05",
+     "arrival_time": "01:00:12",
+     "flight_date": "2020-09-19"
+},
+{
+     "flight_id": "3665601e-b1c4-498e-835a-26eb624ea276",
+     "departure_city": "Bangkok",
+     "arrival_city": "Bali",
+     "departure_time": "16:31:40",
+     "arrival_time": "14:23:18",
+     "flight_date": "2020-04-07"
+},
+{
+     "flight_id": "66f545e3-1dad-47c5-a109-907163dcd1df",
+     "departure_city": "Barcelona",
+     "arrival_city": "Prague",
+     "departure_time": "04:41:06",
+     "arrival_time": "21:11:09",
+     "flight_date": "2021-08-01"
+},
+{
+     "flight_id": "efdbeccb-612c-4d01-b0e5-8db842a5f1e0",
+     "departure_city": "Sydney",
+     "arrival_city": "Istanbul",
+     "departure_time": "22:32:11",
+     "arrival_time": "10:47:34",
+     "flight_date": "2021-08-08"
+},
+{
+     "flight_id": "4a34311c-4e4a-4d3b-b716-7784fcd1abd5",
+     "departure_city": "Cancun",
+     "arrival_city": "Santorini",
+     "departure_time": "13:39:57",
+     "arrival_time": "21:40:31",
+     "flight_date": "2020-12-17"
+},
+{
+     "flight_id": "e08d0530-0044-4fbb-b91a-ac791ae5ae5f",
+     "departure_city": "Prague",
+     "arrival_city": "Phuket",
+     "departure_time": "22:52:57",
+     "arrival_time": "14:29:08",
+     "flight_date": "2020-10-21"
+},
+{
+     "flight_id": "e4143e98-84cb-4334-82e4-db8318752999",
+     "departure_city": "Istanbul",
+     "arrival_city": "Prague",
+     "departure_time": "10:41:31",
+     "arrival_time": "07:32:15",
+     "flight_date": "2023-05-08"
+},
+{
+     "flight_id": "3df2b66d-5e0d-422f-a6a6-8a01929015c2",
+     "departure_city": "Santorini",
+     "arrival_city": "Venice",
+     "departure_time": "05:39:03",
+     "arrival_time": "20:58:38",
+     "flight_date": "2020-03-29"
+},
+{
+     "flight_id": "ca97ded1-2304-4e49-9ddc-328ee18677c5",
+     "departure_city": "Maui",
+     "arrival_city": "Bora Bora",
+     "departure_time": "11:53:47",
+     "arrival_time": "21:54:21",
+     "flight_date": "2023-01-07"
+},
+{
+     "flight_id": "62fc6709-7c2e-4b29-b0fa-64c1d002e42c",
+     "departure_city": "Venice",
+     "arrival_city": "Bora Bora",
+     "departure_time": "07:09:20",
+     "arrival_time": "18:29:49",
+     "flight_date": "2022-06-09"
+},
+{
+     "flight_id": "db6b4ae9-62c6-43eb-a64b-86fcf46fc0c3",
+     "departure_city": "London",
+     "arrival_city": "Prague",
+     "departure_time": "20:36:51",
+     "arrival_time": "16:57:42",
+     "flight_date": "2020-12-14"
+},
+{
+     "flight_id": "5466b042-1705-411e-8a36-e2bc252e642b",
+     "departure_city": "Bora Bora",
+     "arrival_city": "Barcelona",
+     "departure_time": "08:01:00",
+     "arrival_time": "01:40:30",
+     "flight_date": "2021-05-04"
+},
+{
+     "flight_id": "b665f5d2-099d-4ac4-a083-e067f725f2eb",
+     "departure_city": "Maui",
+     "arrival_city": "Serengeti",
+     "departure_time": "00:46:29",
+     "arrival_time": "23:42:57",
+     "flight_date": "2021-05-31"
+},
+{
+     "flight_id": "dda35261-7682-444b-9c80-e5ec0b7942e1",
+     "departure_city": "Serengeti",
+     "arrival_city": "Cancun",
+     "departure_time": "18:02:32",
+     "arrival_time": "07:18:28",
+     "flight_date": "2021-05-27"
+},
+{
+     "flight_id": "3bb6ad65-c81e-455e-95ad-92027a738217",
+     "departure_city": "Paris",
+     "arrival_city": "London",
+     "departure_time": "00:43:46",
+     "arrival_time": "16:04:33",
+     "flight_date": "2022-01-05"
+},
+{
+     "flight_id": "c4165123-0525-4fc1-bfe3-eb77431e5c46",
+     "departure_city": "Barcelona",
+     "arrival_city": "Phuket",
+     "departure_time": "14:02:25",
+     "arrival_time": "09:03:15",
+     "flight_date": "2023-02-18"
+},
+{
+     "flight_id": "7435a9d1-f2f9-4920-9840-baf147c993ca",
+     "departure_city": "Sydney",
+     "arrival_city": "Serengeti",
+     "departure_time": "05:46:01",
+     "arrival_time": "01:05:24",
+     "flight_date": "2023-08-17"
+},
+{
+     "flight_id": "7faa3dd4-77a8-4011-a7c1-6b8f1dab17ba",
+     "departure_city": "Sydney",
+     "arrival_city": "Amsterdam",
+     "departure_time": "18:24:35",
+     "arrival_time": "18:16:14",
+     "flight_date": "2023-07-21"
+},
+{
+     "flight_id": "71167028-a90c-47b2-85c0-9e85e3282541",
+     "departure_city": "New York",
+     "arrival_city": "Paris",
+     "departure_time": "01:47:25",
+     "arrival_time": "22:54:37",
+     "flight_date": "2021-08-01"
+},
+{
+     "flight_id": "ceffdff7-19c7-40d6-979b-df827395cc41",
+     "departure_city": "Barcelona",
+     "arrival_city": "Venice",
+     "departure_time": "14:48:38",
+     "arrival_time": "21:43:05",
+     "flight_date": "2020-07-01"
+},
+{
+     "flight_id": "fc06d54f-8c9a-4518-b7f3-431fb4881e58",
+     "departure_city": "Santorini",
+     "arrival_city": "New York",
+     "departure_time": "01:17:22",
+     "arrival_time": "10:11:59",
+     "flight_date": "2023-03-03"
+},
+{
+     "flight_id": "aa4bd8c9-45e9-4350-b9c0-24527b735374",
+     "departure_city": "Dubai",
+     "arrival_city": "Sydney",
+     "departure_time": "01:09:46",
+     "arrival_time": "10:24:15",
+     "flight_date": "2020-03-31"
+},
+{
+     "flight_id": "d20a0432-f8b4-46ad-b7fb-946b969c97a7",
+     "departure_city": "Maldives",
+     "arrival_city": "Maldives",
+     "departure_time": "22:49:05",
+     "arrival_time": "19:13:35",
+     "flight_date": "2023-09-01"
+},
+{
+     "flight_id": "e6e90698-3494-40e9-95bd-211190e3e103",
+     "departure_city": "London",
+     "arrival_city": "Maldives",
+     "departure_time": "08:38:01",
+     "arrival_time": "12:44:50",
+     "flight_date": "2023-11-18"
+},
+{
+     "flight_id": "2738db92-3700-43d2-a021-b5efb199469d",
+     "departure_city": "Istanbul",
+     "arrival_city": "Santorini",
+     "departure_time": "00:30:42",
+     "arrival_time": "08:51:45",
+     "flight_date": "2023-07-17"
+},
+{
+     "flight_id": "5c9d5ca6-ae39-4c30-95cf-0096b4c6c3ec",
+     "departure_city": "Bora Bora",
+     "arrival_city": "Venice",
+     "departure_time": "12:25:52",
+     "arrival_time": "10:11:21",
+     "flight_date": "2021-03-10"
+},
+{
+     "flight_id": "285151db-095b-45c7-8a2e-ef69315e2300",
+     "departure_city": "Maldives",
+     "arrival_city": "New York",
+     "departure_time": "18:53:28",
+     "arrival_time": "12:36:07",
+     "flight_date": "2022-04-06"
+},
+{
+     "flight_id": "dee97fb3-7a5f-40d5-911a-482297e41af6",
+     "departure_city": "New York",
+     "arrival_city": "Cancun",
+     "departure_time": "07:02:20",
+     "arrival_time": "09:20:10",
+     "flight_date": "2020-12-31"
+},
+{
+     "flight_id": "bacd089f-3009-46f9-a6f7-58944652f375",
+     "departure_city": "Istanbul",
+     "arrival_city": "Bangkok",
+     "departure_time": "14:36:04",
+     "arrival_time": "20:24:41",
+     "flight_date": "2022-02-01"
+},
+{
+     "flight_id": "95027ac0-1046-4671-9c84-128d0d21f28f",
+     "departure_city": "Dubai",
+     "arrival_city": "Serengeti",
+     "departure_time": "06:59:37",
+     "arrival_time": "22:26:59",
+     "flight_date": "2023-04-24"
+},
+{
+     "flight_id": "35de2f9d-9b3e-4f9e-905b-9aa18af6c100",
+     "departure_city": "Maldives",
+     "arrival_city": "Amsterdam",
+     "departure_time": "01:15:20",
+     "arrival_time": "21:13:13",
+     "flight_date": "2021-08-17"
+},
+{
+     "flight_id": "1c8df98e-1072-472c-8f04-b43a72ad64eb",
+     "departure_city": "Prague",
+     "arrival_city": "Bali",
+     "departure_time": "02:18:36",
+     "arrival_time": "21:12:14",
+     "flight_date": "2022-01-17"
+},
+{
+     "flight_id": "600a0e23-7dfd-419f-a3ce-8326ee042715",
+     "departure_city": "Dubai",
+     "arrival_city": "Bangkok",
+     "departure_time": "18:31:28",
+     "arrival_time": "11:56:36",
+     "flight_date": "2021-09-21"
+},
+{
+     "flight_id": "db5e7c66-ffaf-41f7-9ba9-f9d4ad7befef",
+     "departure_city": "Paris",
+     "arrival_city": "London",
+     "departure_time": "12:08:34",
+     "arrival_time": "06:01:40",
+     "flight_date": "2021-02-16"
+},
+{
+     "flight_id": "073e7cea-e1af-4796-b96a-bd97f8e0a24c",
+     "departure_city": "Bora Bora",
+     "arrival_city": "Rome",
+     "departure_time": "20:41:49",
+     "arrival_time": "18:38:22",
+     "flight_date": "2023-03-16"
+},
+{
+     "flight_id": "03bfe9c1-17af-415b-8b52-53a374c5360c",
+     "departure_city": "Venice",
+     "arrival_city": "Amsterdam",
+     "departure_time": "22:36:43",
+     "arrival_time": "20:26:13",
+     "flight_date": "2023-03-03"
+},
+{
+     "flight_id": "db03b713-0392-42bb-b392-9025c0f78bf8",
+     "departure_city": "Prague",
+     "arrival_city": "London",
+     "departure_time": "15:49:39",
+     "arrival_time": "16:34:31",
+     "flight_date": "2022-09-11"
+},
+{
+     "flight_id": "c38dc5bf-3d1a-4e5b-912c-1c2df080d012",
+     "departure_city": "Santorini",
+     "arrival_city": "Tokyo",
+     "departure_time": "07:58:09",
+     "arrival_time": "01:57:47",
+     "flight_date": "2021-10-12"
+},
+{
+     "flight_id": "d0928879-548d-4fd8-8187-d6c4a46dff6f",
+     "departure_city": "Bali",
+     "arrival_city": "Prague",
+     "departure_time": "19:54:57",
+     "arrival_time": "01:11:02",
+     "flight_date": "2020-05-19"
+},
+{
+     "flight_id": "8944bfab-a47a-4bde-882e-e98bf19aa36e",
+     "departure_city": "Serengeti",
+     "arrival_city": "Venice",
+     "departure_time": "11:24:33",
+     "arrival_time": "09:48:22",
+     "flight_date": "2021-06-18"
+},
+{
+     "flight_id": "4e950649-1b5e-44e2-9868-bef3443eb1ca",
+     "departure_city": "Bali",
+     "arrival_city": "Paris",
+     "departure_time": "05:03:00",
+     "arrival_time": "20:49:18",
+     "flight_date": "2022-05-19"
+},
+{
+     "flight_id": "1e90f7a8-5a38-4dbb-8204-fcc995f3a7a0",
+     "departure_city": "Sydney",
+     "arrival_city": "Maldives",
+     "departure_time": "17:26:11",
+     "arrival_time": "21:13:56",
+     "flight_date": "2021-08-23"
+},
+{
+     "flight_id": "79f90d9d-ea6e-4a1c-87fa-45786a350f2c",
+     "departure_city": "Bora Bora",
+     "arrival_city": "Bangkok",
+     "departure_time": "06:20:42",
+     "arrival_time": "13:45:33",
+     "flight_date": "2020-07-29"
+},
+{
+     "flight_id": "89294bf6-b269-43f5-b149-672b5717c2e8",
+     "departure_city": "New York",
+     "arrival_city": "Bangkok",
+     "departure_time": "00:51:35",
+     "arrival_time": "09:24:03",
+     "flight_date": "2021-05-28"
+},
+{
+     "flight_id": "3acc81da-86a8-4c47-8e39-18717d1c80d6",
+     "departure_city": "Santorini",
+     "arrival_city": "New York",
+     "departure_time": "14:05:14",
+     "arrival_time": "16:47:31",
+     "flight_date": "2020-06-17"
+},
+{
+     "flight_id": "9d0452e5-7b32-46e1-bd70-07dd3d74482f",
+     "departure_city": "Santorini",
+     "arrival_city": "Maui",
+     "departure_time": "18:28:01",
+     "arrival_time": "13:29:27",
+     "flight_date": "2023-06-04"
+},
+{
+     "flight_id": "754f3ef8-cd17-4f44-beca-6bc2927e8a53",
+     "departure_city": "Bali",
+     "arrival_city": "Serengeti",
+     "departure_time": "14:50:05",
+     "arrival_time": "19:25:05",
+     "flight_date": "2020-02-11"
+},
+{
+     "flight_id": "81363b73-ccfa-4a0d-9082-6c9015301d0a",
+     "departure_city": "Cancun",
+     "arrival_city": "Santorini",
+     "departure_time": "08:49:40",
+     "arrival_time": "07:14:07",
+     "flight_date": "2020-11-01"
+},
+{
+     "flight_id": "d46c4799-c48e-45e1-a1b2-601bceece118",
+     "departure_city": "Bali",
+     "arrival_city": "Dubai",
+     "departure_time": "14:14:42",
+     "arrival_time": "08:53:28",
+     "flight_date": "2020-09-28"
+},
+{
+     "flight_id": "ff319c02-ad3f-4560-8067-68d25606c68a",
+     "departure_city": "Istanbul",
+     "arrival_city": "London",
+     "departure_time": "06:14:33",
+     "arrival_time": "20:08:10",
+     "flight_date": "2023-08-01"
+},
+{
+     "flight_id": "b62aefea-88a7-4281-8075-a35906aea32a",
+     "departure_city": "Dubai",
+     "arrival_city": "Bangkok",
+     "departure_time": "08:40:11",
+     "arrival_time": "23:35:43",
+     "flight_date": "2023-01-25"
+},
+{
+     "flight_id": "29fa449c-1724-4c47-8800-4b5bdaa9d81e",
+     "departure_city": "Maui",
+     "arrival_city": "Bora Bora",
+     "departure_time": "06:55:08",
+     "arrival_time": "11:15:13",
+     "flight_date": "2021-08-24"
+},
+{
+     "flight_id": "21d2f317-2f4e-4342-86c2-282c20d06806",
+     "departure_city": "Santorini",
+     "arrival_city": "Barcelona",
+     "departure_time": "06:46:20",
+     "arrival_time": "20:44:09",
+     "flight_date": "2020-12-20"
+},
+{
+     "flight_id": "0e0f9ad7-fa99-455b-88c8-4f81ed8cf76a",
+     "departure_city": "London",
+     "arrival_city": "Santorini",
+     "departure_time": "21:33:26",
+     "arrival_time": "19:06:33",
+     "flight_date": "2021-06-15"
+},
+{
+     "flight_id": "0b44918a-1d6a-4e70-b605-649f1dc5ea7d",
+     "departure_city": "London",
+     "arrival_city": "Paris",
+     "departure_time": "13:26:58",
+     "arrival_time": "19:11:21",
+     "flight_date": "2023-03-17"
+},
+{
+     "flight_id": "db2ae51b-9a6c-4065-aeea-457dc9a54df3",
+     "departure_city": "Maldives",
+     "arrival_city": "Dubai",
+     "departure_time": "19:24:51",
+     "arrival_time": "14:17:14",
+     "flight_date": "2023-01-04"
+},
+{
+     "flight_id": "e282b7ae-a043-4bf5-afb8-fae7df07b97e",
+     "departure_city": "Amsterdam",
+     "arrival_city": "Phuket",
+     "departure_time": "22:13:37",
+     "arrival_time": "06:42:24",
+     "flight_date": "2022-12-29"
+},
+{
+     "flight_id": "8848c0ad-3979-49a9-9af8-3b0b3b5c166f",
+     "departure_city": "Santorini",
+     "arrival_city": "Maldives",
+     "departure_time": "14:23:40",
+     "arrival_time": "04:28:53",
+     "flight_date": "2020-02-23"
+},
+{
+     "flight_id": "a6f1f857-7d54-4877-ba8a-fbf9ba27d71d",
+     "departure_city": "Istanbul",
+     "arrival_city": "Amsterdam",
+     "departure_time": "08:30:37",
+     "arrival_time": "17:08:20",
+     "flight_date": "2023-01-31"
+},
+{
+     "flight_id": "3363dd6a-5b2d-45a5-85e4-cc3445664b38",
+     "departure_city": "Amsterdam",
+     "arrival_city": "Paris",
+     "departure_time": "20:50:52",
+     "arrival_time": "19:30:02",
+     "flight_date": "2022-07-26"
+},
+{
+     "flight_id": "20fdf159-7ba6-4057-a836-fdc7bdb245dc",
+     "departure_city": "Bangkok",
+     "arrival_city": "Cancun",
+     "departure_time": "10:19:02",
+     "arrival_time": "13:40:31",
+     "flight_date": "2020-01-07"
+},
+{
+     "flight_id": "9dfbcef8-c92b-4c6a-bf3b-b0cbe88bdd3f",
+     "departure_city": "Dubai",
+     "arrival_city": "Cancun",
+     "departure_time": "16:46:52",
+     "arrival_time": "02:39:41",
+     "flight_date": "2022-03-15"
+},
+{
+     "flight_id": "cc372fb7-5bf1-46af-9586-5d1043726a35",
+     "departure_city": "Maui",
+     "arrival_city": "London",
+     "departure_time": "19:28:28",
+     "arrival_time": "05:52:56",
+     "flight_date": "2021-12-12"
+},
+{
+     "flight_id": "0da7dd07-5ef0-45fe-997d-b3c4e31ab43c",
+     "departure_city": "Maldives",
+     "arrival_city": "Cancun",
+     "departure_time": "09:21:01",
+     "arrival_time": "20:05:44",
+     "flight_date": "2021-08-04"
+},
+{
+     "flight_id": "bef99dfb-7a1b-47ea-9db6-5ddaae4a8b70",
+     "departure_city": "Dubai",
+     "arrival_city": "New York",
+     "departure_time": "18:38:51",
+     "arrival_time": "22:52:38",
+     "flight_date": "2022-05-21"
+},
+{
+     "flight_id": "f58fd8f3-9598-4500-a07b-dbaa082228f9",
+     "departure_city": "Maldives",
+     "arrival_city": "Istanbul",
+     "departure_time": "19:55:43",
+     "arrival_time": "00:39:44",
+     "flight_date": "2021-06-17"
+},
+{
+     "flight_id": "d64a2e47-53dc-4409-898a-ecb321646685",
+     "departure_city": "Dubai",
+     "arrival_city": "Bangkok",
+     "departure_time": "11:56:17",
+     "arrival_time": "03:49:49",
+     "flight_date": "2020-09-29"
+},
+{
+     "flight_id": "cbe05d5d-fb89-4674-86d7-3d1dbfdc4441",
+     "departure_city": "Maui",
+     "arrival_city": "Dubai",
+     "departure_time": "11:16:55",
+     "arrival_time": "13:02:57",
+     "flight_date": "2021-10-22"
+},
+{
+     "flight_id": "063b2abb-a656-4951-a5aa-9b0cd2d843f2",
+     "departure_city": "Venice",
+     "arrival_city": "Bangkok",
+     "departure_time": "14:11:45",
+     "arrival_time": "23:47:31",
+     "flight_date": "2022-03-06"
+},
+{
+     "flight_id": "281bd13d-f4a4-426b-8913-7235e33ebab1",
+     "departure_city": "New York",
+     "arrival_city": "London",
+     "departure_time": "02:43:58",
+     "arrival_time": "02:18:11",
+     "flight_date": "2022-04-30"
+},
+{
+     "flight_id": "c4b70f72-217e-476a-a4a1-f4e1a90cac0d",
+     "departure_city": "Sydney",
+     "arrival_city": "Maldives",
+     "departure_time": "02:12:01",
+     "arrival_time": "05:07:05",
+     "flight_date": "2021-07-02"
+},
+{
+     "flight_id": "5b75a913-8496-4d97-9b5f-a07e188dc8a4",
+     "departure_city": "Sydney",
+     "arrival_city": "Bora Bora",
+     "departure_time": "11:29:59",
+     "arrival_time": "16:01:02",
+     "flight_date": "2023-07-03"
+},
+{
+     "flight_id": "eadebb2e-fe95-49c9-989f-160c25ad2c5c",
+     "departure_city": "Barcelona",
+     "arrival_city": "Cancun",
+     "departure_time": "20:12:01",
+     "arrival_time": "12:15:52",
+     "flight_date": "2020-03-15"
+},
+{
+     "flight_id": "07e45be1-d926-4a04-a45a-c4d64266c5cf",
+     "departure_city": "Venice",
+     "arrival_city": "Phuket",
+     "departure_time": "13:04:41",
+     "arrival_time": "12:59:36",
+     "flight_date": "2023-01-20"
+},
+{
+     "flight_id": "dfc2f9ed-6a38-4c52-b7a9-88534bd52380",
+     "departure_city": "Bali",
+     "arrival_city": "Prague",
+     "departure_time": "00:09:48",
+     "arrival_time": "13:42:08",
+     "flight_date": "2022-07-14"
+},
+{
+     "flight_id": "a786b60c-fd41-4c48-ae75-a7d14db4fb6c",
+     "departure_city": "Sydney",
+     "arrival_city": "Santorini",
+     "departure_time": "06:09:15",
+     "arrival_time": "20:58:30",
+     "flight_date": "2021-12-01"
+},
+{
+     "flight_id": "4655ba4e-1ff4-42e4-b035-a6a6918933e7",
+     "departure_city": "Maui",
+     "arrival_city": "Phuket",
+     "departure_time": "12:10:24",
+     "arrival_time": "08:08:11",
+     "flight_date": "2023-02-16"
+},
+{
+     "flight_id": "9db29a6b-0fc6-4f12-a7ba-690765a383a6",
+     "departure_city": "Prague",
+     "arrival_city": "Santorini",
+     "departure_time": "13:12:59",
+     "arrival_time": "21:19:06",
+     "flight_date": "2021-12-01"
+},
+{
+     "flight_id": "bc516730-0120-41c6-81d1-64fa05e8e56f",
+     "departure_city": "Prague",
+     "arrival_city": "Istanbul",
+     "departure_time": "06:28:39",
+     "arrival_time": "16:52:31",
+     "flight_date": "2021-04-25"
+},
+{
+     "flight_id": "8b6f46b2-af50-47d4-bf04-d7c69a57ba08",
+     "departure_city": "Bora Bora",
+     "arrival_city": "Rome",
+     "departure_time": "00:39:40",
+     "arrival_time": "19:44:17",
+     "flight_date": "2020-05-31"
+},
+{
+     "flight_id": "5d7705e0-d290-44fd-885d-e2bff216208d",
+     "departure_city": "Bali",
+     "arrival_city": "Tokyo",
+     "departure_time": "09:47:08",
+     "arrival_time": "08:03:22",
+     "flight_date": "2022-07-06"
+},
+{
+     "flight_id": "dd598e61-1ef6-4e26-9178-876781f86dd6",
+     "departure_city": "Bali",
+     "arrival_city": "Rome",
+     "departure_time": "05:05:20",
+     "arrival_time": "10:29:08",
+     "flight_date": "2023-04-11"
+},
+{
+     "flight_id": "5be46f5f-03cf-451f-818b-4ab444b05b0f",
+     "departure_city": "Santorini",
+     "arrival_city": "Venice",
+     "departure_time": "01:44:18",
+     "arrival_time": "09:35:42",
+     "flight_date": "2020-02-23"
+},
+{
+     "flight_id": "93db8e30-923b-411c-8049-06184c5e8077",
+     "departure_city": "Serengeti",
+     "arrival_city": "Maldives",
+     "departure_time": "22:56:42",
+     "arrival_time": "12:05:20",
+     "flight_date": "2022-03-10"
+},
+{
+     "flight_id": "d6bd00ec-ebb0-4d3f-a4f4-f5e76c356a57",
+     "departure_city": "Sydney",
+     "arrival_city": "Dubai",
+     "departure_time": "22:34:19",
+     "arrival_time": "19:47:30",
+     "flight_date": "2022-05-28"
+},
+{
+     "flight_id": "4b4a27e2-ef2f-49b9-aa36-ee4e3cfcce9e",
+     "departure_city": "Bora Bora",
+     "arrival_city": "Rome",
+     "departure_time": "20:00:08",
+     "arrival_time": "17:14:50",
+     "flight_date": "2023-03-04"
+},
+{
+     "flight_id": "b04c222a-5194-474e-acb4-3c4a0738f29c",
+     "departure_city": "Phuket",
+     "arrival_city": "Phuket",
+     "departure_time": "10:04:09",
+     "arrival_time": "03:38:25",
+     "flight_date": "2022-11-02"
+},
+{
+     "flight_id": "ee4bcfe1-8c70-4e66-9f5c-8aba9cec1798",
+     "departure_city": "Tokyo",
+     "arrival_city": "Phuket",
+     "departure_time": "06:56:58",
+     "arrival_time": "23:48:23",
+     "flight_date": "2023-06-01"
+},
+{
+     "flight_id": "c1cfb672-5883-4747-8dd5-09a67e80540b",
+     "departure_city": "Paris",
+     "arrival_city": "Bora Bora",
+     "departure_time": "13:28:05",
+     "arrival_time": "07:33:00",
+     "flight_date": "2022-09-04"
+},
+{
+     "flight_id": "531420fe-21d3-4e28-94f0-d0595528a837",
+     "departure_city": "Sydney",
+     "arrival_city": "Tokyo",
+     "departure_time": "14:15:30",
+     "arrival_time": "14:05:50",
+     "flight_date": "2021-01-08"
+},
+{
+     "flight_id": "48ebe8fa-c2c6-4a3b-a644-17b6a467c853",
+     "departure_city": "Paris",
+     "arrival_city": "Barcelona",
+     "departure_time": "17:02:03",
+     "arrival_time": "05:00:59",
+     "flight_date": "2022-08-15"
+},
+{
+     "flight_id": "7f7457cb-3d01-4a17-8637-2f70f77ccc4a",
+     "departure_city": "Paris",
+     "arrival_city": "Maui",
+     "departure_time": "23:00:47",
+     "arrival_time": "11:13:18",
+     "flight_date": "2021-04-07"
+},
+{
+     "flight_id": "62822d50-4870-4ac8-92c2-a3f555240979",
+     "departure_city": "Bora Bora",
+     "arrival_city": "Serengeti",
+     "departure_time": "10:54:53",
+     "arrival_time": "13:53:46",
+     "flight_date": "2022-02-16"
+},
+{
+     "flight_id": "1a5f9a75-eb6f-4af0-9231-7c40668c81a2",
+     "departure_city": "Istanbul",
+     "arrival_city": "Dubai",
+     "departure_time": "22:26:07",
+     "arrival_time": "21:34:20",
+     "flight_date": "2020-05-09"
+},
+{
+     "flight_id": "e7d5b456-a4f3-41c2-a402-375f533caa01",
+     "departure_city": "Serengeti",
+     "arrival_city": "Maldives",
+     "departure_time": "11:54:15",
+     "arrival_time": "00:20:41",
+     "flight_date": "2020-11-26"
+},
+{
+     "flight_id": "08ab8d4e-23f4-4547-b1fa-34dbc304548e",
+     "departure_city": "Paris",
+     "arrival_city": "New York",
+     "departure_time": "23:11:51",
+     "arrival_time": "20:18:37",
+     "flight_date": "2023-06-21"
+},
+{
+     "flight_id": "c6339ef0-3bc2-4425-b731-da269fcfb86c",
+     "departure_city": "Maui",
+     "arrival_city": "Bangkok",
+     "departure_time": "11:36:47",
+     "arrival_time": "10:39:39",
+     "flight_date": "2020-02-19"
+},
+{
+     "flight_id": "889d5941-a353-4c12-a169-cf8667db2233",
+     "departure_city": "Cancun",
+     "arrival_city": "New York",
+     "departure_time": "13:05:03",
+     "arrival_time": "23:47:05",
+     "flight_date": "2023-03-30"
+},
+{
+     "flight_id": "e09b0f4f-9e3d-4101-9ba1-e4dbdc1f399d",
+     "departure_city": "Cancun",
+     "arrival_city": "Barcelona",
+     "departure_time": "12:38:44",
+     "arrival_time": "15:15:03",
+     "flight_date": "2022-02-08"
+},
+{
+     "flight_id": "49dee47d-6741-4234-8284-f9c2fbacfaec",
+     "departure_city": "Serengeti",
+     "arrival_city": "Bangkok",
+     "departure_time": "03:58:59",
+     "arrival_time": "08:24:20",
+     "flight_date": "2021-03-07"
+},
+{
+     "flight_id": "03f27025-87ad-42cd-b205-204daf39087a",
+     "departure_city": "Prague",
+     "arrival_city": "Bangkok",
+     "departure_time": "22:32:12",
+     "arrival_time": "08:11:39",
+     "flight_date": "2022-05-04"
+},
+{
+     "flight_id": "3e0e069b-7ee3-4e96-b884-ba8cb8851050",
+     "departure_city": "Bangkok",
+     "arrival_city": "Bora Bora",
+     "departure_time": "23:50:39",
+     "arrival_time": "21:08:35",
+     "flight_date": "2022-10-31"
+},
+{
+     "flight_id": "72b38bd7-d3a2-414d-837d-3fe1aeb364dd",
+     "departure_city": "Paris",
+     "arrival_city": "Bangkok",
+     "departure_time": "05:12:31",
+     "arrival_time": "21:32:44",
+     "flight_date": "2023-09-06"
+},
+{
+     "flight_id": "6f4d36f3-8cb4-479f-aec6-e1ab8d5fd103",
+     "departure_city": "Bora Bora",
+     "arrival_city": "Venice",
+     "departure_time": "14:07:32",
+     "arrival_time": "18:11:11",
+     "flight_date": "2020-02-07"
+},
+{
+     "flight_id": "c38c99df-e53b-4fba-9851-3b6f3fa351d3",
+     "departure_city": "Tokyo",
+     "arrival_city": "London",
+     "departure_time": "15:50:14",
+     "arrival_time": "06:44:30",
+     "flight_date": "2021-07-27"
+},
+{
+     "flight_id": "7228e7a8-0147-4b74-aeaa-26113141f636",
+     "departure_city": "Paris",
+     "arrival_city": "Santorini",
+     "departure_time": "01:42:03",
+     "arrival_time": "07:50:08",
+     "flight_date": "2023-09-17"
+},
+{
+     "flight_id": "898066f3-54ff-41ce-95be-61c27fca38f5",
+     "departure_city": "Venice",
+     "arrival_city": "Prague",
+     "departure_time": "19:21:22",
+     "arrival_time": "14:24:52",
+     "flight_date": "2020-05-29"
+},
+{
+     "flight_id": "9dcbfb50-1285-4021-99d6-b9f600dddac4",
+     "departure_city": "Bali",
+     "arrival_city": "Rome",
+     "departure_time": "10:35:01",
+     "arrival_time": "23:05:24",
+     "flight_date": "2021-06-01"
+},
+{
+     "flight_id": "37f3fdf3-6d0b-49b6-8a2b-bb60ba40e055",
+     "departure_city": "Maui",
+     "arrival_city": "Santorini",
+     "departure_time": "01:23:14",
+     "arrival_time": "13:32:00",
+     "flight_date": "2021-12-08"
+},
+{
+     "flight_id": "39248fca-63ff-4cab-a0d1-0275f5b1decb",
+     "departure_city": "Bali",
+     "arrival_city": "Prague",
+     "departure_time": "15:46:59",
+     "arrival_time": "23:22:23",
+     "flight_date": "2022-07-06"
+},
+{
+     "flight_id": "be792c41-8f4c-40f4-b1e1-5dc49335292f",
+     "departure_city": "Istanbul",
+     "arrival_city": "London",
+     "departure_time": "02:56:58",
+     "arrival_time": "14:33:09",
+     "flight_date": "2022-07-28"
+},
+{
+     "flight_id": "827b77a2-b2f2-49c4-b7d6-a0ac688acea0",
+     "departure_city": "Barcelona",
+     "arrival_city": "Dubai",
+     "departure_time": "04:58:26",
+     "arrival_time": "20:11:41",
+     "flight_date": "2022-07-01"
+},
+{
+     "flight_id": "fb79de6a-e2d7-47f7-8f6b-35d7ae2fd0e2",
+     "departure_city": "London",
+     "arrival_city": "Rome",
+     "departure_time": "12:58:50",
+     "arrival_time": "16:22:53",
+     "flight_date": "2020-05-11"
+},
+{
+     "flight_id": "d27561a7-c37a-4cda-8e70-8ef0f665596d",
+     "departure_city": "Phuket",
+     "arrival_city": "Santorini",
+     "departure_time": "15:58:12",
+     "arrival_time": "09:10:32",
+     "flight_date": "2021-01-06"
+},
+{
+     "flight_id": "9a85d069-938f-4503-810e-b625d79e564a",
+     "departure_city": "Maui",
+     "arrival_city": "Barcelona",
+     "departure_time": "12:02:59",
+     "arrival_time": "20:37:52",
+     "flight_date": "2020-08-31"
+},
+{
+     "flight_id": "00d369aa-6081-4ae9-a11c-77ef098098c1",
+     "departure_city": "Sydney",
+     "arrival_city": "New York",
+     "departure_time": "07:33:18",
+     "arrival_time": "15:36:11",
+     "flight_date": "2023-04-29"
+},
+{
+     "flight_id": "9e6659a8-32c1-4bff-942b-8839e497d3fc",
+     "departure_city": "Venice",
+     "arrival_city": "Bora Bora",
+     "departure_time": "17:07:28",
+     "arrival_time": "09:54:56",
+     "flight_date": "2021-10-15"
+},
+{
+     "flight_id": "794d38a0-44da-45b6-9e6b-b41e7acd575c",
+     "departure_city": "Venice",
+     "arrival_city": "Bangkok",
+     "departure_time": "10:19:41",
+     "arrival_time": "17:49:57",
+     "flight_date": "2020-03-06"
+},
+{
+     "flight_id": "7cee7f77-5e7b-458f-b2cd-2336f2bb1403",
+     "departure_city": "London",
+     "arrival_city": "Rome",
+     "departure_time": "17:17:19",
+     "arrival_time": "19:42:56",
+     "flight_date": "2021-05-07"
+},
+{
+     "flight_id": "e08fa63e-d674-4774-bf95-2cad5c57bd98",
+     "departure_city": "Venice",
+     "arrival_city": "Tokyo",
+     "departure_time": "22:42:19",
+     "arrival_time": "06:07:14",
+     "flight_date": "2022-07-31"
+},
+{
+     "flight_id": "6b1a71e1-5b11-4053-bf66-d23b72a20126",
+     "departure_city": "London",
+     "arrival_city": "Bali",
+     "departure_time": "19:48:51",
+     "arrival_time": "11:38:48",
+     "flight_date": "2020-03-20"
+},
+{
+     "flight_id": "4331975e-7056-4ea6-9a35-d14404630c29",
+     "departure_city": "Sydney",
+     "arrival_city": "Serengeti",
+     "departure_time": "17:08:58",
+     "arrival_time": "20:32:20",
+     "flight_date": "2022-05-08"
+},
+{
+     "flight_id": "dea3a7f6-291a-45ca-a0bc-e3defba8b4a5",
+     "departure_city": "Tokyo",
+     "arrival_city": "Amsterdam",
+     "departure_time": "04:03:58",
+     "arrival_time": "06:38:50",
+     "flight_date": "2021-11-29"
+},
+{
+     "flight_id": "db9f96d2-12b8-4b9b-9af5-320fa2f81049",
+     "departure_city": "Bangkok",
+     "arrival_city": "Paris",
+     "departure_time": "13:36:52",
+     "arrival_time": "03:25:52",
+     "flight_date": "2020-12-19"
+},
+{
+     "flight_id": "b5cdc54d-3a5a-4251-8465-51503121fb4a",
+     "departure_city": "Bora Bora",
+     "arrival_city": "Bora Bora",
+     "departure_time": "03:38:28",
+     "arrival_time": "12:16:51",
+     "flight_date": "2020-09-09"
+},
+{
+     "flight_id": "50627b34-ee6b-4a43-9d1a-93dd2a9a231a",
+     "departure_city": "Maldives",
+     "arrival_city": "Dubai",
+     "departure_time": "07:26:32",
+     "arrival_time": "09:30:45",
+     "flight_date": "2020-01-31"
+},
+{
+     "flight_id": "d663c17d-7c59-481e-a761-bb7c101bf66a",
+     "departure_city": "Venice",
+     "arrival_city": "Bali",
+     "departure_time": "20:04:47",
+     "arrival_time": "11:38:17",
+     "flight_date": "2022-11-30"
+},
+{
+     "flight_id": "322a9fbf-44c4-4d6e-8bc8-5c9c6d2f13f0",
+     "departure_city": "Prague",
+     "arrival_city": "London",
+     "departure_time": "15:27:05",
+     "arrival_time": "21:09:06",
+     "flight_date": "2021-03-22"
+},
+{
+     "flight_id": "69c5c16b-4e21-4115-b184-a0598a9867f3",
+     "departure_city": "Venice",
+     "arrival_city": "Barcelona",
+     "departure_time": "15:44:38",
+     "arrival_time": "11:47:50",
+     "flight_date": "2021-03-21"
+},
+{
+     "flight_id": "02a89c7b-883a-4dce-8ffa-225f47b49eb2",
+     "departure_city": "Tokyo",
+     "arrival_city": "Amsterdam",
+     "departure_time": "08:04:33",
+     "arrival_time": "03:11:24",
+     "flight_date": "2023-04-01"
+},
+{
+     "flight_id": "556fba70-b783-432e-aa11-12690bfb9ffe",
+     "departure_city": "New York",
+     "arrival_city": "Santorini",
+     "departure_time": "08:01:33",
+     "arrival_time": "02:41:08",
+     "flight_date": "2021-10-31"
+},
+{
+     "flight_id": "ba4caac2-a43d-4003-be5b-970b4d443eb3",
+     "departure_city": "Cancun",
+     "arrival_city": "Serengeti",
+     "departure_time": "03:50:58",
+     "arrival_time": "01:35:22",
+     "flight_date": "2023-06-08"
+},
+{
+     "flight_id": "6c4bc125-2ae3-4e89-80ae-f69f2df48e0d",
+     "departure_city": "Phuket",
+     "arrival_city": "Maldives",
+     "departure_time": "20:00:30",
+     "arrival_time": "12:52:34",
+     "flight_date": "2022-08-03"
+},
+{
+     "flight_id": "1641091b-6bff-4085-96d1-b34f9a5848c9",
+     "departure_city": "Tokyo",
+     "arrival_city": "Istanbul",
+     "departure_time": "17:44:28",
+     "arrival_time": "05:12:12",
+     "flight_date": "2023-03-18"
+},
+{
+     "flight_id": "fd36eeb1-d05e-439e-b97b-2a8db5b4584d",
+     "departure_city": "Tokyo",
+     "arrival_city": "Tokyo",
+     "departure_time": "19:18:13",
+     "arrival_time": "07:30:59",
+     "flight_date": "2022-05-26"
+},
+{
+     "flight_id": "13510180-2a4c-4b48-af1a-caba95273ccd",
+     "departure_city": "Istanbul",
+     "arrival_city": "Venice",
+     "departure_time": "08:45:13",
+     "arrival_time": "14:31:00",
+     "flight_date": "2022-02-06"
+},
+{
+     "flight_id": "df89c6ad-c235-41e3-8495-de4160ef54fa",
+     "departure_city": "Tokyo",
+     "arrival_city": "Tokyo",
+     "departure_time": "18:15:23",
+     "arrival_time": "18:07:05",
+     "flight_date": "2023-09-14"
+},
+{
+     "flight_id": "eced1e35-b518-4d5e-a38e-aa4ece787e4c",
+     "departure_city": "Rome",
+     "arrival_city": "Bali",
+     "departure_time": "03:24:14",
+     "arrival_time": "15:27:19",
+     "flight_date": "2020-04-22"
+},
+{
+     "flight_id": "9a6b930e-d179-4936-abd1-6f43211de821",
+     "departure_city": "Cancun",
+     "arrival_city": "New York",
+     "departure_time": "07:07:18",
+     "arrival_time": "16:03:19",
+     "flight_date": "2020-04-27"
+},
+{
+     "flight_id": "14572189-675c-4a00-b20c-32f8dc05252f",
+     "departure_city": "Sydney",
+     "arrival_city": "Cancun",
+     "departure_time": "09:44:20",
+     "arrival_time": "21:15:25",
+     "flight_date": "2021-12-30"
+},
+{
+     "flight_id": "ecfc0af6-c2ef-4b87-9b28-0b6b7ec6d9e9",
+     "departure_city": "Cancun",
+     "arrival_city": "Phuket",
+     "departure_time": "04:32:28",
+     "arrival_time": "11:15:43",
+     "flight_date": "2021-06-16"
+},
+{
+     "flight_id": "ed580706-6a23-4786-9612-ca2cbb73ad60",
+     "departure_city": "London",
+     "arrival_city": "Bangkok",
+     "departure_time": "16:56:05",
+     "arrival_time": "23:24:18",
+     "flight_date": "2021-09-08"
+},
+{
+     "flight_id": "a8a2d98e-0e44-47ba-bcce-5c31f9c893ec",
+     "departure_city": "Maui",
+     "arrival_city": "Barcelona",
+     "departure_time": "23:50:47",
+     "arrival_time": "13:44:33",
+     "flight_date": "2023-04-26"
+},
+{
+     "flight_id": "35fc11b6-2f7c-4480-8a56-0762c50e250f",
+     "departure_city": "Bora Bora",
+     "arrival_city": "New York",
+     "departure_time": "07:38:49",
+     "arrival_time": "04:43:32",
+     "flight_date": "2023-03-03"
+},
+{
+     "flight_id": "092daa32-1d6b-4c18-aadc-4aadc95ff84c",
+     "departure_city": "London",
+     "arrival_city": "Tokyo",
+     "departure_time": "13:40:18",
+     "arrival_time": "16:08:31",
+     "flight_date": "2020-06-26"
+},
+{
+     "flight_id": "4ea4682b-885c-495f-879a-33a280a8df54",
+     "departure_city": "Bangkok",
+     "arrival_city": "Bali",
+     "departure_time": "04:54:41",
+     "arrival_time": "15:07:19",
+     "flight_date": "2022-10-18"
+},
+{
+     "flight_id": "6ec03787-0b0e-439c-ab5f-5b78c4f1842d",
+     "departure_city": "Bali",
+     "arrival_city": "Bora Bora",
+     "departure_time": "03:13:00",
+     "arrival_time": "16:25:06",
+     "flight_date": "2023-06-16"
+},
+{
+     "flight_id": "3f7ec2af-fba2-44e9-b201-99be78115950",
+     "departure_city": "New York",
+     "arrival_city": "Amsterdam",
+     "departure_time": "18:15:33",
+     "arrival_time": "01:21:07",
+     "flight_date": "2023-01-27"
+},
+{
+     "flight_id": "18055d4d-0fc1-4188-80ec-501eb159e274",
+     "departure_city": "Serengeti",
+     "arrival_city": "Bora Bora",
+     "departure_time": "06:51:28",
+     "arrival_time": "05:40:20",
+     "flight_date": "2020-04-25"
+},
+{
+     "flight_id": "08a3c58e-6cfd-420e-8d9e-2145877e4274",
+     "departure_city": "Rome",
+     "arrival_city": "Maldives",
+     "departure_time": "00:19:42",
+     "arrival_time": "07:38:54",
+     "flight_date": "2020-04-24"
+},
+{
+     "flight_id": "cd7cac86-9ff2-4d0f-ae70-022aff62097d",
+     "departure_city": "Sydney",
+     "arrival_city": "Cancun",
+     "departure_time": "09:58:02",
+     "arrival_time": "15:02:04",
+     "flight_date": "2021-02-25"
+},
+{
+     "flight_id": "92105537-9997-4f5a-aeca-82e3bef4db5f",
+     "departure_city": "Istanbul",
+     "arrival_city": "Amsterdam",
+     "departure_time": "16:47:04",
+     "arrival_time": "05:57:58",
+     "flight_date": "2021-11-27"
+},
+{
+     "flight_id": "a82ecdbf-d124-47d9-8ac2-04f496b17b93",
+     "departure_city": "Dubai",
+     "arrival_city": "Phuket",
+     "departure_time": "04:38:15",
+     "arrival_time": "14:51:01",
+     "flight_date": "2021-08-18"
+},
+{
+     "flight_id": "583ef99e-9fb7-44ca-b039-87867b363e85",
+     "departure_city": "Rome",
+     "arrival_city": "Maui",
+     "departure_time": "18:43:37",
+     "arrival_time": "01:03:09",
+     "flight_date": "2022-10-08"
+},
+{
+     "flight_id": "8783c18f-21e9-4d57-973d-b12fcc739f24",
+     "departure_city": "Sydney",
+     "arrival_city": "Dubai",
+     "departure_time": "10:15:35",
+     "arrival_time": "18:36:25",
+     "flight_date": "2023-04-05"
+},
+{
+     "flight_id": "6e51232c-2eac-4c70-9384-3d77f858c9f8",
+     "departure_city": "Bangkok",
+     "arrival_city": "Bali",
+     "departure_time": "05:35:42",
+     "arrival_time": "03:10:58",
+     "flight_date": "2022-07-14"
+}]

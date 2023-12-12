@@ -1,0 +1,748 @@
+2023-12-12 20:18:27,852  |  INFO  |    
+2023-12-12 20:18:27,853  |  INFO  |  ---------------------------------------------  
+2023-12-12 20:18:27,853  |  INFO  |  Beginning the source data extraction process...  
+2023-12-12 20:18:27,854  |  INFO  |  Successfully located 'flight_destinations.json'  
+2023-12-12 20:18:27,855  |  INFO  |  File type: '<class 'list'>'  
+2023-12-12 20:18:27,916  |  DEBUG  |    
+2023-12-12 20:18:27,917  |  INFO  |  =================================================================================  
+2023-12-12 20:18:27,917  |  INFO  |  CONNECTION SUCCESS: Managed to connect successfully to the dwdss database!!  
+2023-12-12 20:18:27,918  |  INFO  |  Connection details: user=postgres password=xxx dbname=dwdss host=localhost port=5432   
+2023-12-12 20:18:27,918  |  INFO  |  =================================================================================  
+2023-12-12 20:18:27,918  |  DEBUG  |    
+2023-12-12 20:18:27,922  |  DEBUG  |    
+2023-12-12 20:18:27,922  |  INFO  |  =================================================================================================  
+2023-12-12 20:18:27,922  |  INFO  |  SCHEMA CREATION SUCCESS: Managed to create main schema in dwdss   
+2023-12-12 20:18:27,923  |  INFO  |  Schema name in Postgres: main   
+2023-12-12 20:18:27,924  |  INFO  |  SQL Query for validation check:     SELECT schema_name from information_schema.schemata WHERE schema_name= 'main';
+           
+2023-12-12 20:18:27,924  |  INFO  |  =================================================================================================  
+2023-12-12 20:18:27,925  |  DEBUG  |    
+2023-12-12 20:18:27,938  |  DEBUG  |    
+2023-12-12 20:18:27,938  |  ERROR  |  ==========================================================================================================================================================================  
+2023-12-12 20:18:27,939  |  ERROR  |  TABLE DELETION FAILURE: Unable to delete raw_flight_destinations_tbl. This table may have objects that depend on it (use DROP TABLE ... CASCADE to resolve) or it doesn't exist.   
+2023-12-12 20:18:27,939  |  ERROR  |  SQL Query for validation check:     SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'raw_flight_destinations_tbl' );
+           
+2023-12-12 20:18:27,939  |  ERROR  |  ==========================================================================================================================================================================  
+2023-12-12 20:18:27,939  |  DEBUG  |    
+2023-12-12 20:18:27,953  |  DEBUG  |    
+2023-12-12 20:18:27,954  |  INFO  |  =============================================================================================================================================================================  
+2023-12-12 20:18:27,956  |  INFO  |  TABLE CREATION SUCCESS: Managed to create raw_flight_destinations_tbl table in dwdss.    
+2023-12-12 20:18:27,956  |  INFO  |  SQL Query for validation check:         SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'raw_flight_destinations_tbl' );
+           
+2023-12-12 20:18:27,957  |  INFO  |  =============================================================================================================================================================================  
+2023-12-12 20:18:27,957  |  DEBUG  |    
+2023-12-12 20:18:27,976  |  DEBUG  |    
+2023-12-12 20:18:27,977  |  INFO  |  =============================================================================================================================================================================  
+2023-12-12 20:18:27,977  |  INFO  |  DATA LINEAGE FIELDS CREATION SUCCESS: Managed to create data lineage columns in main.raw_flight_destinations_tbl.    
+2023-12-12 20:18:27,979  |  INFO  |  SQL Query for validation check:          
+                                                                    SELECT * 
+                                                                    FROM    information_schema.columns 
+                                                                    WHERE   table_name      = 'raw_flight_destinations_tbl' 
+                                                                        AND     (column_name    = 'created_at'
+                                                                        OR      column_name     = 'updated_at' 
+                                                                        OR      column_name     = 'source_system' 
+                                                                        OR      column_name     = 'source_file' 
+                                                                        OR      column_name     = 'load_timestamp' 
+                                                                        OR      column_name     = 'dwh_layer');
+                                                                              
+           
+2023-12-12 20:18:27,982  |  INFO  |  =============================================================================================================================================================================  
+2023-12-12 20:18:27,984  |  DEBUG  |    
+2023-12-12 20:18:27,986  |  INFO  |  Rows before SQL insert in Postgres: 0   
+2023-12-12 20:18:27,987  |  DEBUG  |    
+2023-12-12 20:18:27,988  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:27,988  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 1   
+2023-12-12 20:18:27,989  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:27,992  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:27,993  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 2   
+2023-12-12 20:18:27,993  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:27,994  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:27,994  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 3   
+2023-12-12 20:18:27,994  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:27,996  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:27,997  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 4   
+2023-12-12 20:18:27,998  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:27,999  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,000  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 5   
+2023-12-12 20:18:28,000  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,002  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,013  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 6   
+2023-12-12 20:18:28,013  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,014  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,014  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 7   
+2023-12-12 20:18:28,014  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,016  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,016  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 8   
+2023-12-12 20:18:28,017  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,019  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,019  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 9   
+2023-12-12 20:18:28,020  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,022  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,022  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 10   
+2023-12-12 20:18:28,023  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,024  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,025  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 11   
+2023-12-12 20:18:28,026  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,028  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,028  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 12   
+2023-12-12 20:18:28,029  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,030  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,031  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 13   
+2023-12-12 20:18:28,033  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,034  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,035  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 14   
+2023-12-12 20:18:28,035  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,036  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,037  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 15   
+2023-12-12 20:18:28,037  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,040  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,041  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 16   
+2023-12-12 20:18:28,041  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,042  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,043  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 17   
+2023-12-12 20:18:28,043  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,044  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,045  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 18   
+2023-12-12 20:18:28,046  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,047  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,048  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 19   
+2023-12-12 20:18:28,048  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,049  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,049  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 20   
+2023-12-12 20:18:28,049  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,050  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,051  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 21   
+2023-12-12 20:18:28,052  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,054  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,069  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 22   
+2023-12-12 20:18:28,069  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,070  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,070  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 23   
+2023-12-12 20:18:28,071  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,072  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,073  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 24   
+2023-12-12 20:18:28,073  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,074  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,075  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 25   
+2023-12-12 20:18:28,075  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,078  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,078  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 26   
+2023-12-12 20:18:28,081  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,082  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,083  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 27   
+2023-12-12 20:18:28,084  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,085  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,086  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 28   
+2023-12-12 20:18:28,087  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,088  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,089  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 29   
+2023-12-12 20:18:28,090  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,090  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,091  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 30   
+2023-12-12 20:18:28,091  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,092  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,093  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 31   
+2023-12-12 20:18:28,094  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,095  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,096  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 32   
+2023-12-12 20:18:28,097  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,109  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,110  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 33   
+2023-12-12 20:18:28,110  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,111  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,111  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 34   
+2023-12-12 20:18:28,112  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,112  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,113  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 35   
+2023-12-12 20:18:28,113  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,113  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,115  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 36   
+2023-12-12 20:18:28,115  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,117  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,118  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 37   
+2023-12-12 20:18:28,119  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,122  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,123  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 38   
+2023-12-12 20:18:28,123  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,125  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,125  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 39   
+2023-12-12 20:18:28,126  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,127  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,127  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 40   
+2023-12-12 20:18:28,127  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,129  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,129  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 41   
+2023-12-12 20:18:28,130  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,131  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,131  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 42   
+2023-12-12 20:18:28,132  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,132  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,133  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 43   
+2023-12-12 20:18:28,133  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,134  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,134  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 44   
+2023-12-12 20:18:28,134  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,135  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,137  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 45   
+2023-12-12 20:18:28,137  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,138  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,138  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 46   
+2023-12-12 20:18:28,139  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,139  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,140  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 47   
+2023-12-12 20:18:28,141  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,142  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,143  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 48   
+2023-12-12 20:18:28,143  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,144  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,144  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 49   
+2023-12-12 20:18:28,145  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,147  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,152  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 50   
+2023-12-12 20:18:28,152  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,153  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,154  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 51   
+2023-12-12 20:18:28,154  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,155  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,155  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 52   
+2023-12-12 20:18:28,156  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,157  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,158  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 53   
+2023-12-12 20:18:28,158  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,159  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,160  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 54   
+2023-12-12 20:18:28,160  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,162  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,165  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 55   
+2023-12-12 20:18:28,166  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,167  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,168  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 56   
+2023-12-12 20:18:28,168  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,169  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,170  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 57   
+2023-12-12 20:18:28,171  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,172  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,172  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 58   
+2023-12-12 20:18:28,172  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,173  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,174  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 59   
+2023-12-12 20:18:28,174  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,174  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,174  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 60   
+2023-12-12 20:18:28,175  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,176  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,178  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 61   
+2023-12-12 20:18:28,179  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,181  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,191  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 62   
+2023-12-12 20:18:28,192  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,193  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,193  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 63   
+2023-12-12 20:18:28,193  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,194  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,194  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 64   
+2023-12-12 20:18:28,195  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,195  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,195  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 65   
+2023-12-12 20:18:28,196  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,196  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,197  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 66   
+2023-12-12 20:18:28,198  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,200  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,201  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 67   
+2023-12-12 20:18:28,202  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,205  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,206  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 68   
+2023-12-12 20:18:28,206  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,208  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,208  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 69   
+2023-12-12 20:18:28,209  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,210  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,210  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 70   
+2023-12-12 20:18:28,211  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,213  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,213  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 71   
+2023-12-12 20:18:28,213  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,214  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,214  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 72   
+2023-12-12 20:18:28,214  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,215  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,216  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 73   
+2023-12-12 20:18:28,216  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,217  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,219  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 74   
+2023-12-12 20:18:28,219  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,221  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,230  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 75   
+2023-12-12 20:18:28,230  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,232  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,232  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 76   
+2023-12-12 20:18:28,233  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,234  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,234  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 77   
+2023-12-12 20:18:28,234  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,235  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,235  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 78   
+2023-12-12 20:18:28,236  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,237  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,238  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 79   
+2023-12-12 20:18:28,240  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,241  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,242  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 80   
+2023-12-12 20:18:28,242  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,243  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,243  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 81   
+2023-12-12 20:18:28,243  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,244  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,245  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 82   
+2023-12-12 20:18:28,245  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,247  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,248  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 83   
+2023-12-12 20:18:28,248  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,250  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,250  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 84   
+2023-12-12 20:18:28,250  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,251  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,251  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 85   
+2023-12-12 20:18:28,252  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,254  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,255  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 86   
+2023-12-12 20:18:28,256  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,257  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,257  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 87   
+2023-12-12 20:18:28,258  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,264  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,265  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 88   
+2023-12-12 20:18:28,265  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,267  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,268  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 89   
+2023-12-12 20:18:28,268  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,269  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,269  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 90   
+2023-12-12 20:18:28,269  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,271  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,271  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 91   
+2023-12-12 20:18:28,271  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,273  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,273  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 92   
+2023-12-12 20:18:28,274  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,275  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,277  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 93   
+2023-12-12 20:18:28,277  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,279  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,279  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 94   
+2023-12-12 20:18:28,281  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,283  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,283  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 95   
+2023-12-12 20:18:28,284  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,286  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,286  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 96   
+2023-12-12 20:18:28,286  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,289  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,289  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 97   
+2023-12-12 20:18:28,290  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,290  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,291  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 98   
+2023-12-12 20:18:28,291  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,292  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,292  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 99   
+2023-12-12 20:18:28,292  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,293  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,293  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 100   
+2023-12-12 20:18:28,293  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,296  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,296  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 101   
+2023-12-12 20:18:28,296  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,297  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,298  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 102   
+2023-12-12 20:18:28,298  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,299  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,299  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 103   
+2023-12-12 20:18:28,299  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,300  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,300  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 104   
+2023-12-12 20:18:28,300  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,301  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,302  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 105   
+2023-12-12 20:18:28,303  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,305  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,310  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 106   
+2023-12-12 20:18:28,311  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,311  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,312  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 107   
+2023-12-12 20:18:28,312  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,313  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,313  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 108   
+2023-12-12 20:18:28,313  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,314  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,315  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 109   
+2023-12-12 20:18:28,315  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,316  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,317  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 110   
+2023-12-12 20:18:28,317  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,319  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,319  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 111   
+2023-12-12 20:18:28,320  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,322  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,324  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 112   
+2023-12-12 20:18:28,325  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,326  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,327  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 113   
+2023-12-12 20:18:28,327  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,329  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,330  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 114   
+2023-12-12 20:18:28,330  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,331  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,331  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 115   
+2023-12-12 20:18:28,332  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,333  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,333  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 116   
+2023-12-12 20:18:28,334  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,334  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,335  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 117   
+2023-12-12 20:18:28,335  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,336  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,337  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 118   
+2023-12-12 20:18:28,337  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,338  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,339  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 119   
+2023-12-12 20:18:28,339  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,340  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,340  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 120   
+2023-12-12 20:18:28,340  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,341  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,341  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 121   
+2023-12-12 20:18:28,341  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,342  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,343  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 122   
+2023-12-12 20:18:28,344  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,345  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,345  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 123   
+2023-12-12 20:18:28,345  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,346  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,356  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 124   
+2023-12-12 20:18:28,356  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,358  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,358  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 125   
+2023-12-12 20:18:28,359  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,359  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,360  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 126   
+2023-12-12 20:18:28,360  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,361  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,361  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 127   
+2023-12-12 20:18:28,361  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,362  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,362  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 128   
+2023-12-12 20:18:28,362  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,364  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,365  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 129   
+2023-12-12 20:18:28,366  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,367  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,367  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 130   
+2023-12-12 20:18:28,368  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,371  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,372  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 131   
+2023-12-12 20:18:28,373  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,374  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,375  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 132   
+2023-12-12 20:18:28,375  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,376  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,376  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 133   
+2023-12-12 20:18:28,377  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,379  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,379  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 134   
+2023-12-12 20:18:28,379  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,380  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,381  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 135   
+2023-12-12 20:18:28,381  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,382  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,382  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 136   
+2023-12-12 20:18:28,382  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,383  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,383  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 137   
+2023-12-12 20:18:28,383  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,385  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,386  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 138   
+2023-12-12 20:18:28,386  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,387  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,387  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 139   
+2023-12-12 20:18:28,388  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,388  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,389  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 140   
+2023-12-12 20:18:28,389  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,390  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,390  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 141   
+2023-12-12 20:18:28,390  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,392  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,393  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 142   
+2023-12-12 20:18:28,393  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,395  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,400  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 143   
+2023-12-12 20:18:28,400  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,401  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,402  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 144   
+2023-12-12 20:18:28,402  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,403  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,403  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 145   
+2023-12-12 20:18:28,403  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,404  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,404  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 146   
+2023-12-12 20:18:28,404  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,405  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,407  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 147   
+2023-12-12 20:18:28,407  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,408  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,409  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 148   
+2023-12-12 20:18:28,410  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,414  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,415  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 149   
+2023-12-12 20:18:28,415  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,416  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,417  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 150   
+2023-12-12 20:18:28,417  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,419  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,420  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 151   
+2023-12-12 20:18:28,420  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,421  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,422  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 152   
+2023-12-12 20:18:28,422  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,423  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,423  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 153   
+2023-12-12 20:18:28,423  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,424  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,424  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 154   
+2023-12-12 20:18:28,425  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,425  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,426  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 155   
+2023-12-12 20:18:28,427  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,429  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,431  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 156   
+2023-12-12 20:18:28,438  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,440  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,441  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 157   
+2023-12-12 20:18:28,441  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,442  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,443  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 158   
+2023-12-12 20:18:28,443  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,444  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,444  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 159   
+2023-12-12 20:18:28,445  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,446  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,446  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 160   
+2023-12-12 20:18:28,447  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,450  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,451  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 161   
+2023-12-12 20:18:28,451  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,452  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,453  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 162   
+2023-12-12 20:18:28,453  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,455  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,455  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 163   
+2023-12-12 20:18:28,456  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,458  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,459  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 164   
+2023-12-12 20:18:28,459  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,460  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,461  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 165   
+2023-12-12 20:18:28,462  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,464  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,464  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 166   
+2023-12-12 20:18:28,464  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,465  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,466  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 167   
+2023-12-12 20:18:28,466  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,467  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,467  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 168   
+2023-12-12 20:18:28,468  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,470  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,470  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 169   
+2023-12-12 20:18:28,470  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,471  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,472  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 170   
+2023-12-12 20:18:28,472  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,473  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,473  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 171   
+2023-12-12 20:18:28,473  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,475  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,477  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 172   
+2023-12-12 20:18:28,477  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,479  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,483  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 173   
+2023-12-12 20:18:28,484  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,485  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,485  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 174   
+2023-12-12 20:18:28,486  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,486  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,487  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 175   
+2023-12-12 20:18:28,487  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,487  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,488  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 176   
+2023-12-12 20:18:28,488  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,490  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,490  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 177   
+2023-12-12 20:18:28,491  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,492  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,492  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 178   
+2023-12-12 20:18:28,493  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,494  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,497  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 179   
+2023-12-12 20:18:28,498  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,499  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,500  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 180   
+2023-12-12 20:18:28,500  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,501  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,502  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 181   
+2023-12-12 20:18:28,502  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,504  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,504  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 182   
+2023-12-12 20:18:28,504  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,505  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,506  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 183   
+2023-12-12 20:18:28,506  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,507  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,508  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 184   
+2023-12-12 20:18:28,508  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,509  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,510  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 185   
+2023-12-12 20:18:28,511  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,512  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,512  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 186   
+2023-12-12 20:18:28,512  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,513  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,514  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 187   
+2023-12-12 20:18:28,514  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,515  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,515  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 188   
+2023-12-12 20:18:28,516  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,518  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,518  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 189   
+2023-12-12 20:18:28,518  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,519  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,520  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 190   
+2023-12-12 20:18:28,521  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,532  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,533  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 191   
+2023-12-12 20:18:28,533  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,534  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,534  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 192   
+2023-12-12 20:18:28,535  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,535  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,536  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 193   
+2023-12-12 20:18:28,536  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,537  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,538  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 194   
+2023-12-12 20:18:28,539  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,541  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,542  |  INFO  |  INSERT SUCCESS: Uploaded flight_destinations record no 195   
+2023-12-12 20:18:28,542  |  DEBUG  |  ---------------------------------  
+2023-12-12 20:18:28,543  |  INFO  |  Rows after SQL insert in Postgres: 195   
+2023-12-12 20:18:28,545  |  DEBUG  |    
+2023-12-12 20:18:28,545  |  WARNING  |    
+2023-12-12 20:18:28,546  |  WARNING  |    
+2023-12-12 20:18:28,546  |  WARNING  |  ================================================  
+2023-12-12 20:18:28,546  |  WARNING  |             SENSITIVE COLUMN IDENTIFICATION                
+2023-12-12 20:18:28,547  |  WARNING  |  ================================================  
+2023-12-12 20:18:28,547  |  WARNING  |    
+2023-12-12 20:18:28,548  |  ERROR  |  IMPORTANT NOTE: Invest time in understanding the underlying data fields to avoid highlighting the incorrect fields or omitting fields containing confidential information.            
+2023-12-12 20:18:28,548  |  ERROR  |    
+2023-12-12 20:18:28,548  |  ERROR  |        Involving the relevant stakeholders in the process of identifying sensitive data fields from the source data is a crucial step to protecting confidential information.   
+2023-12-12 20:18:28,549  |  ERROR  |    
+2023-12-12 20:18:28,550  |  ERROR  |        Neglecting this step could expose customers and the wider company to serious harm (e.g. cybersecurity hacks, data breaches, unauthorized access to sensitive data), so approach this task with the utmost care.   
+2023-12-12 20:18:28,550  |  WARNING  |    
+2023-12-12 20:18:28,551  |  WARNING  |    
+2023-12-12 20:18:28,551  |  WARNING  |  Now beginning the sensitive column identification stage ...  
+2023-12-12 20:18:28,552  |  WARNING  |    
+2023-12-12 20:18:28,553  |  ERROR  |  There are no sensitive columns for the 'raw_flight_destinations_tbl' table   
+2023-12-12 20:18:28,553  |  WARNING  |    
+2023-12-12 20:18:28,553  |  WARNING  |  1 : 'None'    
+2023-12-12 20:18:28,553  |  WARNING  |    
+2023-12-12 20:18:28,554  |  WARNING  |  Now terminating the sensitive column identification stage ...  
+2023-12-12 20:18:28,554  |  WARNING  |  Sensitive column identification stage ended.   
+2023-12-12 20:18:28,554  |  WARNING  |    
+2023-12-12 20:18:28,555  |  WARNING  |    
+2023-12-12 20:18:28,555  |  WARNING  |    
+2023-12-12 20:18:28,568  |  INFO  |    
+2023-12-12 20:18:28,569  |  INFO  |    
+2023-12-12 20:18:28,575  |  INFO  |  ================================================  
+2023-12-12 20:18:28,576  |  INFO  |                DATA PROFILING METRICS                
+2023-12-12 20:18:28,576  |  INFO  |  ================================================  
+2023-12-12 20:18:28,576  |  INFO  |    
+2023-12-12 20:18:28,577  |  INFO  |  Now calculating table statistics...  
+2023-12-12 20:18:28,577  |  INFO  |    
+2023-12-12 20:18:28,577  |  INFO  |    
+2023-12-12 20:18:28,577  |  INFO  |  Table name:                                  raw_flight_destinations_tbl   
+2023-12-12 20:18:28,579  |  INFO  |  Schema name:                                 main   
+2023-12-12 20:18:28,580  |  INFO  |  Database name:                               dwdss   
+2023-12-12 20:18:28,580  |  INFO  |  Data warehouse layer:                        RAW   
+2023-12-12 20:18:28,581  |  INFO  |    
+2023-12-12 20:18:28,581  |  INFO  |    
+2023-12-12 20:18:28,581  |  INFO  |  Number of rows in table:                     195   
+2023-12-12 20:18:28,582  |  INFO  |  Number of columns in table:                  9   
+2023-12-12 20:18:28,582  |  INFO  |    
+2023-12-12 20:18:28,583  |  INFO  |  Successful records uploaded total :          195 / 195     
+2023-12-12 20:18:28,583  |  INFO  |  Failed/Errored records uploaded total:       0 / 195         
+2023-12-12 20:18:28,584  |  INFO  |    
+2023-12-12 20:18:28,584  |  INFO  |  Successful records uploaded % :              100.0      
+2023-12-12 20:18:28,584  |  INFO  |  Failed/Errored records uploaded %:           0.0         
+2023-12-12 20:18:28,585  |  INFO  |    
+2023-12-12 20:18:28,585  |  INFO  |  Number of unique records:                    195 / 195  
+2023-12-12 20:18:28,586  |  INFO  |  Number of duplicate records:                 0 / 195  
+2023-12-12 20:18:28,587  |  INFO  |    
+2023-12-12 20:18:28,587  |  INFO  |  Unique records %:                            100.0   
+2023-12-12 20:18:28,588  |  INFO  |  Duplicate records %:                         0.0   
+2023-12-12 20:18:28,590  |  INFO  |    
+2023-12-12 20:18:28,591  |  INFO  |  Column name: flight_id,  Column no: 1,  Number of NULL values: 0   
+2023-12-12 20:18:28,592  |  INFO  |  Column name: arrival_city,  Column no: 2,  Number of NULL values: 0   
+2023-12-12 20:18:28,595  |  INFO  |  Column name: departure_city,  Column no: 3,  Number of NULL values: 0   
+2023-12-12 20:18:28,596  |  INFO  |  Column name: created_at,  Column no: 4,  Number of NULL values: 0   
+2023-12-12 20:18:28,597  |  INFO  |  Column name: updated_at,  Column no: 5,  Number of NULL values: 0   
+2023-12-12 20:18:28,601  |  INFO  |  Column name: source_system,  Column no: 6,  Number of NULL values: 0   
+2023-12-12 20:18:28,602  |  INFO  |  Column name: source_file,  Column no: 7,  Number of NULL values: 0   
+2023-12-12 20:18:28,603  |  INFO  |  Column name: load_timestamp,  Column no: 8,  Number of NULL values: 0   
+2023-12-12 20:18:28,604  |  INFO  |  Column name: dwh_layer,  Column no: 9,  Number of NULL values: 0   
+2023-12-12 20:18:28,605  |  INFO  |    
+2023-12-12 20:18:28,605  |  INFO  |  ================================================  
+2023-12-12 20:18:28,606  |  INFO  |    
+2023-12-12 20:18:28,607  |  INFO  |  Now calculating performance statistics (from a Python standpoint)...  
+2023-12-12 20:18:28,608  |  INFO  |    
+2023-12-12 20:18:28,609  |  INFO  |    
+2023-12-12 20:18:28,609  |  INFO  |  1. Execution time for CREATING schema: 0.9970664978027344 ms   
+2023-12-12 20:18:28,609  |  INFO  |    
+2023-12-12 20:18:28,610  |  INFO  |    
+2023-12-12 20:18:28,610  |  INFO  |  2. Execution time for CREATING schema (VAL CHECK): 3.000974655151367 ms   
+2023-12-12 20:18:28,610  |  INFO  |    
+2023-12-12 20:18:28,610  |  INFO  |    
+2023-12-12 20:18:28,611  |  INFO  |  3. Execution time for DELETING schema:  0.0 ms   
+2023-12-12 20:18:28,611  |  INFO  |    
+2023-12-12 20:18:28,612  |  INFO  |    
+2023-12-12 20:18:28,614  |  INFO  |  4. Execution time for DELETING schema (VAL CHECK):  2.99835205078125 ms   
+2023-12-12 20:18:28,616  |  INFO  |    
+2023-12-12 20:18:28,632  |  INFO  |    
+2023-12-12 20:18:28,633  |  INFO  |  5. Execution time for CREATING table:  11.993885040283203 ms   
+2023-12-12 20:18:28,633  |  INFO  |    
+2023-12-12 20:18:28,636  |  INFO  |    
+2023-12-12 20:18:28,637  |  INFO  |  6. Execution time for CREATING table (VAL CHECK):  1.9998550415039062 ms   
+2023-12-12 20:18:28,637  |  INFO  |    
+2023-12-12 20:18:28,642  |  INFO  |    
+2023-12-12 20:18:28,643  |  INFO  |  7. Execution time for ADDING data lineage:  2.999544143676758 ms   
+2023-12-12 20:18:28,646  |  INFO  |    
+2023-12-12 20:18:28,646  |  INFO  |    
+2023-12-12 20:18:28,647  |  INFO  |  8. Execution time for ADDING data lineage (VAL CHECK):  15.990972518920898 ms   
+2023-12-12 20:18:28,650  |  INFO  |    
+2023-12-12 20:18:28,651  |  INFO  |    
+2023-12-12 20:18:28,651  |  INFO  |  9. Execution time for INSERTING rows to table:  558.6798191070557 ms   
+2023-12-12 20:18:28,652  |  INFO  |    
+2023-12-12 20:18:28,653  |  INFO  |    
+2023-12-12 20:18:28,653  |  INFO  |  10. Execution time for COUNTING uploaded rows to table:  0.0 ms   
+2023-12-12 20:18:28,653  |  INFO  |    
+2023-12-12 20:18:28,653  |  INFO  |    
+2023-12-12 20:18:28,654  |  INFO  |    
+2023-12-12 20:18:28,654  |  INFO  |  ================================================  
+2023-12-12 20:18:28,654  |  DEBUG  |    
+2023-12-12 20:18:28,654  |  INFO  |  DATA VALIDATION SUCCESS: All general DQ checks passed!   
+2023-12-12 20:18:28,656  |  DEBUG  |    
+2023-12-12 20:18:28,657  |  INFO  |  Now saving changes made by SQL statements to Postgres DB....  
+2023-12-12 20:18:28,657  |  INFO  |  Saved successfully, now terminating cursor and current session....  
+2023-12-12 20:18:28,658  |  DEBUG  |    
+2023-12-12 20:18:28,658  |  DEBUG  |  Cursor closed successfully.  
+2023-12-12 20:18:28,659  |  DEBUG  |  Session connected to Postgres database closed.  

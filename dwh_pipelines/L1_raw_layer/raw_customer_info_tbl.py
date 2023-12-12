@@ -71,7 +71,7 @@ if USING_AIRFLOW:
 
     # Use the airflow config file from the airflow container 
     config.read('/usr/local/airflow/dags/etl_to_postgres/airflow_config.ini')
-    customer_info_path = config['postgres_airflow_config']['DATASET_SOURCE_PATH'] + src_file
+    customer_info_path = config['postgres_airflow_config']['DATASET_SOURCE_PATH'] + os.sep + src_file
 
     host                    =   config['postgres_airflow_config']['HOST']
     port                    =   config['postgres_airflow_config']['PORT']
@@ -88,7 +88,7 @@ else:
     # Use the local config file from the local machine 
     path    =   os.path.abspath('dwh_pipelines/local_config.ini')
     config.read(path)
-    customer_info_path     =   config['travel_data_filepath']['DATASETS_LOCATION_PATH'] + src_file
+    customer_info_path     =   config['travel_data_filepath']['DATASETS_LOCATION_PATH'] + os.sep + src_file
 
     host                    =   config['travel_data_filepath']['HOST']
     port                    =   config['travel_data_filepath']['PORT']
@@ -109,7 +109,6 @@ COMPUTE_START_TIME  =   time.time()
 
 
 with open(customer_info_path, 'r') as customer_info_file:    
-    
     try:
         customer_info_data = json.load(customer_info_file)
         # customer_info_data = customer_info_data[0:100]
