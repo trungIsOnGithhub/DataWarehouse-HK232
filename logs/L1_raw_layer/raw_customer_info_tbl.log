@@ -1,4 +1,101 @@
-2023-12-12 21:47:05,661  |  INFO  |    
-2023-12-12 21:47:05,662  |  INFO  |  ---------------------------------------------  
-2023-12-12 21:47:05,663  |  INFO  |  Beginning the source data extraction process...  
-2023-12-12 21:47:05,683  |  ERROR  |  Unable to locate source file...terminating process...  
+2023-12-13 13:38:46,112  |  INFO  |    
+2023-12-13 13:38:46,112  |  INFO  |  ---------------------------------------------  
+2023-12-13 13:38:46,113  |  INFO  |  Beginning the source data extraction process...  
+2023-12-13 13:38:46,113  |  INFO  |  Successfully located 'customer_info.json'  
+2023-12-13 13:38:46,113  |  INFO  |  File type: '<class 'list'>'  
+2023-12-13 13:38:46,160  |  DEBUG  |    
+2023-12-13 13:38:46,160  |  INFO  |  =================================================================================  
+2023-12-13 13:38:46,160  |  INFO  |  CONNECTION SUCCESS: Managed to connect successfully to the dwdss database!!  
+2023-12-13 13:38:46,161  |  INFO  |  Connection details: user=postgres password=xxx dbname=dwdss host=localhost port=5432   
+2023-12-13 13:38:46,161  |  INFO  |  =================================================================================  
+2023-12-13 13:38:46,161  |  DEBUG  |    
+2023-12-13 13:38:46,163  |  DEBUG  |    
+2023-12-13 13:38:46,164  |  INFO  |  =================================================================================================  
+2023-12-13 13:38:46,164  |  INFO  |  SCHEMA CREATION SUCCESS: Managed to create main schema in dwdss   
+2023-12-13 13:38:46,164  |  INFO  |  Schema name in Postgres: main   
+2023-12-13 13:38:46,164  |  INFO  |  SQL Query for validation check:     SELECT schema_name from information_schema.schemata WHERE schema_name= 'main';
+           
+2023-12-13 13:38:46,164  |  INFO  |  =================================================================================================  
+2023-12-13 13:38:46,165  |  DEBUG  |    
+2023-12-13 13:38:46,167  |  DEBUG  |    
+2023-12-13 13:38:46,167  |  ERROR  |  ==========================================================================================================================================================================  
+2023-12-13 13:38:46,168  |  ERROR  |  TABLE DELETION FAILURE: Unable to delete raw_customer_info_tbl. This table may have objects that depend on it (use DROP TABLE ... CASCADE to resolve) or it doesn't exist.   
+2023-12-13 13:38:46,168  |  ERROR  |  SQL Query for validation check:     SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'raw_customer_info_tbl' );
+           
+2023-12-13 13:38:46,168  |  ERROR  |  ==========================================================================================================================================================================  
+2023-12-13 13:38:46,169  |  DEBUG  |    
+2023-12-13 13:38:46,174  |  DEBUG  |    
+2023-12-13 13:38:46,174  |  INFO  |  =============================================================================================================================================================================  
+2023-12-13 13:38:46,174  |  INFO  |  TABLE CREATION SUCCESS: Managed to create raw_customer_info_tbl table in dwdss.    
+2023-12-13 13:38:46,175  |  INFO  |  SQL Query for validation check:         SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'raw_customer_info_tbl' );
+           
+2023-12-13 13:38:46,175  |  INFO  |  =============================================================================================================================================================================  
+2023-12-13 13:38:46,176  |  DEBUG  |    
+2023-12-13 13:38:46,177  |  DEBUG  |    
+2023-12-13 13:38:46,178  |  DEBUG  |  ---------------------------------  
+2023-12-13 13:38:46,179  |  INFO  |  INSERT SUCCESS: Uploaded customer_info record no 1   
+2023-12-13 13:38:46,179  |  DEBUG  |  ---------------------------------  
+2023-12-13 13:38:46,180  |  DEBUG  |  ---------------------------------  
+2023-12-13 13:38:46,180  |  INFO  |  INSERT SUCCESS: Uploaded customer_info record no 2   
+2023-12-13 13:38:46,180  |  DEBUG  |  ---------------------------------  
+2023-12-13 13:38:46,181  |  DEBUG  |  ---------------------------------  
+2023-12-13 13:38:46,181  |  INFO  |  INSERT SUCCESS: Uploaded customer_info record no 3   
+2023-12-13 13:38:46,181  |  DEBUG  |  ---------------------------------  
+2023-12-13 13:38:46,181  |  DEBUG  |  ---------------------------------  
+2023-12-13 13:38:46,182  |  INFO  |  INSERT SUCCESS: Uploaded customer_info record no 4   
+2023-12-13 13:38:46,182  |  DEBUG  |  ---------------------------------  
+2023-12-13 13:38:46,182  |  DEBUG  |  ---------------------------------  
+2023-12-13 13:38:46,182  |  INFO  |  INSERT SUCCESS: Uploaded customer_info record no 5   
+2023-12-13 13:38:46,183  |  DEBUG  |  ---------------------------------  
+2023-12-13 13:38:46,183  |  DEBUG  |  ---------------------------------  
+2023-12-13 13:38:46,183  |  INFO  |  INSERT SUCCESS: Uploaded customer_info record no 6   
+2023-12-13 13:38:46,183  |  DEBUG  |  ---------------------------------  
+2023-12-13 13:38:46,184  |  DEBUG  |  ---------------------------------  
+2023-12-13 13:38:46,184  |  INFO  |  INSERT SUCCESS: Uploaded customer_info record no 7   
+2023-12-13 13:38:46,184  |  DEBUG  |  ---------------------------------  
+2023-12-13 13:38:46,185  |  DEBUG  |  ---------------------------------  
+2023-12-13 13:38:46,185  |  INFO  |  INSERT SUCCESS: Uploaded customer_info record no 8   
+2023-12-13 13:38:46,186  |  DEBUG  |  ---------------------------------  
+2023-12-13 13:38:46,186  |  DEBUG  |  ---------------------------------  
+2023-12-13 13:38:46,187  |  INFO  |  INSERT SUCCESS: Uploaded customer_info record no 9   
+2023-12-13 13:38:46,187  |  DEBUG  |  ---------------------------------  
+2023-12-13 13:38:46,187  |  DEBUG  |  ---------------------------------  
+2023-12-13 13:38:46,188  |  INFO  |  INSERT SUCCESS: Uploaded customer_info record no 10   
+2023-12-13 13:38:46,188  |  DEBUG  |  ---------------------------------  
+2023-12-13 13:38:46,188  |  INFO  |  Rows after SQL insert in Postgres: 10   
+2023-12-13 13:38:46,188  |  DEBUG  |    
+2023-12-13 13:38:46,189  |  WARNING  |  Here are the columns considered sensitive in this table ...  
+2023-12-13 13:38:46,189  |  WARNING  |    
+2023-12-13 13:38:46,189  |  WARNING  |  1 : 'customer_id'    
+2023-12-13 13:38:46,189  |  WARNING  |  2 : 'address'    
+2023-12-13 13:38:46,189  |  WARNING  |  3 : 'age'    
+2023-12-13 13:38:46,189  |  WARNING  |  4 : 'city'    
+2023-12-13 13:38:46,189  |  WARNING  |  5 : 'created_date'    
+2023-12-13 13:38:46,190  |  WARNING  |  6 : 'dob'    
+2023-12-13 13:38:46,190  |  WARNING  |  7 : 'email'    
+2023-12-13 13:38:46,190  |  WARNING  |  8 : 'first_name'    
+2023-12-13 13:38:46,190  |  WARNING  |  9 : 'last_name'    
+2023-12-13 13:38:46,190  |  WARNING  |  10 : 'last_updated_date'    
+2023-12-13 13:38:46,190  |  WARNING  |  11 : 'phone_number'    
+2023-12-13 13:38:46,190  |  WARNING  |  12 : 'place_of_birth'    
+2023-12-13 13:38:46,191  |  WARNING  |    
+2023-12-13 13:38:46,191  |  WARNING  |    
+2023-12-13 13:38:46,191  |  WARNING  |  Decide on the appropriate treatment for these tables. A few options to consider include:  
+2023-12-13 13:38:46,191  |  WARNING  |  1. Masking fields               -   This involves replacing sensitive columns with alternative characters e.g.  'xxxx-xxxx', '*****', '$$$$'.   
+2023-12-13 13:38:46,191  |  WARNING  |  2. Encrypting fields            -   This is converting sensitive columns to cipher text (unreadable text format).          
+2023-12-13 13:38:46,191  |  WARNING  |  3. Role-based access control    -   Placing a system that delegates privileges based on team members' responsibilities          
+2023-12-13 13:38:46,191  |  WARNING  |    
+2023-12-13 13:38:46,192  |  WARNING  |  Now terminating the sensitive column identification stage ...  
+2023-12-13 13:38:46,192  |  WARNING  |  Sensitive column identification stage ended.   
+2023-12-13 13:38:46,192  |  WARNING  |    
+2023-12-13 13:38:46,192  |  WARNING  |    
+2023-12-13 13:38:46,193  |  WARNING  |    
+2023-12-13 13:38:46,201  |  INFO  |  ================================================  
+2023-12-13 13:38:46,202  |  DEBUG  |    
+2023-12-13 13:38:46,202  |  INFO  |  DATA VALIDATION SUCCESS: All general DQ checks passed!   
+2023-12-13 13:38:46,202  |  DEBUG  |    
+2023-12-13 13:38:46,202  |  INFO  |  Now saving changes made by SQL statements to Postgres DB....  
+2023-12-13 13:38:46,202  |  INFO  |  Saved successfully, now terminating cursor and current session....  
+2023-12-13 13:38:46,203  |  DEBUG  |    
+2023-12-13 13:38:46,203  |  DEBUG  |  Cursor closed successfully.  
+2023-12-13 13:38:46,203  |  DEBUG  |  Session connected to Postgres database closed.  

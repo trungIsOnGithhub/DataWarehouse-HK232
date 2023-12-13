@@ -135,35 +135,20 @@ def test_columns_existence():
                         'first_name',                         
                         'last_name',
                         'full_name',
-                        'email',    
+                        'email',
                         'age',      
                         'dob',      
-                        'phone_number',                       
-                        'nationality',                  
+                        'phone_number',               
                         'place_of_birth',                     
-                        'address',  
-                        'city',     
-                        'state',    
-                        'zip',      
-                        'credit_card',
-                        'credit_card_provider',
-                        'customer_contact_preference_id',
-                        'customer_contact_preference_desc',  
+                        'address',
+                        'city', 
                         'created_date',
                         'last_updated_date',
                         'created_at',
-                        'updated_at',
-                        'source_system',
-                        'source_file',
-                        'load_timestamp',
-                        'dwh_layer'
-                        ]
+                        'updated_at']
     
     for expected_column in expected_columns:
         assert expected_column in actual_columns, f"The '{expected_column}' column should be in the '{table_name}' table. "
-
-
-
 
 
 # ====================================== TEST 4: TABLE EXISTENCE CHECK ======================================
@@ -200,26 +185,14 @@ def test_column_data_types():
         'email'                             :           'character varying',    
         'age'                               :           'integer',      
         'dob'                               :           'date',      
-        'phone_number'                      :           'character varying',                       
-        'nationality'                       :           'character varying',                  
+        'phone_number'                      :           'character varying',                        
         'place_of_birth'                    :           'character varying',                     
         'address'                           :           'character varying',  
-        'city'                              :           'character varying',     
-        'state'                             :           'character varying',    
-        'zip'                               :           'character varying',      
-        'credit_card'                       :           'character varying',
-        'credit_card_provider'              :           'character varying',
-        'customer_contact_preference_id'    :           'uuid',
-        'customer_contact_preference_desc'  :           'character varying',  
+        'city'                              :           'character varying',
         'created_date'                      :           'date',
         'last_updated_date'                 :           'date',
         "created_at"                        :           "timestamp with time zone",
-        "updated_at"                        :           "timestamp with time zone",
-        "source_system"                     :           "character varying",
-        "source_file"                       :           "character varying",
-        "load_timestamp"                    :           "timestamp without time zone",
-        "dwh_layer"                         :           "character varying"
-
+        "updated_at"                        :           "timestamp with time zone"
     }   
 
 

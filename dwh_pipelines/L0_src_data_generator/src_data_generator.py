@@ -63,16 +63,16 @@ def generate_travel_data():
   END_DATE                              =       "2022-12-31"
 
 
-  NO_OF_CUSTOMER_INFO_ROWS              =       1000
-  NO_OF_FLIGHT_SCHEDULES                =       300
-  NO_OF_CUSTOMER_FEEDBACKS              =       200
-  NO_OF_TICKET_PRICES                   =       20
-  NO_OF_FLIGHT_BOOKINGS                 =       10000
-  NO_OF_FLIGHT_DESTINATIONS             =       300
-  NO_OF_FLIGHT_TICKET_SALES             =       10000
-  NO_OF_FLIGHT_PROMOS_AND_DEALS         =       6000
-  NO_OF_SALES_AGENTS                    =       300
-  NO_OF_ACCOMMODATION_BOOKINGS          =       4000
+  NO_OF_CUSTOMER_INFO_ROWS              =       10
+  NO_OF_FLIGHT_SCHEDULES                =       30
+  NO_OF_CUSTOMER_FEEDBACKS              =       2
+  NO_OF_TICKET_PRICES                   =       2
+  NO_OF_FLIGHT_BOOKINGS                 =       10
+  NO_OF_FLIGHT_DESTINATIONS             =       30
+  NO_OF_FLIGHT_TICKET_SALES             =       10
+  NO_OF_FLIGHT_PROMOS_AND_DEALS         =       60
+  NO_OF_SALES_AGENTS                    =       30
+  NO_OF_ACCOMMODATION_BOOKINGS          =       4
 
 
 
@@ -195,25 +195,18 @@ def generate_travel_data():
     for i in range(NO_OF_CUSTOMER_INFO_ROWS):
 
         customer_info_record = {
-        'customer_id': uuid.uuid4(),
-        'first_name': fake.first_name(),
-        'last_name': fake.last_name(),
-        'email': f"{fake.first_name().lower()}.{fake.last_name().lower()}@" + random.choice(['email.com', 'inlook.com', 'mzn.com', 'aio.net', 'macrosoft.com' ]),
-        'place_of_birth': fake.city(),
-        'dob' : fake.date_of_birth(),
-        'age': random.uniform(1, 100),
-        'address': fake.address(),
-        'city': fake.city(),
-        'state': fake.state(),
-        'zip': fake.zipcode(),
-        'phone_number': fake.phone_number(),
-        'credit_card': fake.credit_card_number(),
-        'credit_card_provider': fake.credit_card_provider(),
-        'nationality': fake.country(),
-        'created_date': created_date,
-        'last_updated_date': created_date + pd.Timedelta(days=random.randint(1, 40)),
-        'customer_contact_preference_id': str(uuid.uuid4()),
-        'customer_contact_preference_desc': random.choice(list(preferred_contact_method))
+            'customer_id': uuid.uuid4(),
+            'first_name': fake.first_name(),
+            'last_name': fake.last_name(),
+            'email': f"{fake.first_name().lower()}.{fake.last_name().lower()}@" + random.choice(['email.com', 'inlook.com', 'mzn.com', 'aio.net', 'macrosoft.com' ]),
+            'place_of_birth': fake.city(),
+            'dob' : fake.date_of_birth(),
+            'age': random.uniform(1, 100),
+            'address': fake.address(),
+            'city': fake.city(),
+            'phone_number': fake.phone_number(),
+            'created_date': created_date,
+            'last_updated_date': created_date + pd.Timedelta(days=random.randint(1, 40)),
         }
         yield customer_info_record
 
@@ -483,7 +476,6 @@ def generate_travel_data():
             'flight_id' : random.choice(flight_bookings_df['flight_id']),
             'departure_city' : random.choice(LOCATIONS),
             'arrival_city': random.choice(LOCATIONS) 
-
         }
 
         yield flight_destination

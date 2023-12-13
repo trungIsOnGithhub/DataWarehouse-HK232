@@ -264,16 +264,9 @@ def load_data_to_stg_customers_table(postgres_connection):
                                                                         i.age,
                                                                         i.dob,
                                                                         i.phone_number,
-                                                                        i.nationality,
                                                                         i.place_of_birth,
                                                                         i.address,
                                                                         i.city,
-                                                                        i.state,
-                                                                        i.zip,
-                                                                        i.credit_card,
-                                                                        i.credit_card_provider,
-                                                                        i.customer_contact_preference_id,
-                                                                        i.customer_contact_preference_desc,
                                                                         i.created_date,
                                                                         i.last_updated_date,
                                                                         f.feedback_id,
@@ -320,26 +313,15 @@ def load_data_to_stg_customers_table(postgres_connection):
                                                                                 full_name,
                                                                                 email,    
                                                                                 age,      
-                                                                                dob,      
-                                                                                phone_number,                       
-                                                                                nationality,                  
+                                                                                dob,
+                                                                                phone_number,                                      
                                                                                 place_of_birth,                     
                                                                                 address,  
-                                                                                city,     
-                                                                                state,    
-                                                                                zip,      
-                                                                                credit_card,
-                                                                                credit_card_provider,
-                                                                                customer_contact_preference_id,
-                                                                                customer_contact_preference_desc,  
+                                                                                city,
                                                                                 created_date,
                                                                                 last_updated_date,
                                                                                 created_at,
-                                                                                updated_at,
-                                                                                source_system,
-                                                                                source_file,
-                                                                                load_timestamp,
-                                                                                dwh_layer
+                                                                                updated_at
                                                                             )
                                                                             VALUES (
                                                                                 %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
@@ -470,7 +452,7 @@ def load_data_to_stg_customers_table(postgres_connection):
         # --------- B. Performance statistics (Python)
         EXECUTION_TIME_FOR_CREATING_SCHEMA                   =   (CREATING_SCHEMA_PROCESSING_END_TIME                -       CREATING_SCHEMA_PROCESSING_START_TIME                   )   * 1000
 
-        EXECUTION_TIME_FOR_CREATING_SCHEMA_VAL_CHECK         =   (CREATING_SCHEMA_VAL_CHECK_END_TIME                 -       CREATING_SCHEMA_VAL_CHECK_START_TIME                    )   * 1000
+        # eliminate execution time threshold         =   (CREATING_SCHEMA_VAL_CHECK_END_TIME                 -       CREATING_SCHEMA_VAL_CHECK_START_TIME                    )   * 1000
 
         EXECUTION_TIME_FOR_DROPPING_SCHEMA                   =   (DELETING_SCHEMA_PROCESSING_END_TIME                -       DELETING_SCHEMA_PROCESSING_START_TIME                   )   * 1000
 
@@ -543,16 +525,16 @@ def load_data_to_stg_customers_table(postgres_connection):
             root_logger.info(f'')
 
 
-        if (EXECUTION_TIME_FOR_CREATING_SCHEMA_VAL_CHECK > 1000) and (EXECUTION_TIME_FOR_CREATING_SCHEMA_VAL_CHECK < 60000):
-            root_logger.info(f'2. Execution time for CREATING schema (VAL CHECK): {EXECUTION_TIME_FOR_CREATING_SCHEMA_VAL_CHECK} ms ({  round   (EXECUTION_TIME_FOR_CREATING_SCHEMA_VAL_CHECK  /   1000, 2)} secs)      ')
+        if (# eliminate execution time threshold > 1000) and (# eliminate execution time threshold < 60000):
+            root_logger.info(f'2. Execution time for CREATING schema (VAL CHECK): {# eliminate execution time threshold} ms ({  round   (# eliminate execution time threshold  /   1000, 2)} secs)      ')
             root_logger.info(f'')
             root_logger.info(f'')
-        elif (EXECUTION_TIME_FOR_CREATING_SCHEMA_VAL_CHECK >= 60000):
-            root_logger.info(f'2. Execution time for CREATING schema (VAL CHECK): {EXECUTION_TIME_FOR_CREATING_SCHEMA_VAL_CHECK} ms ({  round   (EXECUTION_TIME_FOR_CREATING_SCHEMA_VAL_CHECK  /   1000, 2)} secs)    ({  round ((EXECUTION_TIME_FOR_CREATING_SCHEMA_VAL_CHECK  /   1000) / 60,  4)   } min)      ')
+        elif (# eliminate execution time threshold >= 60000):
+            root_logger.info(f'2. Execution time for CREATING schema (VAL CHECK): {# eliminate execution time threshold} ms ({  round   (# eliminate execution time threshold  /   1000, 2)} secs)    ({  round ((# eliminate execution time threshold  /   1000) / 60,  4)   } min)      ')
             root_logger.info(f'')
             root_logger.info(f'')
         else:
-            root_logger.info(f'2. Execution time for CREATING schema (VAL CHECK): {EXECUTION_TIME_FOR_CREATING_SCHEMA_VAL_CHECK} ms ')
+            root_logger.info(f'2. Execution time for CREATING schema (VAL CHECK): {# eliminate execution time threshold} ms ')
             root_logger.info(f'')
             root_logger.info(f'')
         
@@ -587,63 +569,7 @@ def load_data_to_stg_customers_table(postgres_connection):
 
         
 
-        if (EXECUTION_TIME_FOR_CREATING_TABLE > 1000) and (EXECUTION_TIME_FOR_CREATING_TABLE < 60000):
-            root_logger.info(f'5. Execution time for CREATING table:  {EXECUTION_TIME_FOR_CREATING_TABLE} ms ({  round   (EXECUTION_TIME_FOR_CREATING_TABLE  /   1000, 2)} secs)      ')
-            root_logger.info(f'')
-            root_logger.info(f'')
-        elif (EXECUTION_TIME_FOR_CREATING_TABLE >= 60000):
-            root_logger.info(f'5. Execution time for CREATING table:  {EXECUTION_TIME_FOR_CREATING_TABLE} ms ({  round   (EXECUTION_TIME_FOR_CREATING_TABLE  /   1000, 2)} secs)    ({  round ((EXECUTION_TIME_FOR_CREATING_TABLE  /   1000) / 60,  4)   } min)      ')
-            root_logger.info(f'')
-            root_logger.info(f'')
-        else:
-            root_logger.info(f'5. Execution time for CREATING table:  {EXECUTION_TIME_FOR_CREATING_TABLE} ms ')
-            root_logger.info(f'')
-            root_logger.info(f'')
-
-
-
-        if (EXECUTION_TIME_FOR_CREATING_TABLE_VAL_CHECK > 1000) and (EXECUTION_TIME_FOR_CREATING_TABLE_VAL_CHECK < 60000):
-            root_logger.info(f'6. Execution time for CREATING table (VAL CHECK):  {EXECUTION_TIME_FOR_CREATING_TABLE_VAL_CHECK} ms ({  round   (EXECUTION_TIME_FOR_CREATING_TABLE_VAL_CHECK  /   1000, 2)} secs)      ')
-            root_logger.info(f'')
-            root_logger.info(f'')
-        elif (EXECUTION_TIME_FOR_CREATING_TABLE_VAL_CHECK >= 60000):
-            root_logger.info(f'6. Execution time for CREATING table (VAL CHECK):  {EXECUTION_TIME_FOR_CREATING_TABLE_VAL_CHECK} ms ({  round   (EXECUTION_TIME_FOR_CREATING_TABLE_VAL_CHECK  /   1000, 2)} secs)  ({  round ((EXECUTION_TIME_FOR_CREATING_TABLE_VAL_CHECK  /   1000) / 60,  4)   } min)      ')
-            root_logger.info(f'')
-            root_logger.info(f'')
-        else:
-            root_logger.info(f'6. Execution time for CREATING table (VAL CHECK):  {EXECUTION_TIME_FOR_CREATING_TABLE_VAL_CHECK} ms ')
-            root_logger.info(f'')
-            root_logger.info(f'')
-
-
-
-        if (EXECUTION_TIME_FOR_ADDING_DATA_LINEAGE > 1000) and (EXECUTION_TIME_FOR_ADDING_DATA_LINEAGE < 60000):
-            root_logger.info(f'7. Execution time for ADDING data lineage:  {EXECUTION_TIME_FOR_ADDING_DATA_LINEAGE} ms ({  round   (EXECUTION_TIME_FOR_ADDING_DATA_LINEAGE  /   1000, 2)} secs)      ')
-            root_logger.info(f'')
-            root_logger.info(f'')
-        elif (EXECUTION_TIME_FOR_ADDING_DATA_LINEAGE >= 60000):
-            root_logger.info(f'7. Execution time for ADDING data lineage:  {EXECUTION_TIME_FOR_ADDING_DATA_LINEAGE} ms ({  round   (EXECUTION_TIME_FOR_ADDING_DATA_LINEAGE  /   1000, 2)} secs)  ({  round ((EXECUTION_TIME_FOR_ADDING_DATA_LINEAGE  /   1000) / 60,  4)   } min)      ')
-            root_logger.info(f'')
-            root_logger.info(f'')
-        else:
-            root_logger.info(f'7. Execution time for ADDING data lineage:  {EXECUTION_TIME_FOR_ADDING_DATA_LINEAGE} ms ')
-            root_logger.info(f'')
-            root_logger.info(f'')
-
-
-
-        if (EXECUTION_TIME_FOR_ADDING_DATA_LINEAGE_VAL_CHECK > 1000) and (EXECUTION_TIME_FOR_ADDING_DATA_LINEAGE_VAL_CHECK < 60000):
-            root_logger.info(f'8. Execution time for ADDING data lineage (VAL CHECK):  {EXECUTION_TIME_FOR_ADDING_DATA_LINEAGE_VAL_CHECK} ms ({  round   (EXECUTION_TIME_FOR_ADDING_DATA_LINEAGE_VAL_CHECK  /   1000, 2)} secs)      ')
-            root_logger.info(f'')
-            root_logger.info(f'')
-        elif (EXECUTION_TIME_FOR_ADDING_DATA_LINEAGE_VAL_CHECK >= 60000):
-            root_logger.info(f'8. Execution time for ADDING data lineage (VAL CHECK):  {EXECUTION_TIME_FOR_ADDING_DATA_LINEAGE_VAL_CHECK} ms ({  round   (EXECUTION_TIME_FOR_ADDING_DATA_LINEAGE_VAL_CHECK  /   1000, 2)} secs)   ({  round ((EXECUTION_TIME_FOR_ADDING_DATA_LINEAGE_VAL_CHECK  /   1000) / 60,  4)   } min)      ')
-            root_logger.info(f'')
-            root_logger.info(f'')
-        else:
-            root_logger.info(f'8. Execution time for ADDING data lineage (VAL CHECK):  {EXECUTION_TIME_FOR_ADDING_DATA_LINEAGE_VAL_CHECK} ms ')
-            root_logger.info(f'')
-            root_logger.info(f'')
+# delete timming on excutuion
 
 
         root_logger.info(f'')

@@ -1,40 +1,40 @@
-2023-12-12 20:18:49,512  |  INFO  |    
-2023-12-12 20:18:49,513  |  INFO  |  ---------------------------------------------  
-2023-12-12 20:18:49,514  |  INFO  |  Beginning the source data extraction process...  
-2023-12-12 20:18:49,516  |  INFO  |  Successfully located 'flight_schedules.json'  
-2023-12-12 20:18:49,517  |  INFO  |  File type: '<class 'list'>'  
-2023-12-12 20:18:49,593  |  DEBUG  |    
-2023-12-12 20:18:49,595  |  INFO  |  =================================================================================  
-2023-12-12 20:18:49,595  |  INFO  |  CONNECTION SUCCESS: Managed to connect successfully to the dwdss database!!  
-2023-12-12 20:18:49,596  |  INFO  |  Connection details: user=postgres password=xxx dbname=dwdss host=localhost port=5432   
-2023-12-12 20:18:49,596  |  INFO  |  =================================================================================  
-2023-12-12 20:18:49,597  |  DEBUG  |    
-2023-12-12 20:18:49,602  |  DEBUG  |    
-2023-12-12 20:18:49,603  |  INFO  |  =================================================================================================  
-2023-12-12 20:18:49,603  |  INFO  |  SCHEMA CREATION SUCCESS: Managed to create main schema in dwdss   
-2023-12-12 20:18:49,604  |  INFO  |  Schema name in Postgres: main   
-2023-12-12 20:18:49,604  |  INFO  |  SQL Query for validation check:     SELECT schema_name from information_schema.schemata WHERE schema_name= 'main';
+2023-12-13 13:10:37,486  |  INFO  |    
+2023-12-13 13:10:37,486  |  INFO  |  ---------------------------------------------  
+2023-12-13 13:10:37,487  |  INFO  |  Beginning the source data extraction process...  
+2023-12-13 13:10:37,487  |  INFO  |  Successfully located 'flight_schedules.json'  
+2023-12-13 13:10:37,487  |  INFO  |  File type: '<class 'list'>'  
+2023-12-13 13:10:37,538  |  DEBUG  |    
+2023-12-13 13:10:37,538  |  INFO  |  =================================================================================  
+2023-12-13 13:10:37,540  |  INFO  |  CONNECTION SUCCESS: Managed to connect successfully to the dwdss database!!  
+2023-12-13 13:10:37,540  |  INFO  |  Connection details: user=postgres password=xxx dbname=dwdss host=localhost port=5432   
+2023-12-13 13:10:37,540  |  INFO  |  =================================================================================  
+2023-12-13 13:10:37,541  |  DEBUG  |    
+2023-12-13 13:10:37,543  |  DEBUG  |    
+2023-12-13 13:10:37,543  |  INFO  |  =================================================================================================  
+2023-12-13 13:10:37,544  |  INFO  |  SCHEMA CREATION SUCCESS: Managed to create main schema in dwdss   
+2023-12-13 13:10:37,544  |  INFO  |  Schema name in Postgres: main   
+2023-12-13 13:10:37,544  |  INFO  |  SQL Query for validation check:     SELECT schema_name from information_schema.schemata WHERE schema_name= 'main';
            
-2023-12-12 20:18:49,605  |  INFO  |  =================================================================================================  
-2023-12-12 20:18:49,605  |  DEBUG  |    
-2023-12-12 20:18:49,611  |  DEBUG  |    
-2023-12-12 20:18:49,612  |  ERROR  |  ==========================================================================================================================================================================  
-2023-12-12 20:18:49,613  |  ERROR  |  TABLE DELETION FAILURE: Unable to delete raw_flight_schedules_tbl. This table may have objects that depend on it (use DROP TABLE ... CASCADE to resolve) or it doesn't exist.   
-2023-12-12 20:18:49,616  |  ERROR  |  SQL Query for validation check:     SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'raw_flight_schedules_tbl' );
+2023-12-13 13:10:37,544  |  INFO  |  =================================================================================================  
+2023-12-13 13:10:37,545  |  DEBUG  |    
+2023-12-13 13:10:37,550  |  DEBUG  |    
+2023-12-13 13:10:37,550  |  ERROR  |  ==========================================================================================================================================================================  
+2023-12-13 13:10:37,550  |  ERROR  |  TABLE DELETION FAILURE: Unable to delete raw_flight_schedules_tbl. This table may have objects that depend on it (use DROP TABLE ... CASCADE to resolve) or it doesn't exist.   
+2023-12-13 13:10:37,551  |  ERROR  |  SQL Query for validation check:     SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'raw_flight_schedules_tbl' );
            
-2023-12-12 20:18:49,617  |  ERROR  |  ==========================================================================================================================================================================  
-2023-12-12 20:18:49,618  |  DEBUG  |    
-2023-12-12 20:18:49,647  |  DEBUG  |    
-2023-12-12 20:18:49,648  |  INFO  |  =============================================================================================================================================================================  
-2023-12-12 20:18:49,650  |  INFO  |  TABLE CREATION SUCCESS: Managed to create raw_flight_schedules_tbl table in dwdss.    
-2023-12-12 20:18:49,652  |  INFO  |  SQL Query for validation check:         SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'raw_flight_schedules_tbl' );
+2023-12-13 13:10:37,551  |  ERROR  |  ==========================================================================================================================================================================  
+2023-12-13 13:10:37,552  |  DEBUG  |    
+2023-12-13 13:10:37,557  |  DEBUG  |    
+2023-12-13 13:10:37,557  |  INFO  |  =============================================================================================================================================================================  
+2023-12-13 13:10:37,557  |  INFO  |  TABLE CREATION SUCCESS: Managed to create raw_flight_schedules_tbl table in dwdss.    
+2023-12-13 13:10:37,557  |  INFO  |  SQL Query for validation check:         SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'raw_flight_schedules_tbl' );
            
-2023-12-12 20:18:49,652  |  INFO  |  =============================================================================================================================================================================  
-2023-12-12 20:18:49,653  |  DEBUG  |    
-2023-12-12 20:18:49,687  |  DEBUG  |    
-2023-12-12 20:18:49,690  |  INFO  |  =============================================================================================================================================================================  
-2023-12-12 20:18:49,694  |  INFO  |  DATA LINEAGE FIELDS CREATION SUCCESS: Managed to create data lineage columns in main.raw_flight_schedules_tbl.    
-2023-12-12 20:18:49,695  |  INFO  |  SQL Query for validation check:          
+2023-12-13 13:10:37,558  |  INFO  |  =============================================================================================================================================================================  
+2023-12-13 13:10:37,558  |  DEBUG  |    
+2023-12-13 13:10:37,569  |  DEBUG  |    
+2023-12-13 13:10:37,569  |  INFO  |  =============================================================================================================================================================================  
+2023-12-13 13:10:37,570  |  INFO  |  DATA LINEAGE FIELDS CREATION SUCCESS: Managed to create data lineage columns in main.raw_flight_schedules_tbl.    
+2023-12-13 13:10:37,570  |  INFO  |  SQL Query for validation check:          
                                                                     SELECT * 
                                                                     FROM    information_schema.columns 
                                                                     WHERE   table_name      = 'raw_flight_schedules_tbl' 
@@ -46,14 +46,14 @@
                                                                         OR      column_name     = 'dwh_layer');
                                                                               
            
-2023-12-12 20:18:49,699  |  INFO  |  =============================================================================================================================================================================  
-2023-12-12 20:18:49,700  |  DEBUG  |    
-2023-12-12 20:18:49,702  |  INFO  |  Rows before SQL insert in Postgres: 0   
-2023-12-12 20:18:49,703  |  DEBUG  |    
-2023-12-12 20:18:49,708  |  INFO  |  invalid input syntax for type bigint: "2021-06-29"
-LINE 16: ...          '5cde8a50-aacf-4695-8986-184f06ab9d82', '2021-06-2...
+2023-12-13 13:10:37,572  |  INFO  |  =============================================================================================================================================================================  
+2023-12-13 13:10:37,572  |  DEBUG  |    
+2023-12-13 13:10:37,573  |  INFO  |  Rows before SQL insert in Postgres: 0   
+2023-12-13 13:10:37,573  |  DEBUG  |    
+2023-12-13 13:10:37,574  |  INFO  |  invalid input syntax for type bigint: "2021-06-28"
+LINE 16: ...          '1d7e0996-2cda-493e-93c4-8b1e1af2993f', '2021-06-2...
                                                               ^
   
-2023-12-12 20:18:49,709  |  DEBUG  |    
-2023-12-12 20:18:49,710  |  DEBUG  |  Cursor closed successfully.  
-2023-12-12 20:18:49,710  |  DEBUG  |  Session connected to Postgres database closed.  
+2023-12-13 13:10:37,575  |  DEBUG  |    
+2023-12-13 13:10:37,575  |  DEBUG  |  Cursor closed successfully.  
+2023-12-13 13:10:37,576  |  DEBUG  |  Session connected to Postgres database closed.  

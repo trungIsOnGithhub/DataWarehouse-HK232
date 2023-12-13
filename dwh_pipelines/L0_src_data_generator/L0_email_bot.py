@@ -9,10 +9,8 @@ from email import encoders
 from pathlib import Path
 from dotenv import load_dotenv
 
-
 # Load environment variables from .env 
 load_dotenv()
-
 
 
 # Set up constants 
@@ -23,7 +21,7 @@ SMTP_HOST_SERVER            =   "smtp.gmail.com"
 CURRENT_TIMESTAMP           =   datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 EMAIL_ADDRESS               =   os.getenv("SENDER")
 EMAIL_PASSWORD              =   os.getenv("EMAIL_PASSWORD")
-SENDER                      =   "Postgres Data Warehouse Program - SDW"
+SENDER                      =   "Data Warehouse Program - SDW"
 RECIPIENT                   =   os.getenv("RECIPIENT")
 
 
@@ -63,9 +61,6 @@ def attach_log_files_to_email(message, log_filepaths):
             encoders.encode_base64(log_attachment)
             log_attachment.add_header('Content-Disposition', f'attachment; filename="{os.path.basename(log_file)}"')
             message.attach(log_attachment)
-  
-
-  
 
 # ===================================== SETTING UP LOG FILE ATTACHMENTS ===================================== 
 

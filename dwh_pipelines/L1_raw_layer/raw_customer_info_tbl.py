@@ -1,4 +1,3 @@
-
 import os 
 import json
 import time 
@@ -111,7 +110,6 @@ COMPUTE_START_TIME  =   time.time()
 with open(customer_info_path, 'r') as customer_info_file:    
     try:
         customer_info_data = json.load(customer_info_file)
-        # customer_info_data = customer_info_data[0:100]
         root_logger.info(f"Successfully located '{src_file}'")
         root_logger.info(f"File type: '{type(customer_info_data)}'")
 
@@ -186,27 +184,20 @@ def load_customer_info_data_to_raw_table(postgres_connection):
         '''
 
         # Set up SQL statements for table creation and validation check 
-        create_raw_customer_info_tbl = f'''                CREATE TABLE IF NOT EXISTS {schema_name}.{table_name} (
-                                                                    customer_id                             UUID PRIMARY KEY,
+        create_raw_customer_info_tbl = f'''CREATE TABLE IF NOT EXISTS {schema_name}.{table_name} (
+                                                                    customer_id                               UUID PRIMARY KEY,
                                                                     address                                 varchar(255),
                                                                     age                                     NUMERIC(18, 6),
                                                                     city                                    varchar(255),
-                                                                    created_date                            bigint,
-                                                                    credit_card                             varchar(255),
-                                                                    credit_card_provider                    varchar(255),
-                                                                    customer_contact_preference_desc        varchar,
-                                                                    customer_contact_preference_id          UUID,
-                                                                    dob                                     bigint,
-                                                                    email                                   varchar(255),
-                                                                    first_name                              varchar(255),
-                                                                    last_name                               varchar(255),
-                                                                    last_updated_date                       bigint,
-                                                                    nationality                             varchar(255),
-                                                                    phone_number                            varchar(255),
-                                                                    place_of_birth                          varchar(255),
-                                                                    state                                   varchar(255),
-                                                                    zip                                     varchar(255)
-                                                                        );
+                                                                    created_date bigint,
+                                                                    dob bigint,
+                                                                    email varchar(255),
+                                                                    first_name varchar(255),
+                                                                    last_name varchar(255),
+                                                                    last_updated_date bigint,
+                                                                    phone_number varchar(255),
+                                                                    place_of_birth varchar(255)
+                                                            );
 
 
 
@@ -220,62 +211,38 @@ def load_customer_info_data_to_raw_table(postgres_connection):
 
 
         # Set up SQL statements for adding data lineage and validation check 
-        add_data_lineage_to_raw_customer_info_tbl  =   f'''        ALTER TABLE {schema_name}.{table_name}
-                                                                                ADD COLUMN  created_at                  TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
-                                                                                ADD COLUMN  updated_at                  TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
-                                                                                ADD COLUMN  source_system               VARCHAR(255),
-                                                                                ADD COLUMN  source_file                 VARCHAR(255),
-                                                                                ADD COLUMN  load_timestamp              TIMESTAMP,
-                                                                                ADD COLUMN  dwh_layer                   VARCHAR(255)
-                                                                        ;
-        '''
+        add_data_lineage_to_raw_customer_info_tbl  =   f''' ALTER TABLE {schema_name}.{table_name}
+                                                                                ADD COLUMN  created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+                                                                                ADD COLUMN  updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP;'''
 
-        check_if_data_lineage_fields_are_added_to_tbl   =   f'''        
-                                                                    SELECT * 
-                                                                    FROM    information_schema.columns 
-                                                                    WHERE   table_name      = '{table_name}' 
-                                                                        AND     (column_name    = 'created_at'
-                                                                        OR      column_name     = 'updated_at' 
-                                                                        OR      column_name     = 'source_system' 
-                                                                        OR      column_name     = 'source_file' 
-                                                                        OR      column_name     = 'load_timestamp' 
-                                                                        OR      column_name     = 'dwh_layer');
+        # check_if_data_lineage_fields_are_added_to_tbl   =   f'''        
+        #                                                             SELECT * 
+        #                                                             FROM    information_schema.columns 
+        #                                                             WHERE   table_name = '{table_name}' AND (column_name = 'created_at' OR column_name = 'updated_at');
                                                                               
-        '''
+        # '''
         
-        check_total_row_count_before_insert_statement   =   f'''   SELECT COUNT(*) FROM {schema_name}.{table_name}
-        '''
+        check_total_row_count_before_insert_statement   =   f'''SELECT COUNT(*) FROM {schema_name}.{table_name}'''
 
         # Set up SQL statements for records insert and validation check
-        insert_customer_info_data  =   f'''                       INSERT INTO {schema_name}.{table_name} (
+        insert_customer_info_data  =   f'''INSERT INTO {schema_name}.{table_name} (
                                                                                 address, 
                                                                                 age, 
                                                                                 city, 
-                                                                                created_date, 
-                                                                                credit_card, 
-                                                                                credit_card_provider, 
-                                                                                customer_contact_preference_desc,
-                                                                                customer_contact_preference_id, 
+                                                                                created_date,
                                                                                 customer_id, 
                                                                                 dob, 
                                                                                 email, 
                                                                                 first_name, 
                                                                                 last_name, 
-                                                                                last_updated_date, 
-                                                                                nationality,
+                                                                                last_updated_date,
                                                                                 phone_number, 
                                                                                 place_of_birth, 
-                                                                                state, 
-                                                                                zip, 
                                                                                 created_at, 
-                                                                                updated_at, 
-                                                                                source_system, 
-                                                                                source_file, 
-                                                                                load_timestamp, 
-                                                                                dwh_layer
+                                                                                updated_at
                                                                             )
                                                                             VALUES (
-                                                                                %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+                                                                                %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
                                                                             );
         '''
 
@@ -300,22 +267,10 @@ def load_customer_info_data_to_raw_table(postgres_connection):
 
         '''
 
-        
-
-
-
-
         # Create schema in Postgres
-        CREATING_SCHEMA_PROCESSING_START_TIME   =   time.time()
         cursor.execute(create_schema)
-        CREATING_SCHEMA_PROCESSING_END_TIME     =   time.time()
 
-
-        CREATING_SCHEMA_VAL_CHECK_START_TIME    =   time.time()
         cursor.execute(check_if_schema_exists)
-        CREATING_SCHEMA_VAL_CHECK_END_TIME      =   time.time()
-
-
 
         sql_result = cursor.fetchone()[0]
         if sql_result:
@@ -338,14 +293,9 @@ def load_customer_info_data_to_raw_table(postgres_connection):
         
 
         # Delete table if it exists in Postgres
-        DELETING_SCHEMA_PROCESSING_START_TIME   =   time.time()
         cursor.execute(delete_raw_customer_info_tbl_if_exists)
-        DELETING_SCHEMA_PROCESSING_END_TIME     =   time.time()
 
-        
-        DELETING_SCHEMA_VAL_CHECK_PROCESSING_START_TIME     =   time.time()
         cursor.execute(check_if_raw_customer_info_tbl_is_deleted)
-        DELETING_SCHEMA_VAL_CHECK_PROCESSING_END_TIME       =   time.time()
 
 
         sql_result = cursor.fetchone()[0]
@@ -367,14 +317,9 @@ def load_customer_info_data_to_raw_table(postgres_connection):
 
 
         # Create table if it doesn't exist in Postgres  
-        CREATING_TABLE_PROCESSING_START_TIME    =   time.time()
         cursor.execute(create_raw_customer_info_tbl)
-        CREATING_TABLE_PROCESSING_END_TIME  =   time.time()
 
-        
-        CREATING_TABLE_VAL_CHECK_PROCESSING_START_TIME  =   time.time()
         cursor.execute(check_if_raw_customer_info_tbl_exists)
-        CREATING_TABLE_VAL_CHECK_PROCESSING_END_TIME    =   time.time()
 
 
         sql_result = cursor.fetchone()[0]
@@ -396,71 +341,53 @@ def load_customer_info_data_to_raw_table(postgres_connection):
 
 
         # Add data lineage to table 
-        ADDING_DATA_LINEAGE_PROCESSING_START_TIME   =   time.time()
         cursor.execute(add_data_lineage_to_raw_customer_info_tbl)
-        ADDING_DATA_LINEAGE_PROCESSING_END_TIME     =   time.time()
 
+
+        # sql_results = cursor.fetchall()
         
-        ADDING_DATA_LINEAGE_VAL_CHECK_PROCESSING_START_TIME  =  time.time()
-        cursor.execute(check_if_data_lineage_fields_are_added_to_tbl)
-        ADDING_DATA_LINEAGE_VAL_CHECK_PROCESSING_END_TIME    =  time.time()
-
-
-        sql_results = cursor.fetchall()
-        
-        if len(sql_results) == 6:
-            root_logger.debug(f"")
-            root_logger.info(f"=============================================================================================================================================================================")
-            root_logger.info(f"DATA LINEAGE FIELDS CREATION SUCCESS: Managed to create data lineage columns in {schema_name}.{table_name}.  ")
-            root_logger.info(f"SQL Query for validation check:  {check_if_data_lineage_fields_are_added_to_tbl} ")
-            root_logger.info(f"=============================================================================================================================================================================")
-            root_logger.debug(f"")
-        else:
-            root_logger.debug(f"")
-            root_logger.error(f"==========================================================================================================================================================================")
-            root_logger.error(f"DATA LINEAGE FIELDS CREATION FAILURE: Unable to create data lineage columns in {schema_name}.{table_name}.... ")
-            root_logger.error(f"SQL Query for validation check:  {check_if_data_lineage_fields_are_added_to_tbl} ")
-            root_logger.error(f"==========================================================================================================================================================================")
-            root_logger.debug(f"")
+        # if len(sql_results) == 6:
+        #     root_logger.debug(f"")
+        #     root_logger.info(f"=============================================================================================================================================================================")
+        #     root_logger.info(f"DATA LINEAGE FIELDS CREATION SUCCESS: Managed to create data lineage columns in {schema_name}.{table_name}.  ")
+        #     root_logger.info(f"SQL Query for validation check:  {check_if_data_lineage_fields_are_added_to_tbl} ")
+        #     root_logger.info(f"=============================================================================================================================================================================")
+        #     root_logger.debug(f"")
+        # else:
+        #     root_logger.debug(f"")
+        #     root_logger.error(f"==========================================================================================================================================================================")
+        #     root_logger.error(f"DATA LINEAGE FIELDS CREATION FAILURE: Unable to create data lineage columns in {schema_name}.{table_name}.... ")
+        #     root_logger.error(f"SQL Query for validation check:  {check_if_data_lineage_fields_are_added_to_tbl} ")
+        #     root_logger.error(f"==========================================================================================================================================================================")
+        #     root_logger.debug(f"")
 
 
 
         # Add insert rows to table 
         ROW_INSERTION_PROCESSING_START_TIME     =   time.time()
-        cursor.execute(check_total_row_count_before_insert_statement)
-        sql_result = cursor.fetchone()[0]
-        root_logger.info(f"Rows before SQL insert in Postgres: {sql_result} ")
+        # cursor.execute(check_total_row_count_before_insert_statement)
+        # sql_result = cursor.fetchone()[0]
+        # root_logger.info(f"Rows before SQL insert in Postgres: {sql_result} ")
         root_logger.debug(f"")
 
 
         for customer_info in customer_info_data:
             values = (
-                customer_info['address'], 
+                customer_info['address'],
                 customer_info['age'], 
                 customer_info['city'], 
-                customer_info['created_date'], 
-                customer_info['credit_card'], 
-                customer_info['credit_card_provider'], 
-                json.dumps(customer_info['customer_contact_preference_desc']),
-                customer_info['customer_contact_preference_id'], 
+                customer_info['created_date'],
                 customer_info['customer_id'], 
                 customer_info['dob'], 
                 customer_info['email'], 
                 customer_info['first_name'], 
                 customer_info['last_name'], 
                 customer_info['last_updated_date'], 
-                customer_info['nationality'],
                 customer_info['phone_number'], 
-                customer_info['place_of_birth'], 
-                customer_info['state'], 
-                customer_info['zip'],
+                customer_info['place_of_birth'],
                 CURRENT_TIMESTAMP,
-                CURRENT_TIMESTAMP,
-                random.choice(source_system),
-                src_file,
-                CURRENT_TIMESTAMP,
-                'RAW'
-                )
+                CURRENT_TIMESTAMP
+            )
 
             cursor.execute(insert_customer_info_data, values)
 
@@ -497,25 +424,7 @@ def load_customer_info_data_to_raw_table(postgres_connection):
 
         # ======================================= SENSITIVE COLUMN IDENTIFICATION =======================================
 
-        note_1 = """IMPORTANT NOTE: Invest time in understanding the underlying data fields to avoid highlighting the incorrect fields or omitting fields containing confidential information.          """
-        note_2 = """      Involving the relevant stakeholders in the process of identifying sensitive data fields from the source data is a crucial step to protecting confidential information. """
-        note_3 = """      Neglecting this step could expose customers and the wider company to serious harm (e.g. cybersecurity hacks, data breaches, unauthorized access to sensitive data), so approach this task with the utmost care. """
-        
-        root_logger.warning(f'')
-        root_logger.warning(f'')
-        root_logger.warning('================================================')
-        root_logger.warning('           SENSITIVE COLUMN IDENTIFICATION              ')
-        root_logger.warning('================================================')
-        root_logger.warning(f'')
-        root_logger.error(f'{note_1}')
-        root_logger.error(f'')
-        root_logger.error(f'{note_2}')
-        root_logger.error(f'')
-        root_logger.error(f'{note_3}')
-        root_logger.warning(f'')
-        root_logger.warning(f'')
-        root_logger.warning(f'Now beginning the sensitive column identification stage ...')
-        root_logger.warning(f'')
+# drop sensitive col identification
         
 
         # Add a flag for confirming if sensitive data fields have been highlighted  
@@ -524,22 +433,13 @@ def load_customer_info_data_to_raw_table(postgres_connection):
                                         'age',
                                         'city',
                                         'created_date',
-                                        'credit_card',
-                                        'credit_card_provider',
-                                        'customer_contact_preference_desc',
-                                        'customer_contact_preference_id',
                                         'dob',
-                                        'email'  ,
+                                        'email',
                                         'first_name',
                                         'last_name',
                                         'last_updated_date',
-                                        'nationality',
                                         'phone_number',
-                                        'place_of_birth',
-                                        'state',
-                                        'zip'
-                            ]
-        
+                                        'place_of_birth']
         
 
         if len(sensitive_columns_selected) == 0:
@@ -634,269 +534,27 @@ def load_customer_info_data_to_raw_table(postgres_connection):
         
         
         # --------- B. Performance statistics (Python)
-        EXECUTION_TIME_FOR_CREATING_SCHEMA                   =   (CREATING_SCHEMA_PROCESSING_END_TIME                -       CREATING_SCHEMA_PROCESSING_START_TIME                   )   * 1000
-
-
-        EXECUTION_TIME_FOR_CREATING_SCHEMA_VAL_CHECK         =   (CREATING_SCHEMA_VAL_CHECK_END_TIME                 -       CREATING_SCHEMA_VAL_CHECK_START_TIME                    )   * 1000
-
-
-        EXECUTION_TIME_FOR_DROPPING_SCHEMA                   =   (DELETING_SCHEMA_PROCESSING_END_TIME                -       DELETING_SCHEMA_PROCESSING_START_TIME                   )   * 1000
-
-
-        EXECUTION_TIME_FOR_DROPPING_SCHEMA_VAL_CHECK         =   (DELETING_SCHEMA_VAL_CHECK_PROCESSING_END_TIME      -       DELETING_SCHEMA_VAL_CHECK_PROCESSING_START_TIME         )   * 1000
-
-
-        EXECUTION_TIME_FOR_CREATING_TABLE                    =   (CREATING_TABLE_PROCESSING_END_TIME                 -       CREATING_TABLE_PROCESSING_START_TIME                    )   * 1000
-
-
-        EXECUTION_TIME_FOR_CREATING_TABLE_VAL_CHECK          =   (CREATING_TABLE_VAL_CHECK_PROCESSING_END_TIME       -       CREATING_TABLE_VAL_CHECK_PROCESSING_START_TIME          )   * 1000
-
-
-        EXECUTION_TIME_FOR_ADDING_DATA_LINEAGE               =   (ADDING_DATA_LINEAGE_PROCESSING_END_TIME            -       ADDING_DATA_LINEAGE_PROCESSING_START_TIME               )   * 1000
-
-
-        EXECUTION_TIME_FOR_ADDING_DATA_LINEAGE_VAL_CHECK     =   (ADDING_DATA_LINEAGE_VAL_CHECK_PROCESSING_END_TIME  -       ADDING_DATA_LINEAGE_VAL_CHECK_PROCESSING_START_TIME     )   * 1000
-
-
-        EXECUTION_TIME_FOR_ROW_INSERTION                     =   (ROW_INSERTION_PROCESSING_END_TIME                  -       ROW_INSERTION_PROCESSING_START_TIME                     )   * 1000
-
-
-        EXECUTION_TIME_FOR_ROW_COUNT                         =   (ROW_COUNT_VAL_CHECK_PROCESSING_END_TIME            -       ROW_COUNT_VAL_CHECK_PROCESSING_START_TIME               )   * 1000
-
-
 
 
         # Display data profiling metrics
         
-        root_logger.info(f'')
-        root_logger.info(f'')
+# delete some null and validation profiling
         root_logger.info('================================================')
-        root_logger.info('              DATA PROFILING METRICS              ')
-        root_logger.info('================================================')
-        root_logger.info(f'')
-        root_logger.info(f'Now calculating table statistics...')
-        root_logger.info(f'')
-        root_logger.info(f'')
-        root_logger.info(f'Table name:                                  {table_name} ')
-        root_logger.info(f'Schema name:                                 {schema_name} ')
-        root_logger.info(f'Database name:                               {database} ')
-        root_logger.info(f'Data warehouse layer:                        {data_warehouse_layer} ')
-        root_logger.info(f'')
-        root_logger.info(f'')
-        root_logger.info(f'Number of rows in table:                     {total_rows_in_table} ')
-        root_logger.info(f'Number of columns in table:                  {total_columns_in_table} ')
-        root_logger.info(f'')
+        # root_logger.info(f'')
+        # root_logger.info(f'Now calculating performance statistics (from a Python standpoint)...')
+        # root_logger.info(f'')
+        # root_logger.info(f'')
 
 
-        if successful_rows_upload_count == total_rows_in_table:
-            root_logger.info(f'Successful records uploaded total :          {successful_rows_upload_count} / {total_rows_in_table}   ')
-            root_logger.info(f'Failed/Errored records uploaded total:       {failed_rows_upload_count} / {total_rows_in_table}       ')
-            root_logger.info(f'')
-            root_logger.info(f'Successful records uploaded % :              {(successful_rows_upload_count / total_rows_in_table) * 100}    ')
-            root_logger.info(f'Failed/Errored records uploaded %:           {(failed_rows_upload_count/total_rows_in_table) * 100}       ')
-            root_logger.info(f'')
-        else:
-            root_logger.warning(f'Successful records uploaded total :          {successful_rows_upload_count} / {total_rows_in_table}   ')
-            root_logger.warning(f'Failed/Errored records uploaded total:       {failed_rows_upload_count} / {total_rows_in_table}       ')
-            root_logger.warning(f'')
-            root_logger.warning(f'Successful records uploaded % :              {(successful_rows_upload_count / total_rows_in_table) * 100}    ')
-            root_logger.warning(f'Failed/Errored records uploaded %:           {(failed_rows_upload_count/total_rows_in_table) * 100}       ')
-            root_logger.warning(f'')
-
-
-        if total_unique_records_in_table == total_rows_in_table:
-            root_logger.info(f'Number of unique records:                    {total_unique_records_in_table} / {total_rows_in_table}')
-            root_logger.info(f'Number of duplicate records:                 {total_duplicate_records_in_table} / {total_rows_in_table}')
-            root_logger.info(f'')
-            root_logger.info(f'Unique records %:                            {(total_unique_records_in_table / total_rows_in_table) * 100} ')
-            root_logger.info(f'Duplicate records %:                         {(total_duplicate_records_in_table / total_rows_in_table)  * 100} ')
-            root_logger.info(f'')
-        
-        else:
-            root_logger.warning(f'Number of unique records:                    {total_unique_records_in_table} / {total_rows_in_table}')
-            root_logger.warning(f'Number of duplicate records:                 {total_duplicate_records_in_table} / {total_rows_in_table}')
-            root_logger.warning(f'')
-            root_logger.warning(f'Unique records %:                            {(total_unique_records_in_table / total_rows_in_table) * 100} ')
-            root_logger.warning(f'Duplicate records %:                         {(total_duplicate_records_in_table / total_rows_in_table)  * 100} ')
-            root_logger.warning(f'')
-        
-
-        for column_name in column_names:
-            cursor.execute(f'''
-                    SELECT COUNT(*)
-                    FROM {schema_name}.{table_name}
-                    WHERE {column_name} is NULL
-            ''')
-            sql_result = cursor.fetchone()[0]
-            total_null_values_in_table += sql_result
-            column_index += 1
-            if sql_result == 0:
-                root_logger.info(f'Column name: {column_name},  Column no: {column_index},  Number of NULL values: {sql_result} ')
-            else:
-                root_logger.warning(f'Column name: {column_name},  Column no: {column_index},  Number of NULL values: {sql_result} ')
-        
-
-
-
-        root_logger.info(f'')
-        root_logger.info('================================================')
-        root_logger.info(f'')
-        root_logger.info(f'Now calculating performance statistics (from a Python standpoint)...')
-        root_logger.info(f'')
-        root_logger.info(f'')
-
-
-        if (EXECUTION_TIME_FOR_CREATING_SCHEMA > 1000) and (EXECUTION_TIME_FOR_CREATING_SCHEMA < 60000):
-            root_logger.info(f'1. Execution time for CREATING schema: {EXECUTION_TIME_FOR_CREATING_SCHEMA} ms ({    round   (EXECUTION_TIME_FOR_CREATING_SCHEMA  /   1000, 2)   } secs) ')
-            root_logger.info(f'')
-            root_logger.info(f'')
-        elif (EXECUTION_TIME_FOR_CREATING_SCHEMA >= 60000):
-            root_logger.info(f'1. Execution time for CREATING schema: {EXECUTION_TIME_FOR_CREATING_SCHEMA} ms  ({    round   (EXECUTION_TIME_FOR_CREATING_SCHEMA  /   1000, 2)   } secs)  ({   round  ((EXECUTION_TIME_FOR_CREATING_SCHEMA  /   1000) / 60, 4)     } mins)   ')
-            root_logger.info(f'')
-            root_logger.info(f'')
-        else:
-            root_logger.info(f'1. Execution time for CREATING schema: {EXECUTION_TIME_FOR_CREATING_SCHEMA} ms ')
-            root_logger.info(f'')
-            root_logger.info(f'')
-
-
-
-        if (EXECUTION_TIME_FOR_CREATING_SCHEMA_VAL_CHECK > 1000) and (EXECUTION_TIME_FOR_CREATING_SCHEMA_VAL_CHECK < 60000):
-            root_logger.info(f'2. Execution time for CREATING schema (VAL CHECK): {EXECUTION_TIME_FOR_CREATING_SCHEMA_VAL_CHECK} ms ({  round   (EXECUTION_TIME_FOR_CREATING_SCHEMA_VAL_CHECK  /   1000, 2)} secs)      ')
-            root_logger.info(f'')
-            root_logger.info(f'')
-        elif (EXECUTION_TIME_FOR_CREATING_SCHEMA_VAL_CHECK >= 60000):
-            root_logger.info(f'2. Execution time for CREATING schema (VAL CHECK): {EXECUTION_TIME_FOR_CREATING_SCHEMA_VAL_CHECK} ms ({  round   (EXECUTION_TIME_FOR_CREATING_SCHEMA_VAL_CHECK  /   1000, 2)} secs)    ({  round ((EXECUTION_TIME_FOR_CREATING_SCHEMA_VAL_CHECK  /   1000) / 60,  4)   } min)      ')
-            root_logger.info(f'')
-            root_logger.info(f'')
-        else:
-            root_logger.info(f'2. Execution time for CREATING schema (VAL CHECK): {EXECUTION_TIME_FOR_CREATING_SCHEMA_VAL_CHECK} ms ')
-            root_logger.info(f'')
-            root_logger.info(f'')
-        
-
-        if (EXECUTION_TIME_FOR_DROPPING_SCHEMA > 1000) and (EXECUTION_TIME_FOR_DROPPING_SCHEMA < 60000):
-            root_logger.info(f'3. Execution time for DELETING schema:  {EXECUTION_TIME_FOR_DROPPING_SCHEMA} ms ({  round   (EXECUTION_TIME_FOR_DROPPING_SCHEMA  /   1000, 2)} secs)      ')
-            root_logger.info(f'')
-            root_logger.info(f'')
-        elif (EXECUTION_TIME_FOR_DROPPING_SCHEMA >= 60000):
-            root_logger.info(f'3. Execution time for DELETING schema:  {EXECUTION_TIME_FOR_DROPPING_SCHEMA} ms ({  round   (EXECUTION_TIME_FOR_DROPPING_SCHEMA  /   1000, 2)} secs)    ({  round ((EXECUTION_TIME_FOR_DROPPING_SCHEMA  /   1000) / 60,  4)   } min)      ')
-            root_logger.info(f'')
-            root_logger.info(f'')
-        else:
-            root_logger.info(f'3. Execution time for DELETING schema:  {EXECUTION_TIME_FOR_DROPPING_SCHEMA} ms ')
-            root_logger.info(f'')
-            root_logger.info(f'')
-
-
-
-        if (EXECUTION_TIME_FOR_DROPPING_SCHEMA_VAL_CHECK > 1000) and (EXECUTION_TIME_FOR_DROPPING_SCHEMA_VAL_CHECK < 60000):
-            root_logger.info(f'4. Execution time for DELETING schema (VAL CHECK):  {EXECUTION_TIME_FOR_DROPPING_SCHEMA_VAL_CHECK} ms ({  round   (EXECUTION_TIME_FOR_DROPPING_SCHEMA_VAL_CHECK  /   1000, 2)} secs)      ')
-            root_logger.info(f'')
-            root_logger.info(f'')
-        elif (EXECUTION_TIME_FOR_DROPPING_SCHEMA_VAL_CHECK >= 60000):
-            root_logger.info(f'4. Execution time for DELETING schema (VAL CHECK):  {EXECUTION_TIME_FOR_DROPPING_SCHEMA_VAL_CHECK} ms ({  round   (EXECUTION_TIME_FOR_DROPPING_SCHEMA_VAL_CHECK  /   1000, 2)} secs)    ({  round ((EXECUTION_TIME_FOR_DROPPING_SCHEMA_VAL_CHECK  /   1000) / 60,  4)   } min)      ')
-            root_logger.info(f'')
-            root_logger.info(f'')
-        else:
-            root_logger.info(f'4. Execution time for DELETING schema (VAL CHECK):  {EXECUTION_TIME_FOR_DROPPING_SCHEMA_VAL_CHECK} ms ')
-            root_logger.info(f'')
-            root_logger.info(f'')
+# delete some timming
 
         
 
-        if (EXECUTION_TIME_FOR_CREATING_TABLE > 1000) and (EXECUTION_TIME_FOR_CREATING_TABLE < 60000):
-            root_logger.info(f'5. Execution time for CREATING table:  {EXECUTION_TIME_FOR_CREATING_TABLE} ms ({  round   (EXECUTION_TIME_FOR_CREATING_TABLE  /   1000, 2)} secs)      ')
-            root_logger.info(f'')
-            root_logger.info(f'')
-        elif (EXECUTION_TIME_FOR_CREATING_TABLE >= 60000):
-            root_logger.info(f'5. Execution time for CREATING table:  {EXECUTION_TIME_FOR_CREATING_TABLE} ms ({  round   (EXECUTION_TIME_FOR_CREATING_TABLE  /   1000, 2)} secs)    ({  round ((EXECUTION_TIME_FOR_CREATING_TABLE  /   1000) / 60,  4)   } min)      ')
-            root_logger.info(f'')
-            root_logger.info(f'')
-        else:
-            root_logger.info(f'5. Execution time for CREATING table:  {EXECUTION_TIME_FOR_CREATING_TABLE} ms ')
-            root_logger.info(f'')
-            root_logger.info(f'')
+# delete timming on excutuion
 
 
 
-        if (EXECUTION_TIME_FOR_CREATING_TABLE_VAL_CHECK > 1000) and (EXECUTION_TIME_FOR_CREATING_TABLE_VAL_CHECK < 60000):
-            root_logger.info(f'6. Execution time for CREATING table (VAL CHECK):  {EXECUTION_TIME_FOR_CREATING_TABLE_VAL_CHECK} ms ({  round   (EXECUTION_TIME_FOR_CREATING_TABLE_VAL_CHECK  /   1000, 2)} secs)      ')
-            root_logger.info(f'')
-            root_logger.info(f'')
-        elif (EXECUTION_TIME_FOR_CREATING_TABLE_VAL_CHECK >= 60000):
-            root_logger.info(f'6. Execution time for CREATING table (VAL CHECK):  {EXECUTION_TIME_FOR_CREATING_TABLE_VAL_CHECK} ms ({  round   (EXECUTION_TIME_FOR_CREATING_TABLE_VAL_CHECK  /   1000, 2)} secs)  ({  round ((EXECUTION_TIME_FOR_CREATING_TABLE_VAL_CHECK  /   1000) / 60,  4)   } min)      ')
-            root_logger.info(f'')
-            root_logger.info(f'')
-        else:
-            root_logger.info(f'6. Execution time for CREATING table (VAL CHECK):  {EXECUTION_TIME_FOR_CREATING_TABLE_VAL_CHECK} ms ')
-            root_logger.info(f'')
-            root_logger.info(f'')
-
-
-
-        if (EXECUTION_TIME_FOR_ADDING_DATA_LINEAGE > 1000) and (EXECUTION_TIME_FOR_ADDING_DATA_LINEAGE < 60000):
-            root_logger.info(f'7. Execution time for ADDING data lineage:  {EXECUTION_TIME_FOR_ADDING_DATA_LINEAGE} ms ({  round   (EXECUTION_TIME_FOR_ADDING_DATA_LINEAGE  /   1000, 2)} secs)      ')
-            root_logger.info(f'')
-            root_logger.info(f'')
-        elif (EXECUTION_TIME_FOR_ADDING_DATA_LINEAGE >= 60000):
-            root_logger.info(f'7. Execution time for ADDING data lineage:  {EXECUTION_TIME_FOR_ADDING_DATA_LINEAGE} ms ({  round   (EXECUTION_TIME_FOR_ADDING_DATA_LINEAGE  /   1000, 2)} secs)  ({  round ((EXECUTION_TIME_FOR_ADDING_DATA_LINEAGE  /   1000) / 60,  4)   } min)      ')
-            root_logger.info(f'')
-            root_logger.info(f'')
-        else:
-            root_logger.info(f'7. Execution time for ADDING data lineage:  {EXECUTION_TIME_FOR_ADDING_DATA_LINEAGE} ms ')
-            root_logger.info(f'')
-            root_logger.info(f'')
-
-
-
-        if (EXECUTION_TIME_FOR_ADDING_DATA_LINEAGE_VAL_CHECK > 1000) and (EXECUTION_TIME_FOR_ADDING_DATA_LINEAGE_VAL_CHECK < 60000):
-            root_logger.info(f'8. Execution time for ADDING data lineage (VAL CHECK):  {EXECUTION_TIME_FOR_ADDING_DATA_LINEAGE_VAL_CHECK} ms ({  round   (EXECUTION_TIME_FOR_ADDING_DATA_LINEAGE_VAL_CHECK  /   1000, 2)} secs)      ')
-            root_logger.info(f'')
-            root_logger.info(f'')
-        elif (EXECUTION_TIME_FOR_ADDING_DATA_LINEAGE_VAL_CHECK >= 60000):
-            root_logger.info(f'8. Execution time for ADDING data lineage (VAL CHECK):  {EXECUTION_TIME_FOR_ADDING_DATA_LINEAGE_VAL_CHECK} ms ({  round   (EXECUTION_TIME_FOR_ADDING_DATA_LINEAGE_VAL_CHECK  /   1000, 2)} secs)   ({  round ((EXECUTION_TIME_FOR_ADDING_DATA_LINEAGE_VAL_CHECK  /   1000) / 60,  4)   } min)      ')
-            root_logger.info(f'')
-            root_logger.info(f'')
-        else:
-            root_logger.info(f'8. Execution time for ADDING data lineage (VAL CHECK):  {EXECUTION_TIME_FOR_ADDING_DATA_LINEAGE_VAL_CHECK} ms ')
-            root_logger.info(f'')
-            root_logger.info(f'')
-
-
-
-        if (EXECUTION_TIME_FOR_ROW_INSERTION > 1000) and (EXECUTION_TIME_FOR_ROW_INSERTION < 60000):
-            root_logger.info(f'9. Execution time for INSERTING rows to table:  {EXECUTION_TIME_FOR_ROW_INSERTION} ms ({  round   (EXECUTION_TIME_FOR_ROW_INSERTION  /   1000, 2)} secs)      ')
-            root_logger.info(f'')
-            root_logger.info(f'')
-        elif (EXECUTION_TIME_FOR_ROW_INSERTION >= 60000):
-            root_logger.info(f'9. Execution time for INSERTING rows to table:  {EXECUTION_TIME_FOR_ROW_INSERTION} ms ({  round   (EXECUTION_TIME_FOR_ROW_INSERTION  /   1000, 2)} secs)   ({  round ((EXECUTION_TIME_FOR_ROW_INSERTION  /   1000) / 60,  4)   } min)      ')
-            root_logger.info(f'')
-            root_logger.info(f'')
-        else:
-            root_logger.info(f'9. Execution time for INSERTING rows to table:  {EXECUTION_TIME_FOR_ROW_INSERTION} ms ')
-            root_logger.info(f'')
-            root_logger.info(f'')
-
-
-
-        if (EXECUTION_TIME_FOR_ROW_COUNT > 1000) and (EXECUTION_TIME_FOR_ROW_COUNT < 60000):
-            root_logger.info(f'10. Execution time for COUNTING uploaded rows to table:  {EXECUTION_TIME_FOR_ROW_COUNT} ms ({  round   (EXECUTION_TIME_FOR_ROW_COUNT  /   1000, 2)} secs)      ')
-            root_logger.info(f'')
-            root_logger.info(f'')
-        elif (EXECUTION_TIME_FOR_ROW_COUNT >= 60000):
-            root_logger.info(f'10. Execution time for COUNTING uploaded rows to table:  {EXECUTION_TIME_FOR_ROW_COUNT} ms ({  round   (EXECUTION_TIME_FOR_ROW_COUNT  /   1000, 2)} secs)    ({  round ((EXECUTION_TIME_FOR_ROW_COUNT  /   1000) / 60,  4)   } min)      ')
-            root_logger.info(f'')
-            root_logger.info(f'')
-        else:
-            root_logger.info(f'10. Execution time for COUNTING uploaded rows to table:  {EXECUTION_TIME_FOR_ROW_COUNT} ms ')
-            root_logger.info(f'')
-            root_logger.info(f'')
-
-
-
-        root_logger.info(f'')
-        root_logger.info('================================================')
+# delete more timming on excutuion
 
 
         # Add conditional statements for data profile metrics 
