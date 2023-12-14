@@ -118,7 +118,7 @@ def send_logs_via_email_for_L0():
 
 @task
 def load_data_to_raw_accommodation_bookings_tbl():
-    from dwh_pipelines.L1_raw_layer.raw_accommodation_bookings_tbl      import  load_accommodation_bookings_data_to_raw_table
+    from dwh_pipelines.L1_raw_layer._accommodation_bookings_tbl      import  load_accommodation_bookings_data_to_raw_table
     module_name = 'dwh_pipelines.L1_raw_layer.raw_accommodation_bookings_tbl'
     imported_function = 'load_accommodation_bookings_data_to_raw_table'
     root_logger.info("")
@@ -132,7 +132,7 @@ def load_data_to_raw_accommodation_bookings_tbl():
 
 @task
 def load_data_to_raw_customer_feedbacks_tbl():
-    from dwh_pipelines.L1_raw_layer.raw_customer_feedbacks_tbl          import  load_customer_feedbacks_data_to_raw_table
+    from dwh_pipelines.L1_raw_layer._customer_feedbacks_tbl          import  load_customer_feedbacks_data_to_raw_table
     module_name = 'dwh_pipelines.L1_raw_layer.raw_customer_feedbacks_tbl'
     imported_function = 'load_customer_feedbacks_data_to_raw_table'
     root_logger.info("")
@@ -146,7 +146,7 @@ def load_data_to_raw_customer_feedbacks_tbl():
 
 @task
 def load_data_to_raw_customer_info_tbl():
-    from dwh_pipelines.L1_raw_layer.raw_customer_info_tbl               import  load_customer_info_data_to_raw_table
+    from dwh_pipelines.L1_raw_layer.raw_Discount_Coupon_tbl               import  load_customer_info_data_to_raw_table
     module_name = 'dwh_pipelines.L1_raw_layer.raw_customer_info_tbl'
     imported_function = 'load_customer_info_data_to_raw_table'
     root_logger.info("")
@@ -160,7 +160,7 @@ def load_data_to_raw_customer_info_tbl():
 
 @task
 def load_data_to_raw_flight_bookings_tbl():
-    from dwh_pipelines.L1_raw_layer.raw_flight_bookings_tbl             import  load_flight_bookings_data_to_raw_table
+    from dwh_pipelines.L1_raw_layer._flight_bookings_tbl             import  load_flight_bookings_data_to_raw_table
     module_name = 'dwh_pipelines.L1_raw_layer.raw_flight_bookings_tbl'
     imported_function = 'load_flight_bookings_data_to_raw_table'
     root_logger.info("")
@@ -174,7 +174,7 @@ def load_data_to_raw_flight_bookings_tbl():
 
 @task
 def load_data_to_raw_flight_destinations_tbl():
-    from dwh_pipelines.L1_raw_layer.raw_flight_destinations_tbl         import  load_flight_destinations_data_to_raw_table
+    from dwh_pipelines.L1_raw_layer.raw_Tax_amount_tbl         import  load_flight_destinations_data_to_raw_table
     module_name = 'dwh_pipelines.L1_raw_layer.raw_flight_destinations_tbl'
     imported_function = 'load_flight_destinations_data_to_raw_table'
     root_logger.info("")
@@ -188,7 +188,7 @@ def load_data_to_raw_flight_destinations_tbl():
 
 @task
 def load_data_to_raw_flight_promotion_deals_tbl():
-    from dwh_pipelines.L1_raw_layer.raw_flight_promotion_deals_tbl      import  load_flight_promotion_deals_data_to_raw_table
+    from dwh_pipelines.L1_raw_layer._flight_promotion_deals_tbl      import  load_flight_promotion_deals_data_to_raw_table
     module_name = 'dwh_pipelines.L1_raw_layer.raw_flight_promotion_deals_tbl'
     imported_function = 'load_flight_promotion_deals_data_to_raw_table'
     root_logger.info("")
@@ -202,7 +202,7 @@ def load_data_to_raw_flight_promotion_deals_tbl():
 
 @task
 def load_data_to_raw_flight_schedules_tbl():
-    from dwh_pipelines.L1_raw_layer.raw_flight_schedules_tbl            import  load_flight_schedules_data_to_raw_table
+    from dwh_pipelines.L1_raw_layer._flight_schedules_tbl            import  load_flight_schedules_data_to_raw_table
     module_name = 'dwh_pipelines.L1_raw_layer.raw_flight_schedules_tbl'
     imported_function = 'load_flight_schedules_data_to_raw_table'
     root_logger.info("")
@@ -216,7 +216,7 @@ def load_data_to_raw_flight_schedules_tbl():
 
 @task
 def load_data_to_raw_flight_ticket_sales_tbl():
-    from dwh_pipelines.L1_raw_layer.raw_flight_ticket_sales_tbl         import  load_flight_ticket_sales_data_to_raw_table
+    from dwh_pipelines.L1_raw_layer._flight_ticket_sales_tbl         import  load_flight_ticket_sales_data_to_raw_table
     module_name = 'dwh_pipelines.L1_raw_layer.raw_flight_ticket_sales_tbl'
     imported_function = 'load_flight_ticket_sales_data_to_raw_table'
     root_logger.info("")
@@ -230,7 +230,7 @@ def load_data_to_raw_flight_ticket_sales_tbl():
 
 @task
 def load_data_to_raw_sales_agents_tbl():
-    from dwh_pipelines.L1_raw_layer.raw_sales_agents_tbl                import  load_sales_agents_data_to_raw_table
+    from dwh_pipelines.L1_raw_layer._sales_agents_tbl                import  load_sales_agents_data_to_raw_table
     module_name = 'dwh_pipelines.L1_raw_layer.raw_sales_agents_tbl'
     imported_function = 'load_sales_agents_data_to_raw_table'
     root_logger.info("")
@@ -244,7 +244,7 @@ def load_data_to_raw_sales_agents_tbl():
 
 @task
 def load_data_to_raw_ticket_prices_tbl():
-    from dwh_pipelines.L1_raw_layer.raw_ticket_prices_tbl               import  load_ticket_prices_data_to_raw_table
+    from dwh_pipelines.L1_raw_layer._ticket_prices_tbl               import  load_ticket_prices_data_to_raw_table
     module_name = 'dwh_pipelines.L1_raw_layer.raw_ticket_prices_tbl'
     imported_function = 'load_ticket_prices_data_to_raw_table'
     root_logger.info("")

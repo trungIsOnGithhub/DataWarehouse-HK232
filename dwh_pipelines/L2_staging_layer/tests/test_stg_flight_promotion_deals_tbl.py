@@ -20,7 +20,7 @@ if USING_AIRFLOW:
 
     # Use the airflow config file from the airflow container 
     config.read('/usr/local/airflow/dags/etl_to_postgres/airflow_config.ini')
-    DATASETS_LOCATION_PATH = config['postgres_airflow_config']['DATASET_SOURCE_PATH'] 
+    JSONDATA = config['postgres_airflow_config']['DATASET_SOURCE_PATH'] 
 
     host                    =   config['postgres_airflow_config']['HOST']
     port                    =   config['postgres_airflow_config']['PORT']
@@ -37,13 +37,13 @@ else:
     # Use the local config file from the local machine 
     path    =   os.path.abspath('dwh_pipelines/local_config.ini')
     config.read(path)
-    DATASETS_LOCATION_PATH     =   config['travel_data_filepath']['DATASETS_LOCATION_PATH']
+    JSONDATA     =   config['data_filepath']['JSONDATA']
 
-    host                    =   config['travel_data_filepath']['HOST']
-    port                    =   config['travel_data_filepath']['PORT']
-    database                =   config['travel_data_filepath']['STAGING_DB']
-    username                =   config['travel_data_filepath']['USERNAME']
-    password                =   config['travel_data_filepath']['PASSWORD']
+    host                    =   config['data_filepath']['HOST']
+    port                    =   config['data_filepath']['PORT']
+    database                =   config['data_filepath']['STAGING_DB']
+    username                =   config['data_filepath']['USERNAME']
+    password                =   config['data_filepath']['PASSWORD']
 
     postgres_connection     =   None
     cursor                  =   None

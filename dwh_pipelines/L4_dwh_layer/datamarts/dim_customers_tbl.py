@@ -61,13 +61,13 @@ path    =   os.path.abspath('dwh_pipelines/local_config.ini')
 
 config.read(path)
 
-DATASETS_LOCATION_PATH = config['travel_data_filepath']['DATASETS_LOCATION_PATH']
+JSONDATA = config['data_filepath']['JSONDATA']
 
-host = config['travel_data_filepath']['HOST']
-port =  config['travel_data_filepath']['PORT']
-database = config['travel_data_filepath']['DWH_DB']
-username = config['travel_data_filepath']['USERNAME']
-password = config['travel_data_filepath']['PASSWORD']
+host = config['data_filepath']['HOST']
+port =  config['data_filepath']['PORT']
+database = config['data_filepath']['DWH_DB']
+username = config['data_filepath']['USERNAME']
+password = config['data_filepath']['PASSWORD']
 
 postgres_connection = None
 cursor = None
@@ -92,9 +92,9 @@ def load_data_to_stg_customers_table(postgres_connection):
     try:
         CURRENT_TIMESTAMP = datetime.now()
         fdw_extension = 'postgres_fdw'
-        foreign_server = config['travel_data_filepath']['HOST']
+        foreign_server = config['data_filepath']['HOST']
         fdw_user = username
-        src_db_name = config['travel_data_filepath']['STAGING_DB']
+        src_db_name = config['data_filepath']['STAGING_DB']
         src_schema_name = 'dev'
         active_schema_name = 'main'
         active_db_name = database

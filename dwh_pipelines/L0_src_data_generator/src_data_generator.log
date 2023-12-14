@@ -1043,3 +1043,21 @@
 2023-12-13 13:29:47,427  |  DEBUG  |    
 2023-12-13 13:29:47,428  |  DEBUG  |  Terminating data generation job...  
 2023-12-13 13:29:47,428  |  DEBUG  |  Session ended.  
+2023-12-14 10:25:29,899  |  DEBUG  |    
+2023-12-14 10:25:29,899  |  DEBUG  |    
+2023-12-14 10:25:29,899  |  DEBUG  |  Now beginning session for generating data...  
+2023-12-14 10:25:29,977  |  INFO  |  ----------  
+2023-12-14 10:25:29,977  |  INFO  |  ============================ CUSTOMER INFORMATION ============================  
+2023-12-14 10:25:29,977  |  INFO  |                              customer_id first_name  ... created_date last_updated_date
+0  2d36442e-dca6-4408-9538-4d7cd4e5b164    Kirsten  ...   2022-12-06        2022-12-12
+1  e0604ff2-30f3-4578-8106-092405b9fc22     Joanne  ...   2022-12-06        2022-12-16
+2  9cec335d-c7d2-4e06-b3c6-0449446d2f38    Richard  ...   2022-12-06        2023-01-02
+3  c6b66506-48eb-487e-b805-605491709901       Erik  ...   2022-12-06        2023-01-02
+4  dde2daf6-eba1-40cf-bd23-5450e039b370  Stephanie  ...   2022-12-06        2022-12-18
+5  3246dc63-4eff-4b3d-86f9-1fc93a48cd62       Ryan  ...   2022-12-06        2022-12-27
+6  0c084662-32a1-4af1-b389-401cd1c2a6a2    Michael  ...   2022-12-06        2022-12-10
+7  edc9384d-4b09-4669-8154-c8544a6c93f3      Brian  ...   2022-12-06        2022-12-18
+8  ddec6128-3cf4-4864-b934-f83c80c3182d      Brian  ...   2022-12-06        2022-12-14
+9  a27a2b72-7c31-4c23-ad84-07bf259d8bfa    Melissa  ...   2022-12-06        2022-12-11
+
+[10 rows x 12 columns]  
