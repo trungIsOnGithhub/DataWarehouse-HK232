@@ -1,3 +1,0 @@
-Ngoai function naming, _naming_, src_table_name va table_name
-Phan khac nhau chinh se nam o
---> Ctrl F --> tim 2 cai cuoi "# Set up SQL statements" for o cac file _dim, _fact

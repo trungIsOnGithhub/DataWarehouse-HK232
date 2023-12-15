@@ -1,106 +1,106 @@
-2023-12-15 14:52:25,245  |  INFO  |    
-2023-12-15 14:52:25,247  |  INFO  |  ---------------------------------------------  
-2023-12-15 14:52:25,248  |  INFO  |  Beginning the source data extraction process...  
-2023-12-15 14:52:25,248  |  INFO  |  File type: '<class 'list'>'  
-2023-12-15 14:52:25,248  |  INFO  |  [{'Product_Category': 'Nest-USA', 'GST': 0.1}, {'Product_Category': 'Office', 'GST': 0.1}, {'Product_Category': 'Apparel', 'GST': 0.18}, {'Product_Category': 'Bags', 'GST': 0.18}, {'Product_Category': 'Drinkware', 'GST': 0.18}, {'Product_Category': 'Lifestyle', 'GST': 0.18}, {'Product_Category': 'Notebooks & Journals', 'GST': 0.05}, {'Product_Category': 'Headgear', 'GST': 0.05}, {'Product_Category': 'Waze', 'GST': 0.18}, {'Product_Category': 'Fun', 'GST': 0.18}, {'Product_Category': 'Nest-Canada', 'GST': 0.1}, {'Product_Category': 'Backpacks', 'GST': 0.1}, {'Product_Category': 'Google', 'GST': 0.1}, {'Product_Category': 'Bottles', 'GST': 0.05}, {'Product_Category': 'Gift Cards', 'GST': 0.05}, {'Product_Category': 'More Bags', 'GST': 0.18}, {'Product_Category': 'Housewares', 'GST': 0.12}, {'Product_Category': 'Android', 'GST': 0.1}, {'Product_Category': 'Accessories', 'GST': 0.1}, {'Product_Category': 'Nest', 'GST': 0.05}]  
-2023-12-15 14:52:25,299  |  DEBUG  |    
-2023-12-15 14:52:25,299  |  INFO  |  =================================================================================  
-2023-12-15 14:52:25,299  |  INFO  |  CONNECTION SUCCESS: Managed to connect successfully to the initial_dw database!!  
-2023-12-15 14:52:25,300  |  INFO  |  Connection details: user=postgres password=xxx dbname=initial_dw host=localhost port=5432   
-2023-12-15 14:52:25,300  |  INFO  |  =================================================================================  
-2023-12-15 14:52:25,301  |  DEBUG  |    
-2023-12-15 14:52:25,303  |  DEBUG  |    
-2023-12-15 14:52:25,303  |  INFO  |  =================================================================================================  
-2023-12-15 14:52:25,303  |  INFO  |  SCHEMA CREATION SUCCESS: Managed to create main schema in initial_dw   
-2023-12-15 14:52:25,303  |  INFO  |  Schema name in Postgres: main   
-2023-12-15 14:52:25,303  |  INFO  |  SQL Query for validation check:  SELECT schema_name from information_schema.schemata WHERE schema_name= 'main';   
-2023-12-15 14:52:25,304  |  INFO  |  =================================================================================================  
-2023-12-15 14:52:25,304  |  DEBUG  |    
-2023-12-15 14:52:25,306  |  DEBUG  |    
-2023-12-15 14:52:25,306  |  ERROR  |  ==========================================================================================================================================================================  
-2023-12-15 14:52:25,307  |  ERROR  |  TABLE DELETION FAILURE: Unable to delete stg_tax_amount. This table may have objects that depend on it (use DROP TABLE ... CASCADE to resolve) or it doesn't exist.   
-2023-12-15 14:52:25,307  |  ERROR  |  SQL Query for validation check:  SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'stg_tax_amount' );   
-2023-12-15 14:52:25,307  |  ERROR  |  ==========================================================================================================================================================================  
-2023-12-15 14:52:25,307  |  DEBUG  |    
-2023-12-15 14:52:25,312  |  DEBUG  |    
-2023-12-15 14:52:25,312  |  INFO  |  =============================================================================================================================================================================  
-2023-12-15 14:52:25,312  |  INFO  |  TABLE CREATION SUCCESS: Managed to create stg_tax_amount table in initial_dw.    
-2023-12-15 14:52:25,313  |  INFO  |  SQL Query for validation check:  SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'stg_tax_amount' );   
-2023-12-15 14:52:25,313  |  INFO  |  =============================================================================================================================================================================  
-2023-12-15 14:52:25,313  |  DEBUG  |    
-2023-12-15 14:52:25,316  |  INFO  |  Rows before SQL insert in Postgres: 0   
-2023-12-15 14:52:25,316  |  DEBUG  |    
-2023-12-15 14:52:25,318  |  DEBUG  |  ---------------------------------  
-2023-12-15 14:52:25,318  |  INFO  |  INSERT SUCCESS record no 1   
-2023-12-15 14:52:25,318  |  DEBUG  |  ---------------------------------  
-2023-12-15 14:52:25,319  |  DEBUG  |  ---------------------------------  
-2023-12-15 14:52:25,319  |  INFO  |  INSERT SUCCESS record no 2   
-2023-12-15 14:52:25,319  |  DEBUG  |  ---------------------------------  
-2023-12-15 14:52:25,320  |  DEBUG  |  ---------------------------------  
-2023-12-15 14:52:25,320  |  INFO  |  INSERT SUCCESS record no 3   
-2023-12-15 14:52:25,320  |  DEBUG  |  ---------------------------------  
-2023-12-15 14:52:25,320  |  DEBUG  |  ---------------------------------  
-2023-12-15 14:52:25,321  |  INFO  |  INSERT SUCCESS record no 4   
-2023-12-15 14:52:25,321  |  DEBUG  |  ---------------------------------  
-2023-12-15 14:52:25,321  |  DEBUG  |  ---------------------------------  
-2023-12-15 14:52:25,321  |  INFO  |  INSERT SUCCESS record no 5   
-2023-12-15 14:52:25,322  |  DEBUG  |  ---------------------------------  
-2023-12-15 14:52:25,322  |  DEBUG  |  ---------------------------------  
-2023-12-15 14:52:25,322  |  INFO  |  INSERT SUCCESS record no 6   
-2023-12-15 14:52:25,322  |  DEBUG  |  ---------------------------------  
-2023-12-15 14:52:25,323  |  DEBUG  |  ---------------------------------  
-2023-12-15 14:52:25,323  |  INFO  |  INSERT SUCCESS record no 7   
-2023-12-15 14:52:25,323  |  DEBUG  |  ---------------------------------  
-2023-12-15 14:52:25,324  |  DEBUG  |  ---------------------------------  
-2023-12-15 14:52:25,324  |  INFO  |  INSERT SUCCESS record no 8   
-2023-12-15 14:52:25,324  |  DEBUG  |  ---------------------------------  
-2023-12-15 14:52:25,325  |  DEBUG  |  ---------------------------------  
-2023-12-15 14:52:25,325  |  INFO  |  INSERT SUCCESS record no 9   
-2023-12-15 14:52:25,325  |  DEBUG  |  ---------------------------------  
-2023-12-15 14:52:25,326  |  DEBUG  |  ---------------------------------  
-2023-12-15 14:52:25,326  |  INFO  |  INSERT SUCCESS record no 10   
-2023-12-15 14:52:25,326  |  DEBUG  |  ---------------------------------  
-2023-12-15 14:52:25,326  |  DEBUG  |  ---------------------------------  
-2023-12-15 14:52:25,327  |  INFO  |  INSERT SUCCESS record no 11   
-2023-12-15 14:52:25,327  |  DEBUG  |  ---------------------------------  
-2023-12-15 14:52:25,327  |  DEBUG  |  ---------------------------------  
-2023-12-15 14:52:25,327  |  INFO  |  INSERT SUCCESS record no 12   
-2023-12-15 14:52:25,328  |  DEBUG  |  ---------------------------------  
-2023-12-15 14:52:25,328  |  DEBUG  |  ---------------------------------  
-2023-12-15 14:52:25,328  |  INFO  |  INSERT SUCCESS record no 13   
-2023-12-15 14:52:25,328  |  DEBUG  |  ---------------------------------  
-2023-12-15 14:52:25,329  |  DEBUG  |  ---------------------------------  
-2023-12-15 14:52:25,329  |  INFO  |  INSERT SUCCESS record no 14   
-2023-12-15 14:52:25,330  |  DEBUG  |  ---------------------------------  
-2023-12-15 14:52:25,330  |  DEBUG  |  ---------------------------------  
-2023-12-15 14:52:25,330  |  INFO  |  INSERT SUCCESS record no 15   
-2023-12-15 14:52:25,331  |  DEBUG  |  ---------------------------------  
-2023-12-15 14:52:25,331  |  DEBUG  |  ---------------------------------  
-2023-12-15 14:52:25,331  |  INFO  |  INSERT SUCCESS record no 16   
-2023-12-15 14:52:25,331  |  DEBUG  |  ---------------------------------  
-2023-12-15 14:52:25,332  |  DEBUG  |  ---------------------------------  
-2023-12-15 14:52:25,332  |  INFO  |  INSERT SUCCESS record no 17   
-2023-12-15 14:52:25,333  |  DEBUG  |  ---------------------------------  
-2023-12-15 14:52:25,334  |  DEBUG  |  ---------------------------------  
-2023-12-15 14:52:25,334  |  INFO  |  INSERT SUCCESS record no 18   
-2023-12-15 14:52:25,334  |  DEBUG  |  ---------------------------------  
-2023-12-15 14:52:25,335  |  DEBUG  |  ---------------------------------  
-2023-12-15 14:52:25,335  |  INFO  |  INSERT SUCCESS record no 19   
-2023-12-15 14:52:25,336  |  DEBUG  |  ---------------------------------  
-2023-12-15 14:52:25,336  |  DEBUG  |  ---------------------------------  
-2023-12-15 14:52:25,336  |  INFO  |  INSERT SUCCESS record no 20   
-2023-12-15 14:52:25,336  |  DEBUG  |  ---------------------------------  
-2023-12-15 14:52:25,337  |  INFO  |  Rows after SQL insert in Postgres: 20   
-2023-12-15 14:52:25,337  |  DEBUG  |    
-2023-12-15 14:52:25,337  |  INFO  |  Sensitve columns: ['Product_Category', 'GST']  
-2023-12-15 14:52:25,346  |  INFO  |  ================================================  
-2023-12-15 14:52:25,346  |  INFO  |  Total columns in table after insertion: 6  
-2023-12-15 14:52:25,346  |  INFO  |  Columns name list in table after insertion: ['tax_amount_id', 'product_category', 'gst', 'created_at', 'updated_at', 'source']  
-2023-12-15 14:52:25,347  |  DEBUG  |    
-2023-12-15 14:52:25,347  |  INFO  |  DATA VALIDATION SUCCESS: All general DQ checks passed!   
-2023-12-15 14:52:25,347  |  DEBUG  |    
-2023-12-15 14:52:25,347  |  INFO  |  Now saving changes made by SQL statements to Postgres DB....  
-2023-12-15 14:52:25,347  |  INFO  |  Saved successfully, now terminating cursor and current session....  
-2023-12-15 14:52:25,348  |  DEBUG  |    
-2023-12-15 14:52:25,348  |  DEBUG  |  Cursor closed successfully.  
-2023-12-15 14:52:25,348  |  DEBUG  |  Session connected to Postgres database closed.  
+2023-12-15 20:51:57,428  |  INFO  |    
+2023-12-15 20:51:57,429  |  INFO  |  ---------------------------------------------  
+2023-12-15 20:51:57,429  |  INFO  |  Beginning the source data extraction process...  
+2023-12-15 20:51:57,430  |  INFO  |  File type: '<class 'list'>'  
+2023-12-15 20:51:57,430  |  INFO  |  [{'Product_Category': 'Nest-USA', 'GST': 0.1}, {'Product_Category': 'Office', 'GST': 0.1}, {'Product_Category': 'Apparel', 'GST': 0.18}, {'Product_Category': 'Bags', 'GST': 0.18}, {'Product_Category': 'Drinkware', 'GST': 0.18}, {'Product_Category': 'Lifestyle', 'GST': 0.18}, {'Product_Category': 'Notebooks & Journals', 'GST': 0.05}, {'Product_Category': 'Headgear', 'GST': 0.05}, {'Product_Category': 'Waze', 'GST': 0.18}, {'Product_Category': 'Fun', 'GST': 0.18}, {'Product_Category': 'Nest-Canada', 'GST': 0.1}, {'Product_Category': 'Backpacks', 'GST': 0.1}, {'Product_Category': 'Google', 'GST': 0.1}, {'Product_Category': 'Bottles', 'GST': 0.05}, {'Product_Category': 'Gift Cards', 'GST': 0.05}, {'Product_Category': 'More Bags', 'GST': 0.18}, {'Product_Category': 'Housewares', 'GST': 0.12}, {'Product_Category': 'Android', 'GST': 0.1}, {'Product_Category': 'Accessories', 'GST': 0.1}, {'Product_Category': 'Nest', 'GST': 0.05}]  
+2023-12-15 20:51:57,476  |  DEBUG  |    
+2023-12-15 20:51:57,476  |  INFO  |  =================================================================================  
+2023-12-15 20:51:57,476  |  INFO  |  CONNECTION SUCCESS: Managed to connect successfully to the initial_dw database!!  
+2023-12-15 20:51:57,476  |  INFO  |  Connection details: user=postgres password=xxx dbname=initial_dw host=localhost port=5432   
+2023-12-15 20:51:57,477  |  INFO  |  =================================================================================  
+2023-12-15 20:51:57,477  |  DEBUG  |    
+2023-12-15 20:51:57,481  |  DEBUG  |    
+2023-12-15 20:51:57,481  |  INFO  |  =================================================================================================  
+2023-12-15 20:51:57,482  |  INFO  |  SCHEMA CREATION SUCCESS: Managed to create main schema in initial_dw   
+2023-12-15 20:51:57,482  |  INFO  |  Schema name in Postgres: main   
+2023-12-15 20:51:57,483  |  INFO  |  SQL Query for validation check:  SELECT schema_name from information_schema.schemata WHERE schema_name= 'main';   
+2023-12-15 20:51:57,483  |  INFO  |  =================================================================================================  
+2023-12-15 20:51:57,484  |  DEBUG  |    
+2023-12-15 20:51:57,496  |  DEBUG  |    
+2023-12-15 20:51:57,496  |  ERROR  |  ==========================================================================================================================================================================  
+2023-12-15 20:51:57,496  |  ERROR  |  TABLE DELETION FAILURE: Unable to delete stg_tax_amount. This table may have objects that depend on it (use DROP TABLE ... CASCADE to resolve) or it doesn't exist.   
+2023-12-15 20:51:57,497  |  ERROR  |  SQL Query for validation check:  SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'stg_tax_amount' );   
+2023-12-15 20:51:57,497  |  ERROR  |  ==========================================================================================================================================================================  
+2023-12-15 20:51:57,497  |  DEBUG  |    
+2023-12-15 20:51:57,509  |  DEBUG  |    
+2023-12-15 20:51:57,509  |  INFO  |  =============================================================================================================================================================================  
+2023-12-15 20:51:57,510  |  INFO  |  TABLE CREATION SUCCESS: Managed to create stg_tax_amount table in initial_dw.    
+2023-12-15 20:51:57,510  |  INFO  |  SQL Query for validation check:  SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'stg_tax_amount' );   
+2023-12-15 20:51:57,510  |  INFO  |  =============================================================================================================================================================================  
+2023-12-15 20:51:57,511  |  DEBUG  |    
+2023-12-15 20:51:57,516  |  INFO  |  Rows before SQL insert in Postgres: 0   
+2023-12-15 20:51:57,516  |  DEBUG  |    
+2023-12-15 20:51:57,517  |  DEBUG  |  ---------------------------------  
+2023-12-15 20:51:57,518  |  INFO  |  INSERT SUCCESS record no 1   
+2023-12-15 20:51:57,518  |  DEBUG  |  ---------------------------------  
+2023-12-15 20:51:57,520  |  DEBUG  |  ---------------------------------  
+2023-12-15 20:51:57,524  |  INFO  |  INSERT SUCCESS record no 2   
+2023-12-15 20:51:57,525  |  DEBUG  |  ---------------------------------  
+2023-12-15 20:51:57,526  |  DEBUG  |  ---------------------------------  
+2023-12-15 20:51:57,526  |  INFO  |  INSERT SUCCESS record no 3   
+2023-12-15 20:51:57,526  |  DEBUG  |  ---------------------------------  
+2023-12-15 20:51:57,527  |  DEBUG  |  ---------------------------------  
+2023-12-15 20:51:57,527  |  INFO  |  INSERT SUCCESS record no 4   
+2023-12-15 20:51:57,528  |  DEBUG  |  ---------------------------------  
+2023-12-15 20:51:57,528  |  DEBUG  |  ---------------------------------  
+2023-12-15 20:51:57,529  |  INFO  |  INSERT SUCCESS record no 5   
+2023-12-15 20:51:57,529  |  DEBUG  |  ---------------------------------  
+2023-12-15 20:51:57,529  |  DEBUG  |  ---------------------------------  
+2023-12-15 20:51:57,529  |  INFO  |  INSERT SUCCESS record no 6   
+2023-12-15 20:51:57,530  |  DEBUG  |  ---------------------------------  
+2023-12-15 20:51:57,530  |  DEBUG  |  ---------------------------------  
+2023-12-15 20:51:57,530  |  INFO  |  INSERT SUCCESS record no 7   
+2023-12-15 20:51:57,531  |  DEBUG  |  ---------------------------------  
+2023-12-15 20:51:57,531  |  DEBUG  |  ---------------------------------  
+2023-12-15 20:51:57,532  |  INFO  |  INSERT SUCCESS record no 8   
+2023-12-15 20:51:57,532  |  DEBUG  |  ---------------------------------  
+2023-12-15 20:51:57,534  |  DEBUG  |  ---------------------------------  
+2023-12-15 20:51:57,534  |  INFO  |  INSERT SUCCESS record no 9   
+2023-12-15 20:51:57,534  |  DEBUG  |  ---------------------------------  
+2023-12-15 20:51:57,536  |  DEBUG  |  ---------------------------------  
+2023-12-15 20:51:57,537  |  INFO  |  INSERT SUCCESS record no 10   
+2023-12-15 20:51:57,537  |  DEBUG  |  ---------------------------------  
+2023-12-15 20:51:57,538  |  DEBUG  |  ---------------------------------  
+2023-12-15 20:51:57,538  |  INFO  |  INSERT SUCCESS record no 11   
+2023-12-15 20:51:57,538  |  DEBUG  |  ---------------------------------  
+2023-12-15 20:51:57,539  |  DEBUG  |  ---------------------------------  
+2023-12-15 20:51:57,539  |  INFO  |  INSERT SUCCESS record no 12   
+2023-12-15 20:51:57,539  |  DEBUG  |  ---------------------------------  
+2023-12-15 20:51:57,540  |  DEBUG  |  ---------------------------------  
+2023-12-15 20:51:57,541  |  INFO  |  INSERT SUCCESS record no 13   
+2023-12-15 20:51:57,541  |  DEBUG  |  ---------------------------------  
+2023-12-15 20:51:57,543  |  DEBUG  |  ---------------------------------  
+2023-12-15 20:51:57,543  |  INFO  |  INSERT SUCCESS record no 14   
+2023-12-15 20:51:57,543  |  DEBUG  |  ---------------------------------  
+2023-12-15 20:51:57,544  |  DEBUG  |  ---------------------------------  
+2023-12-15 20:51:57,544  |  INFO  |  INSERT SUCCESS record no 15   
+2023-12-15 20:51:57,545  |  DEBUG  |  ---------------------------------  
+2023-12-15 20:51:57,546  |  DEBUG  |  ---------------------------------  
+2023-12-15 20:51:57,546  |  INFO  |  INSERT SUCCESS record no 16   
+2023-12-15 20:51:57,546  |  DEBUG  |  ---------------------------------  
+2023-12-15 20:51:57,547  |  DEBUG  |  ---------------------------------  
+2023-12-15 20:51:57,547  |  INFO  |  INSERT SUCCESS record no 17   
+2023-12-15 20:51:57,548  |  DEBUG  |  ---------------------------------  
+2023-12-15 20:51:57,548  |  DEBUG  |  ---------------------------------  
+2023-12-15 20:51:57,549  |  INFO  |  INSERT SUCCESS record no 18   
+2023-12-15 20:51:57,549  |  DEBUG  |  ---------------------------------  
+2023-12-15 20:51:57,550  |  DEBUG  |  ---------------------------------  
+2023-12-15 20:51:57,551  |  INFO  |  INSERT SUCCESS record no 19   
+2023-12-15 20:51:57,559  |  DEBUG  |  ---------------------------------  
+2023-12-15 20:51:57,560  |  DEBUG  |  ---------------------------------  
+2023-12-15 20:51:57,561  |  INFO  |  INSERT SUCCESS record no 20   
+2023-12-15 20:51:57,561  |  DEBUG  |  ---------------------------------  
+2023-12-15 20:51:57,561  |  INFO  |  Rows after SQL insert in Postgres: 20   
+2023-12-15 20:51:57,562  |  DEBUG  |    
+2023-12-15 20:51:57,562  |  INFO  |  Sensitve columns: ['Product_Category', 'GST']  
+2023-12-15 20:51:57,574  |  INFO  |  ================================================  
+2023-12-15 20:51:57,575  |  INFO  |  Total columns in table after insertion: 6  
+2023-12-15 20:51:57,575  |  INFO  |  Columns name list in table after insertion: ['tax_amount_id', 'product_category', 'gst', 'created_at', 'updated_at', 'source']  
+2023-12-15 20:51:57,575  |  DEBUG  |    
+2023-12-15 20:51:57,575  |  INFO  |  DATA VALIDATION SUCCESS: All general DQ checks passed!   
+2023-12-15 20:51:57,576  |  DEBUG  |    
+2023-12-15 20:51:57,576  |  INFO  |  Now saving changes made by SQL statements to Postgres DB....  
+2023-12-15 20:51:57,576  |  INFO  |  Saved successfully, now terminating cursor and current session....  
+2023-12-15 20:51:57,576  |  DEBUG  |    
+2023-12-15 20:51:57,577  |  DEBUG  |  Cursor closed successfully.  
+2023-12-15 20:51:57,577  |  DEBUG  |  Session connected to Postgres database closed.  

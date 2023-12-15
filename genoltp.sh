@@ -1,0 +1,1 @@
+python3 dwh_pipelines/synthetic_data_generator/oltp.py

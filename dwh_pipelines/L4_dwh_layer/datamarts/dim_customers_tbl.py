@@ -100,7 +100,7 @@ def load_data_to_stg_customers_table(postgres_connection):
         active_db_name = database
 
         src_table_1 = 'stg_customer_feedbacks_tbl' 
-        src_table_2 = 'stg_customer_info_tbl'
+        src_table_2 = 'stg_tbl'
 
         table_name = 'stg_customers_tbl'
         data_warehouse_layer = 'DWH - DATAMART'
@@ -272,7 +272,7 @@ def load_data_to_stg_customers_table(postgres_connection):
                                                                         f.feedback_id,
                                                                         f.feedback_date,
                                                                         f.feedback_text
-                                                                    FROM dev.stg_customer_info_tbl i
+                                                                    FROM dev.stg_tbl i
                                                                     LEFT JOIN dev.stg_customer_feedbacks_tbl f ON i.customer_id = f.customer_id;
         '''
 

@@ -19,15 +19,15 @@
 2023-12-13 13:38:46,165  |  DEBUG  |    
 2023-12-13 13:38:46,167  |  DEBUG  |    
 2023-12-13 13:38:46,167  |  ERROR  |  ==========================================================================================================================================================================  
-2023-12-13 13:38:46,168  |  ERROR  |  TABLE DELETION FAILURE: Unable to delete raw_customer_info_tbl. This table may have objects that depend on it (use DROP TABLE ... CASCADE to resolve) or it doesn't exist.   
-2023-12-13 13:38:46,168  |  ERROR  |  SQL Query for validation check:     SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'raw_customer_info_tbl' );
+2023-12-13 13:38:46,168  |  ERROR  |  TABLE DELETION FAILURE: Unable to delete raw_tbl. This table may have objects that depend on it (use DROP TABLE ... CASCADE to resolve) or it doesn't exist.   
+2023-12-13 13:38:46,168  |  ERROR  |  SQL Query for validation check:     SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'raw_tbl' );
            
 2023-12-13 13:38:46,168  |  ERROR  |  ==========================================================================================================================================================================  
 2023-12-13 13:38:46,169  |  DEBUG  |    
 2023-12-13 13:38:46,174  |  DEBUG  |    
 2023-12-13 13:38:46,174  |  INFO  |  =============================================================================================================================================================================  
-2023-12-13 13:38:46,174  |  INFO  |  TABLE CREATION SUCCESS: Managed to create raw_customer_info_tbl table in dwdss.    
-2023-12-13 13:38:46,175  |  INFO  |  SQL Query for validation check:         SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'raw_customer_info_tbl' );
+2023-12-13 13:38:46,174  |  INFO  |  TABLE CREATION SUCCESS: Managed to create raw_tbl table in dwdss.    
+2023-12-13 13:38:46,175  |  INFO  |  SQL Query for validation check:         SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'raw_tbl' );
            
 2023-12-13 13:38:46,175  |  INFO  |  =============================================================================================================================================================================  
 2023-12-13 13:38:46,176  |  DEBUG  |    

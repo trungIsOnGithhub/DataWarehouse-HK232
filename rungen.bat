@@ -1,1 +1,0 @@
-python dwh_pipelines/L0_src_data_generator/src_data_generator.py

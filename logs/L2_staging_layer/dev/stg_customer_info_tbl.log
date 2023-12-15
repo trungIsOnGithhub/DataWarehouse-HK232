@@ -38,16 +38,16 @@
 2023-12-13 12:05:02,010  |  INFO  |  -------------------------------------------------------------------------------------------------------------------------------------------  
 2023-12-13 12:05:02,010  |  INFO  |    
 2023-12-13 12:05:02,058  |  ERROR  |    
-2023-12-13 12:05:02,059  |  ERROR  |  Unable to import the 'raw_customer_info_tbl' table into 'stgdwdss' database .   
+2023-12-13 12:05:02,059  |  ERROR  |  Unable to import the 'raw_tbl' table into 'stgdwdss' database .   
 2023-12-13 12:05:02,059  |  ERROR  |    
 2023-12-13 12:05:02,065  |  INFO  |    
 2023-12-13 12:05:02,065  |  INFO  |   COMPLETED: Successfully added 0/0 columns to desired SQL columns list. The remaining 0 columns not included were data lineage columns to be added later via ALTER command.   
 2023-12-13 12:05:02,065  |  INFO  |    
 2023-12-13 12:05:02,066  |  INFO  |    
-2023-12-13 12:05:02,066  |  DEBUG  |       SELECT  FROM dev.raw_customer_info_tbl;  
+2023-12-13 12:05:02,066  |  DEBUG  |       SELECT  FROM dev.raw_tbl;  
               
 2023-12-13 12:05:02,066  |  INFO  |    
-2023-12-13 12:05:02,066  |  INFO  |  Successfully IMPORTED the 'raw_customer_info_tbl' virtual table from the 'localhost' server into the 'dev' schema for 'stgdwdss' database. Now advancing to data cleaning stage...  
+2023-12-13 12:05:02,066  |  INFO  |  Successfully IMPORTED the 'raw_tbl' virtual table from the 'localhost' server into the 'dev' schema for 'stgdwdss' database. Now advancing to data cleaning stage...  
 2023-12-13 12:05:02,067  |  INFO  |    
 2023-12-13 12:05:02,068  |  INFO  |  cannot access local variable 'temp_df' where it is not associated with a value  
 2023-12-13 12:05:02,068  |  DEBUG  |    

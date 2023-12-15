@@ -95,7 +95,7 @@ postgres_connection = psycopg2.connect(
         )
 postgres_connection.set_session(autocommit=True)
 
-def load_customer_info_data_to_raw_table(postgres_connection):
+def load_data_to_raw_table(postgres_connection):
     try:
         db_layer_name =   database
         schema_name = 'main'
@@ -133,11 +133,11 @@ def load_customer_info_data_to_raw_table(postgres_connection):
 
         check_if_schema_exists  =   f'''SELECT schema_name from information_schema.schemata WHERE schema_name= '{schema_name}';'''
 
-        delete_raw_customer_info_tbl_if_exists = f'''DROP TABLE IF EXISTS {schema_name}.{table_name} CASCADE;'''
+        delete_raw_tbl_if_exists = f'''DROP TABLE IF EXISTS {schema_name}.{table_name} CASCADE;'''
 
-        check_if_raw_customer_info_tbl_is_deleted = f'''SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = '{table_name}' );'''
+        check_if_raw_tbl_is_deleted = f'''SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = '{table_name}' );'''
 
-        create_raw_customer_info_tbl = f'''CREATE TABLE IF NOT EXISTS {schema_name}.{table_name} (
+        create_raw_tbl = f'''CREATE TABLE IF NOT EXISTS {schema_name}.{table_name} (
             Online_Sale_id SERIAL PRIMARY KEY,
             CustomerID varchar(255),
             Transaction_ID varchar(255),
@@ -151,10 +151,10 @@ def load_customer_info_data_to_raw_table(postgres_connection):
             Coupon_Status varchar(255)
         );'''
 
-        check_if_raw_customer_info_tbl_exists  =   f'''SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = '{table_name}' );'''
+        check_if_raw_tbl_exists  =   f'''SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = '{table_name}' );'''
 
 
-        add_data_lineage_to_raw_customer_info_tbl  =   f''' ALTER TABLE {schema_name}.{table_name}
+        add_data_lineage_to_raw_tbl  =   f''' ALTER TABLE {schema_name}.{table_name}
                                                                 ADD COLUMN  created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
                                                                 ADD COLUMN  updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
                                                                 ADD COLUMN  source VARCHAR(255);'''
@@ -167,7 +167,7 @@ def load_customer_info_data_to_raw_table(postgres_connection):
         check_total_row_count_before_insert_statement   =   f'''SELECT COUNT(*) FROM {schema_name}.{table_name}'''
 
 
-        insert_customer_info_data  = f'''INSERT INTO {schema_name}.{table_name} (
+        insert_data  = f'''INSERT INTO {schema_name}.{table_name} (
             CustomerID,
             Transaction_ID,
             Transaction_Date,
@@ -229,9 +229,9 @@ def load_customer_info_data_to_raw_table(postgres_connection):
         
 
         # Delete table if it exists in Postgres
-        cursor.execute(delete_raw_customer_info_tbl_if_exists)
+        cursor.execute(delete_raw_tbl_if_exists)
 
-        cursor.execute(check_if_raw_customer_info_tbl_is_deleted)
+        cursor.execute(check_if_raw_tbl_is_deleted)
 
 
         sql_result = cursor.fetchone()[0]
@@ -239,23 +239,23 @@ def load_customer_info_data_to_raw_table(postgres_connection):
             root_logger.debug(f"")
             root_logger.info(f"=============================================================================================================================================================================")
             root_logger.info(f"TABLE DELETION SUCCESS: Managed to drop {table_name} table in {db_layer_name}. Now advancing to recreating table... ")
-            root_logger.info(f"SQL Query for validation check:  {check_if_raw_customer_info_tbl_is_deleted} ")
+            root_logger.info(f"SQL Query for validation check:  {check_if_raw_tbl_is_deleted} ")
             root_logger.info(f"=============================================================================================================================================================================")
             root_logger.debug(f"")
         else:
             root_logger.debug(f"")
             root_logger.error(f"==========================================================================================================================================================================")
             root_logger.error(f"TABLE DELETION FAILURE: Unable to delete {table_name}. This table may have objects that depend on it (use DROP TABLE ... CASCADE to resolve) or it doesn't exist. ")
-            root_logger.error(f"SQL Query for validation check:  {check_if_raw_customer_info_tbl_is_deleted} ")
+            root_logger.error(f"SQL Query for validation check:  {check_if_raw_tbl_is_deleted} ")
             root_logger.error(f"==========================================================================================================================================================================")
             root_logger.debug(f"")
 
 
 
         # Create table if it doesn't exist in Postgres  
-        cursor.execute(create_raw_customer_info_tbl)
+        cursor.execute(create_raw_tbl)
 
-        cursor.execute(check_if_raw_customer_info_tbl_exists)
+        cursor.execute(check_if_raw_tbl_exists)
 
 
         sql_result = cursor.fetchone()[0]
@@ -263,21 +263,21 @@ def load_customer_info_data_to_raw_table(postgres_connection):
             root_logger.debug(f"")
             root_logger.info(f"=============================================================================================================================================================================")
             root_logger.info(f"TABLE CREATION SUCCESS: Managed to create {table_name} table in {db_layer_name}.  ")
-            root_logger.info(f"SQL Query for validation check:  {check_if_raw_customer_info_tbl_exists} ")
+            root_logger.info(f"SQL Query for validation check:  {check_if_raw_tbl_exists} ")
             root_logger.info(f"=============================================================================================================================================================================")
             root_logger.debug(f"")
         else:
             root_logger.debug(f"")
             root_logger.error(f"==========================================================================================================================================================================")
             root_logger.error(f"TABLE CREATION FAILURE: Unable to create {table_name}... ")
-            root_logger.error(f"SQL Query for validation check:  {check_if_raw_customer_info_tbl_exists} ")
+            root_logger.error(f"SQL Query for validation check:  {check_if_raw_tbl_exists} ")
             root_logger.error(f"==========================================================================================================================================================================")
             root_logger.debug(f"")
 
 
 
         # Add data lineage to table 
-        cursor.execute(add_data_lineage_to_raw_customer_info_tbl)
+        cursor.execute(add_data_lineage_to_raw_tbl)
 
 
         # sql_results = cursor.fetchall()
@@ -325,7 +325,7 @@ def load_customer_info_data_to_raw_table(postgres_connection):
                 source_system[random.randint(0, len(source_system)-1)]
             )
 
-            cursor.execute(insert_customer_info_data, values)
+            cursor.execute(insert_data, values)
 
 
             # Validate if each row inserted into the table exists 
@@ -454,4 +454,4 @@ def load_customer_info_data_to_raw_table(postgres_connection):
             # root_logger.debug("")
             root_logger.debug("Session connected to Postgres database closed.")
 
-load_customer_info_data_to_raw_table(postgres_connection)
+load_data_to_raw_table(postgres_connection)
