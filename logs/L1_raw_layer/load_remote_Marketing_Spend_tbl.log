@@ -1,0 +1,52 @@
+2023-12-15 17:33:55,831  |  INFO  |    
+2023-12-15 17:33:55,832  |  INFO  |  ---------------------------------------------  
+2023-12-15 17:33:55,832  |  INFO  |  Beginning the source data extraction process...  
+2023-12-15 17:33:55,832  |  INFO  |  Successfully located 'temp_results.json'  
+2023-12-15 17:33:55,833  |  INFO  |  File type: '<class 'list'>'  
+2023-12-15 17:33:55,884  |  DEBUG  |    
+2023-12-15 17:33:55,885  |  INFO  |  =================================================================================  
+2023-12-15 17:33:55,885  |  INFO  |  CONNECTION SUCCESS: Managed to connect successfully to the initial_dw database!!  
+2023-12-15 17:33:55,885  |  INFO  |  Connection details: user=postgres password=xxx dbname=initial_dw host=localhost port=5432   
+2023-12-15 17:33:55,885  |  INFO  |  =================================================================================  
+2023-12-15 17:33:55,885  |  DEBUG  |    
+2023-12-15 17:33:55,887  |  DEBUG  |    
+2023-12-15 17:33:55,887  |  INFO  |  =================================================================================================  
+2023-12-15 17:33:55,888  |  INFO  |  SCHEMA CREATION SUCCESS: Managed to create main schema in initial_dw   
+2023-12-15 17:33:55,888  |  INFO  |  Schema name in Postgres: main   
+2023-12-15 17:33:55,888  |  INFO  |  SQL Query for validation check:  SELECT schema_name from information_schema.schemata WHERE schema_name= 'main';   
+2023-12-15 17:33:55,888  |  INFO  |  =================================================================================================  
+2023-12-15 17:33:55,889  |  DEBUG  |    
+2023-12-15 17:33:55,894  |  DEBUG  |    
+2023-12-15 17:33:55,894  |  ERROR  |  ==========================================================================================================================================================================  
+2023-12-15 17:33:55,895  |  ERROR  |  TABLE DELETION FAILURE: Unable to delete marketing_spend. This table may have objects that depend on it (use DROP TABLE ... CASCADE to resolve) or it doesn't exist.   
+2023-12-15 17:33:55,895  |  ERROR  |  SQL Query for validation check:  SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'marketing_spend' );   
+2023-12-15 17:33:55,895  |  ERROR  |  ==========================================================================================================================================================================  
+2023-12-15 17:33:55,896  |  DEBUG  |    
+2023-12-15 17:33:55,901  |  DEBUG  |    
+2023-12-15 17:33:55,901  |  INFO  |  =============================================================================================================================================================================  
+2023-12-15 17:33:55,901  |  INFO  |  TABLE CREATION SUCCESS: Managed to create marketing_spend table in initial_dw.    
+2023-12-15 17:33:55,902  |  INFO  |  SQL Query for validation check:  SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'marketing_spend' );   
+2023-12-15 17:33:55,902  |  INFO  |  =============================================================================================================================================================================  
+2023-12-15 17:33:55,902  |  DEBUG  |    
+2023-12-15 17:33:55,903  |  INFO  |  Rows before SQL insert in Postgres: 0   
+2023-12-15 17:33:55,904  |  DEBUG  |    
+2023-12-15 17:33:55,905  |  DEBUG  |  ---------------------------------  
+2023-12-15 17:33:55,906  |  INFO  |  INSERT SUCCESS record no 1   
+2023-12-15 17:33:55,906  |  DEBUG  |  ---------------------------------  
+2023-12-15 17:33:55,907  |  DEBUG  |  ---------------------------------  
+2023-12-15 17:33:55,907  |  INFO  |  INSERT SUCCESS record no 2   
+2023-12-15 17:33:55,908  |  DEBUG  |  ---------------------------------  
+2023-12-15 17:33:55,908  |  INFO  |  Rows after SQL insert in Postgres: 2   
+2023-12-15 17:33:55,909  |  DEBUG  |    
+2023-12-15 17:33:55,909  |  INFO  |  Sensitve columns: ['Product_Category']  
+2023-12-15 17:33:55,917  |  INFO  |  ================================================  
+2023-12-15 17:33:55,917  |  INFO  |  Total columns in table after insertion: 7  
+2023-12-15 17:33:55,918  |  INFO  |  Columns name list in table after insertion: ['coupon_id', 'date', 'offlinespend', 'onlinespend', 'created_at', 'updated_at', 'source']  
+2023-12-15 17:33:55,918  |  DEBUG  |    
+2023-12-15 17:33:55,918  |  INFO  |  DATA VALIDATION SUCCESS: All general DQ checks passed!   
+2023-12-15 17:33:55,919  |  DEBUG  |    
+2023-12-15 17:33:55,919  |  INFO  |  Now saving changes made by SQL statements to Postgres DB....  
+2023-12-15 17:33:55,919  |  INFO  |  Saved successfully, now terminating cursor and current session....  
+2023-12-15 17:33:55,919  |  DEBUG  |    
+2023-12-15 17:33:55,919  |  DEBUG  |  Cursor closed successfully.  
+2023-12-15 17:33:55,920  |  DEBUG  |  Session connected to Postgres database closed.  

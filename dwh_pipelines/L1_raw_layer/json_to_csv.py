@@ -8,7 +8,7 @@ CSV_FILENAME = ["Discount_Coupon", "Online_Sales"]
 def json_to_csv(csvFilePath, jsonFilePath):
     try:
         df = pd.read_json(jsonFilePath)
-        df.to_csv( csvFilePath, index=False)
+        df.to_csv(csvFilePath, index=False)
     except (Exception) as err:
         print(err)
 

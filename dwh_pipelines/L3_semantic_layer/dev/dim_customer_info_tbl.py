@@ -671,7 +671,7 @@ def load_data_to_dim_customer_info_table(postgres_connection):
                 row_counter += 1
                 successful_rows_upload_count += 1
                 root_logger.debug(f'---------------------------------')
-                root_logger.info(f'INSERT SUCCESS: Uploaded customer_info record no {row_counter} ')
+                root_logger.info(f'INSERT SUCCESS record no {row_counter} ')
                 root_logger.debug(f'---------------------------------')
             else:
                 row_counter += 1

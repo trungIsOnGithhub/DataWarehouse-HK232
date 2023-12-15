@@ -31,64 +31,64 @@
 2023-12-14 15:34:29,412  |  INFO  |  Rows before SQL insert in Postgres: 0   
 2023-12-14 15:34:29,412  |  DEBUG  |    
 2023-12-14 15:34:29,413  |  DEBUG  |  ---------------------------------  
-2023-12-14 15:34:29,413  |  INFO  |  INSERT SUCCESS: Uploaded customer_info record no 1   
+2023-12-14 15:34:29,413  |  INFO  |  INSERT SUCCESS record no 1   
 2023-12-14 15:34:29,414  |  DEBUG  |  ---------------------------------  
 2023-12-14 15:34:29,414  |  DEBUG  |  ---------------------------------  
-2023-12-14 15:34:29,414  |  INFO  |  INSERT SUCCESS: Uploaded customer_info record no 2   
+2023-12-14 15:34:29,414  |  INFO  |  INSERT SUCCESS record no 2   
 2023-12-14 15:34:29,415  |  DEBUG  |  ---------------------------------  
 2023-12-14 15:34:29,415  |  DEBUG  |  ---------------------------------  
-2023-12-14 15:34:29,416  |  INFO  |  INSERT SUCCESS: Uploaded customer_info record no 3   
+2023-12-14 15:34:29,416  |  INFO  |  INSERT SUCCESS record no 3   
 2023-12-14 15:34:29,416  |  DEBUG  |  ---------------------------------  
 2023-12-14 15:34:29,417  |  DEBUG  |  ---------------------------------  
-2023-12-14 15:34:29,417  |  INFO  |  INSERT SUCCESS: Uploaded customer_info record no 4   
+2023-12-14 15:34:29,417  |  INFO  |  INSERT SUCCESS record no 4   
 2023-12-14 15:34:29,417  |  DEBUG  |  ---------------------------------  
 2023-12-14 15:34:29,418  |  DEBUG  |  ---------------------------------  
-2023-12-14 15:34:29,418  |  INFO  |  INSERT SUCCESS: Uploaded customer_info record no 5   
+2023-12-14 15:34:29,418  |  INFO  |  INSERT SUCCESS record no 5   
 2023-12-14 15:34:29,418  |  DEBUG  |  ---------------------------------  
 2023-12-14 15:34:29,419  |  DEBUG  |  ---------------------------------  
-2023-12-14 15:34:29,419  |  INFO  |  INSERT SUCCESS: Uploaded customer_info record no 6   
+2023-12-14 15:34:29,419  |  INFO  |  INSERT SUCCESS record no 6   
 2023-12-14 15:34:29,419  |  DEBUG  |  ---------------------------------  
 2023-12-14 15:34:29,420  |  DEBUG  |  ---------------------------------  
-2023-12-14 15:34:29,420  |  INFO  |  INSERT SUCCESS: Uploaded customer_info record no 7   
+2023-12-14 15:34:29,420  |  INFO  |  INSERT SUCCESS record no 7   
 2023-12-14 15:34:29,420  |  DEBUG  |  ---------------------------------  
 2023-12-14 15:34:29,421  |  DEBUG  |  ---------------------------------  
-2023-12-14 15:34:29,421  |  INFO  |  INSERT SUCCESS: Uploaded customer_info record no 8   
+2023-12-14 15:34:29,421  |  INFO  |  INSERT SUCCESS record no 8   
 2023-12-14 15:34:29,421  |  DEBUG  |  ---------------------------------  
 2023-12-14 15:34:29,421  |  DEBUG  |  ---------------------------------  
-2023-12-14 15:34:29,421  |  INFO  |  INSERT SUCCESS: Uploaded customer_info record no 9   
+2023-12-14 15:34:29,421  |  INFO  |  INSERT SUCCESS record no 9   
 2023-12-14 15:34:29,422  |  DEBUG  |  ---------------------------------  
 2023-12-14 15:34:29,422  |  DEBUG  |  ---------------------------------  
-2023-12-14 15:34:29,422  |  INFO  |  INSERT SUCCESS: Uploaded customer_info record no 10   
+2023-12-14 15:34:29,422  |  INFO  |  INSERT SUCCESS record no 10   
 2023-12-14 15:34:29,422  |  DEBUG  |  ---------------------------------  
 2023-12-14 15:34:29,422  |  DEBUG  |  ---------------------------------  
-2023-12-14 15:34:29,423  |  INFO  |  INSERT SUCCESS: Uploaded customer_info record no 11   
+2023-12-14 15:34:29,423  |  INFO  |  INSERT SUCCESS record no 11   
 2023-12-14 15:34:29,423  |  DEBUG  |  ---------------------------------  
 2023-12-14 15:34:29,423  |  DEBUG  |  ---------------------------------  
-2023-12-14 15:34:29,424  |  INFO  |  INSERT SUCCESS: Uploaded customer_info record no 12   
+2023-12-14 15:34:29,424  |  INFO  |  INSERT SUCCESS record no 12   
 2023-12-14 15:34:29,424  |  DEBUG  |  ---------------------------------  
 2023-12-14 15:34:29,424  |  DEBUG  |  ---------------------------------  
-2023-12-14 15:34:29,425  |  INFO  |  INSERT SUCCESS: Uploaded customer_info record no 13   
+2023-12-14 15:34:29,425  |  INFO  |  INSERT SUCCESS record no 13   
 2023-12-14 15:34:29,425  |  DEBUG  |  ---------------------------------  
 2023-12-14 15:34:29,426  |  DEBUG  |  ---------------------------------  
-2023-12-14 15:34:29,426  |  INFO  |  INSERT SUCCESS: Uploaded customer_info record no 14   
+2023-12-14 15:34:29,426  |  INFO  |  INSERT SUCCESS record no 14   
 2023-12-14 15:34:29,426  |  DEBUG  |  ---------------------------------  
 2023-12-14 15:34:29,426  |  DEBUG  |  ---------------------------------  
-2023-12-14 15:34:29,427  |  INFO  |  INSERT SUCCESS: Uploaded customer_info record no 15   
+2023-12-14 15:34:29,427  |  INFO  |  INSERT SUCCESS record no 15   
 2023-12-14 15:34:29,427  |  DEBUG  |  ---------------------------------  
 2023-12-14 15:34:29,427  |  DEBUG  |  ---------------------------------  
-2023-12-14 15:34:29,427  |  INFO  |  INSERT SUCCESS: Uploaded customer_info record no 16   
+2023-12-14 15:34:29,427  |  INFO  |  INSERT SUCCESS record no 16   
 2023-12-14 15:34:29,427  |  DEBUG  |  ---------------------------------  
 2023-12-14 15:34:29,428  |  DEBUG  |  ---------------------------------  
-2023-12-14 15:34:29,428  |  INFO  |  INSERT SUCCESS: Uploaded customer_info record no 17   
+2023-12-14 15:34:29,428  |  INFO  |  INSERT SUCCESS record no 17   
 2023-12-14 15:34:29,428  |  DEBUG  |  ---------------------------------  
 2023-12-14 15:34:29,428  |  DEBUG  |  ---------------------------------  
-2023-12-14 15:34:29,428  |  INFO  |  INSERT SUCCESS: Uploaded customer_info record no 18   
+2023-12-14 15:34:29,428  |  INFO  |  INSERT SUCCESS record no 18   
 2023-12-14 15:34:29,429  |  DEBUG  |  ---------------------------------  
 2023-12-14 15:34:29,429  |  DEBUG  |  ---------------------------------  
-2023-12-14 15:34:29,429  |  INFO  |  INSERT SUCCESS: Uploaded customer_info record no 19   
+2023-12-14 15:34:29,429  |  INFO  |  INSERT SUCCESS record no 19   
 2023-12-14 15:34:29,429  |  DEBUG  |  ---------------------------------  
 2023-12-14 15:34:29,430  |  DEBUG  |  ---------------------------------  
-2023-12-14 15:34:29,430  |  INFO  |  INSERT SUCCESS: Uploaded customer_info record no 20   
+2023-12-14 15:34:29,430  |  INFO  |  INSERT SUCCESS record no 20   
 2023-12-14 15:34:29,430  |  DEBUG  |  ---------------------------------  
 2023-12-14 15:34:29,430  |  INFO  |  Rows after SQL insert in Postgres: 20   
 2023-12-14 15:34:29,430  |  DEBUG  |    

@@ -116,7 +116,7 @@ def set_up_access_controls(postgres_connection):
         
         cursor                                                  =          postgres_connection.cursor()
         active_db_name                                          =          database
-        raw_db                                                  =          config['data_filepath']['RAW_DB']
+        raw_db                                                  =          config['data_filepath']['DWH_DB']
         staging_db                                              =          config['data_filepath']['STAGING_DB']
         semantic_db                                             =          config['data_filepath']['SEMANTIC_DB']
         dwh_db                                                  =          config['data_filepath']['DWH_DB']
