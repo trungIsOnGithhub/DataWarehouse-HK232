@@ -68,7 +68,7 @@ cursor                  =   None
 
 
 root_logger.info("")
-root_logger.info("---------------------------------------------")
+
 root_logger.info("Beginning the source data extraction process...")
 COMPUTE_START_TIME  =  time.time()
 
@@ -85,12 +85,12 @@ with open(customer_info_path, 'r') as customer_info_file:
     
 
 postgres_connection = psycopg2.connect(
-                host        =   host,
-                port        =   port,
-                dbname      =   database,
-                user        =   username,
-                password    =   password,
-        )
+host        =   host,
+port        =   port,
+dbname      =   database,
+user        =   username,
+password    =   password,
+)
 postgres_connection.set_session(autocommit=True)
 
 def load_data_to_raw_table(postgres_connection):
@@ -296,12 +296,12 @@ def load_data_to_raw_table(postgres_connection):
         root_logger.debug(f"")
 
 
-        for customer_info in customer_info_data:
+        for datainfo in customer_info_data:
             values = (
-                customer_info['Month'],
-                customer_info['Product_Category'], 
-                customer_info['Coupon_Code'], 
-                customer_info['Discount_pct'],
+                datainfo['Month'],
+                datainfo['Product_Category'], 
+                datainfo['Coupon_Code'], 
+                datainfo['Discount_pct'],
                 CURRENT_TIMESTAMP,
                 CURRENT_TIMESTAMP,
                 source_system[random.randint(0, len(source_system)-1)]
@@ -321,14 +321,10 @@ def load_data_to_raw_table(postgres_connection):
                 row_counter += 1
                 failed_rows_upload_count +=1
                 root_logger.error(f'---------------------------------')
-                root_logger.error(f'INSERT FAILED: Unable to insert customer_info record no {row_counter} ')
+                root_logger.error(f'INSERT FAILED: Unable to insert datainfo record no {row_counter} ')
                 root_logger.error(f'---------------------------------')
 
-        ROW_INSERTION_PROCESSING_END_TIME   =   time.time()
-
-        ROW_COUNT_VAL_CHECK_PROCESSING_START_TIME   =   time.time()
         cursor.execute(check_total_row_count_after_insert_statement)
-        ROW_COUNT_VAL_CHECK_PROCESSING_END_TIME     =   time.time()
 
 
         total_rows_in_table = cursor.fetchone()[0]

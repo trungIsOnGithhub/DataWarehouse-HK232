@@ -70,7 +70,7 @@ cursor                  =   None
 
 
 root_logger.info("")
-root_logger.info("---------------------------------------------")
+
 root_logger.info("Beginning the source data extraction process...")
 COMPUTE_START_TIME  =  time.time()
 
@@ -308,18 +308,18 @@ def load_data_to_raw_table(postgres_connection):
         root_logger.debug(f"")
 
 
-        for customer_info in customer_info_data:
+        for datainfo in customer_info_data:
             values = (
-                customer_info['CustomerID'],
-                customer_info['Transaction_ID'],
-                customer_info['Transaction_Date'],
-                customer_info['Product_SKU'],
-                customer_info['Product_Description'],
-                customer_info['Product_Category'],
-                customer_info['Quantity'],
-                customer_info['Avg_Price'],
-                customer_info['Delivery_Charges'],
-                customer_info['Coupon_Status'],
+                datainfo['CustomerID'],
+                datainfo['Transaction_ID'],
+                datainfo['Transaction_Date'],
+                datainfo['Product_SKU'],
+                datainfo['Product_Description'],
+                datainfo['Product_Category'],
+                datainfo['Quantity'],
+                datainfo['Avg_Price'],
+                datainfo['Delivery_Charges'],
+                datainfo['Coupon_Status'],
                 CURRENT_TIMESTAMP,
                 CURRENT_TIMESTAMP,
                 source_system[random.randint(0, len(source_system)-1)]
@@ -339,7 +339,7 @@ def load_data_to_raw_table(postgres_connection):
                 row_counter += 1
                 failed_rows_upload_count +=1
                 root_logger.error(f'---------------------------------')
-                root_logger.error(f'INSERT FAILED: Unable to insert customer_info record no {row_counter} ')
+                root_logger.error(f'INSERT FAILED: Unable to insert datainfo record no {row_counter} ')
                 root_logger.error(f'---------------------------------')
 
         ROW_INSERTION_PROCESSING_END_TIME   =   time.time()

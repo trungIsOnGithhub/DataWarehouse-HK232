@@ -278,7 +278,7 @@ def load_data_to_raw_table(postgres_connection):
                 row_counter += 1
                 failed_rows_upload_count +=1
                 root_logger.error(f'---------------------------------')
-                root_logger.error(f'INSERT FAILED: Unable to insert customer_info record no {row_counter} ')
+                root_logger.error(f'INSERT FAILED: Unable to insert datainfo record no {row_counter} ')
                 root_logger.error(f'---------------------------------')
 
         ROW_INSERTION_PROCESSING_END_TIME   =   time.time()

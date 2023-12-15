@@ -64,13 +64,12 @@ port                    =   config['data_filepath']['PORT']
 database                =   config['data_filepath']['DWH_DB']
 username                =   config['data_filepath']['USERNAME']
 password                =   config['data_filepath']['PASSWORD']
-
 postgres_connection     =   None
 cursor                  =   None
 
 
 root_logger.info("")
-root_logger.info("---------------------------------------------")
+
 root_logger.info("Beginning the source data extraction process...")
 COMPUTE_START_TIME  =  time.time()
 
@@ -88,12 +87,12 @@ with open(customer_info_path, 'r') as customer_info_file:
     
 
 postgres_connection = psycopg2.connect(
-                host        =   host,
-                port        =   port,
-                dbname      =   database,
-                user        =   username,
-                password    =   password,
-        )
+host        =   host,
+port        =   port,
+dbname      =   database,
+user        =   username,
+password    =   password,
+)
 postgres_connection.set_session(autocommit=True)
 
 def load_data_to_raw_table(postgres_connection):
@@ -148,11 +147,6 @@ def load_data_to_raw_table(postgres_connection):
                                                                 ADD COLUMN  created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
                                                                 ADD COLUMN  updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
                                                                 ADD COLUMN  source VARCHAR(255);'''
-
-        check_if_data_lineage_fields_are_added_to_tbl   =   f'''        
-                                                                SELECT * 
-                                                                FROM    information_schema.columns 
-                                                                WHERE   table_name = '{table_name}' AND (column_name = 'created_at' OR column_name = 'updated_at');'''
         
         check_total_row_count_before_insert_statement   =   f'''SELECT COUNT(*) FROM {schema_name}.{table_name}'''
 
@@ -288,10 +282,10 @@ def load_data_to_raw_table(postgres_connection):
         root_logger.debug(f"")
 
 
-        for customer_info in customer_info_data:
+        for datainfo in customer_info_data:
             values = (
-                customer_info['Product_Category'], 
-                customer_info['GST'], 
+                datainfo['Product_Category'], 
+                datainfo['GST'], 
                 CURRENT_TIMESTAMP,
                 CURRENT_TIMESTAMP,
                 source_system[random.randint(0, len(source_system)-1)]
@@ -310,7 +304,7 @@ def load_data_to_raw_table(postgres_connection):
                 row_counter += 1
                 failed_rows_upload_count +=1
                 root_logger.error(f'---------------------------------')
-                root_logger.error(f'INSERT FAILED: Unable to insert customer_info record no {row_counter} ')
+                root_logger.error(f'INSERT FAILED: Unable to insert datainfo record no {row_counter} ')
                 root_logger.error(f'---------------------------------')
 
 

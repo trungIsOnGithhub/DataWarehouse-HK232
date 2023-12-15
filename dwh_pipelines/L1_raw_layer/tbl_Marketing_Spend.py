@@ -18,18 +18,17 @@ root_logger     =   logging.getLogger(__name__)
 root_logger.setLevel(logging.DEBUG)
 file_handler_log_formatter      =   logging.Formatter('%(asctime)s  |  %(levelname)s  |  %(message)s  ')
 console_handler_log_formatter   =   coloredlogs.ColoredFormatter(fmt    =   '%(message)s', level_styles=dict(
-                                                                                                debug           =   dict    (color  =   'white'),
-                                                                                                info            =   dict    (color  =   'green'),
-                                                                                                warning         =   dict    (color  =   'cyan'),
-                                                                                                error           =   dict    (color  =   'red',      bold    =   True,   bright      =   True),
-                                                                                                critical        =   dict    (color  =   'black',    bold    =   True,   background  =   'red')
-                                                                                            ),
+debug           =   dict    (color  =   'white'),
+info            =   dict    (color  =   'green'),
+warning         =   dict    (color  =   'cyan'),
+error           =   dict    (color  =   'red',      bold    =   True,   bright      =   True),
+critical        =   dict    (color  =   'black',    bold    =   True,   background  =   'red')
+),
 
-                                                                                    field_styles=dict(
-                                                                                        messages            =   dict    (color  =   'white')
-                                                                                    )
-                                                                                    )
-
+field_styles=dict(
+messages            =   dict    (color  =   'white')
+)
+)
 
 # Set up file handler object for logging events to file
 current_filepath    =   Path(__file__).stem
@@ -51,7 +50,6 @@ if __name__=="__main__":
     root_logger.addHandler(console_handler)
 
 
-
 # ================================================ CONFIG ================================================
 
 
@@ -67,13 +65,10 @@ port                    =   config['data_filepath']['PORT']
 database                =   config['data_filepath']['DWH_DB']
 username                =   config['data_filepath']['USERNAME']
 password                =   config['data_filepath']['PASSWORD']
-
 postgres_connection     =   None
 cursor                  =   None
 
 
-root_logger.info("")
-root_logger.info("---------------------------------------------")
 root_logger.info("Beginning the source data extraction process...")
 COMPUTE_START_TIME  =  time.time()
 
@@ -299,11 +294,11 @@ def load_data_to_raw_table(postgres_connection):
         root_logger.debug(f"")
 
 
-        for customer_info in customer_info_data:
+        for datainfo in customer_info_data:
             values = (
-                customer_info['dateh'],
-                customer_info['offs'], 
-                customer_info['ons'], 
+                datainfo['dateh'],
+                datainfo['offs'], 
+                datainfo['ons'], 
                 CURRENT_TIMESTAMP,
                 CURRENT_TIMESTAMP,
                 source_system
@@ -323,7 +318,7 @@ def load_data_to_raw_table(postgres_connection):
                 row_counter += 1
                 failed_rows_upload_count +=1
                 root_logger.error(f'---------------------------------')
-                root_logger.error(f'INSERT FAILED: Unable to insert customer_info record no {row_counter} ')
+                root_logger.error(f'INSERT FAILED: Unable to insert datainfo record no {row_counter} ')
                 root_logger.error(f'---------------------------------')
 
         ROW_INSERTION_PROCESSING_END_TIME   =   time.time()
