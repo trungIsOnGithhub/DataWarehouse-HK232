@@ -9,7 +9,7 @@ from pathlib import Path
 import logging, coloredlogs
 from datetime import datetime
 
-with open(f"{os.getcwd()}{os.sep}dwh_pipelines{os.sep}etl{os.sep}load_remote_Marketing_Spend.py") as start_fetch:
+with open(f"{os.getcwd()}{os.sep}dwh_pipelines{os.sep}extract{os.sep}load_remote_Marketing_Spend.py") as start_fetch:
     exec(start_fetch.read())
 
 src_file = 'Marketing_Spend.csv'
@@ -32,7 +32,7 @@ messages            =   dict    (color  =   'white')
 
 # Set up file handler object for logging events to file
 current_filepath    =   Path(__file__).stem
-file_handler        =   logging.FileHandler('logs/L1_raw_layer/' + current_filepath + '.log', mode='w')
+file_handler        =   logging.FileHandler('logs/' + current_filepath + '.log', mode='w')
 file_handler.setFormatter(file_handler_log_formatter)
 
 
@@ -100,7 +100,7 @@ password    =   password,
 )
 postgres_connection.set_session(autocommit=True)
 
-def load_data_to_raw_table(postgres_connection):
+def load_data_to_table(postgres_connection):
     try:
         db_layer_name =   database
         schema_name = 'main'
@@ -134,17 +134,17 @@ def load_data_to_raw_table(postgres_connection):
 
         check_if_schema_exists  =   f'''SELECT schema_name from information_schema.schemata WHERE schema_name= '{schema_name}';'''
 
-        delete_raw_tbl_if_exists = f'''DROP TABLE IF EXISTS {schema_name}.{table_name} CASCADE;'''
+        delete_tbl_if_exists = f'''DROP TABLE IF EXISTS {schema_name}.{table_name} CASCADE;'''
 
-        check_if_raw_tbl_is_deleted = f'''SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = '{table_name}' );'''
+        check_if_tbl_is_deleted = f'''SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = '{table_name}' );'''
 
-        create_raw_tbl = f'''CREATE TABLE IF NOT EXISTS {schema_name}.{table_name} (
+        create_tbl = f'''CREATE TABLE IF NOT EXISTS {schema_name}.{table_name} (
             dateh date,
             offs integer,
             ons integer
         );'''
 
-        check_if_raw_tbl_exists  =   f'''SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = '{table_name}' );'''
+        check_if_tbl_exists  =   f'''SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = '{table_name}' );'''
         
         check_total_row_count_before_insert_statement = f'''SELECT COUNT(*) FROM {schema_name}.{table_name}'''
 
@@ -201,9 +201,9 @@ def load_data_to_raw_table(postgres_connection):
         
 
         # Delete table if it exists in Postgres
-        cursor.execute(delete_raw_tbl_if_exists)
+        cursor.execute(delete_tbl_if_exists)
 
-        cursor.execute(check_if_raw_tbl_is_deleted)
+        cursor.execute(check_if_tbl_is_deleted)
 
 
         sql_result = cursor.fetchone()[0]
@@ -211,23 +211,23 @@ def load_data_to_raw_table(postgres_connection):
             root_logger.debug(f"")
             root_logger.info(f"=============================================================================================================================================================================")
             root_logger.info(f"TABLE DELETION SUCCESS: Managed to drop {table_name} table in {db_layer_name}. Now advancing to recreating table... ")
-            root_logger.info(f"SQL Query for validation check:  {check_if_raw_tbl_is_deleted} ")
+            root_logger.info(f"SQL Query for validation check:  {check_if_tbl_is_deleted} ")
             root_logger.info(f"=============================================================================================================================================================================")
             root_logger.debug(f"")
         else:
             root_logger.debug(f"")
             root_logger.error(f"==========================================================================================================================================================================")
             root_logger.error(f"TABLE DELETION FAILURE: Unable to delete {table_name}. This table may have objects that depend on it (use DROP TABLE ... CASCADE to resolve) or it doesn't exist. ")
-            root_logger.error(f"SQL Query for validation check:  {check_if_raw_tbl_is_deleted} ")
+            root_logger.error(f"SQL Query for validation check:  {check_if_tbl_is_deleted} ")
             root_logger.error(f"==========================================================================================================================================================================")
             root_logger.debug(f"")
 
 
 
         # Create table if it doesn't exist in Postgres  
-        cursor.execute(create_raw_tbl)
+        cursor.execute(create_tbl)
 
-        cursor.execute(check_if_raw_tbl_exists)
+        cursor.execute(check_if_tbl_exists)
 
 
         sql_result = cursor.fetchone()[0]
@@ -235,14 +235,14 @@ def load_data_to_raw_table(postgres_connection):
             root_logger.debug(f"")
             root_logger.info(f"=============================================================================================================================================================================")
             root_logger.info(f"TABLE CREATION SUCCESS: Managed to create {table_name} table in {db_layer_name}.  ")
-            root_logger.info(f"SQL Query for validation check:  {check_if_raw_tbl_exists} ")
+            root_logger.info(f"SQL Query for validation check:  {check_if_tbl_exists} ")
             root_logger.info(f"=============================================================================================================================================================================")
             root_logger.debug(f"")
         else:
             root_logger.debug(f"")
             root_logger.error(f"==========================================================================================================================================================================")
             root_logger.error(f"TABLE CREATION FAILURE: Unable to create {table_name}... ")
-            root_logger.error(f"SQL Query for validation check:  {check_if_raw_tbl_exists} ")
+            root_logger.error(f"SQL Query for validation check:  {check_if_tbl_exists} ")
             root_logger.error(f"==========================================================================================================================================================================")
             root_logger.debug(f"")
 
@@ -393,4 +393,4 @@ def load_data_to_raw_table(postgres_connection):
             # root_logger.debug("")
             root_logger.debug("Session connected to Postgres database closed.")
 
-load_data_to_raw_table(postgres_connection)
+load_data_to_table(postgres_connection)

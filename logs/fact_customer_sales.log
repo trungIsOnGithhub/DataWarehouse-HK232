@@ -1,0 +1,54 @@
+2023-12-16 12:14:55,675  |  INFO  |  Beginning the source data extraction process...  
+2023-12-16 12:14:55,715  |  DEBUG  |    
+2023-12-16 12:14:55,715  |  INFO  |  =================================================================================  
+2023-12-16 12:14:55,715  |  INFO  |  CONNECTION SUCCESS: Managed to connect successfully to the initial_dw database!!  
+2023-12-16 12:14:55,723  |  INFO  |  Connection details: user=postgres password=xxx dbname=initial_dw host=localhost port=5432   
+2023-12-16 12:14:55,724  |  INFO  |  =================================================================================  
+2023-12-16 12:14:55,724  |  DEBUG  |    
+2023-12-16 12:14:55,728  |  DEBUG  |    
+2023-12-16 12:14:55,728  |  INFO  |  =================================================================================================  
+2023-12-16 12:14:55,729  |  INFO  |  SCHEMA CREATION SUCCESS: Managed to create datamart schema in initial_dw   
+2023-12-16 12:14:55,730  |  INFO  |  Schema name in Postgres: datamart   
+2023-12-16 12:14:55,731  |  INFO  |  SQL Query for validation check:  SELECT schema_name from information_schema.schemata WHERE schema_name= 'datamart';   
+2023-12-16 12:14:55,731  |  INFO  |  =================================================================================================  
+2023-12-16 12:14:55,732  |  DEBUG  |    
+2023-12-16 12:14:55,734  |  DEBUG  |    
+2023-12-16 12:14:55,734  |  ERROR  |  ==========================================================================================================================================================================  
+2023-12-16 12:14:55,735  |  ERROR  |  TABLE DELETION FAILURE: Unable to delete customers_sales. This table may have objects that depend on it (use DROP TABLE ... CASCADE to resolve) or it doesn't exist.   
+2023-12-16 12:14:55,736  |  ERROR  |  SQL Query for validation check:  SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'customers_sales' );   
+2023-12-16 12:14:55,737  |  ERROR  |  ==========================================================================================================================================================================  
+2023-12-16 12:14:55,738  |  DEBUG  |    
+2023-12-16 12:14:55,812  |  DEBUG  |    
+2023-12-16 12:14:55,812  |  INFO  |  =============================================================================================================================================================================  
+2023-12-16 12:14:55,813  |  INFO  |  TABLE CREATION SUCCESS: Managed to create customers_sales table in initial_dw.    
+2023-12-16 12:14:55,814  |  INFO  |  SQL Query for validation check:  SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'customers_sales' );   
+2023-12-16 12:14:55,814  |  INFO  |  =============================================================================================================================================================================  
+2023-12-16 12:14:55,815  |  DEBUG  |    
+2023-12-16 12:14:55,819  |  DEBUG  |    
+2023-12-16 12:14:55,820  |  INFO  |  Rows after SQL insert in Postgres: 52924   
+2023-12-16 12:14:55,820  |  INFO  |  Total time Table Creation: 0.07724499702453613   
+2023-12-16 12:14:55,821  |  DEBUG  |    
+2023-12-16 12:14:55,856  |  INFO  |  ================================================  
+2023-12-16 12:14:55,857  |  INFO  |  Total columns in table after insertion: 5  
+2023-12-16 12:14:55,858  |  INFO  |  Columns name list in table after insertion: ['customerid', 'gender', 'location', 'product_category', 'transaction_date']  
+2023-12-16 12:14:55,858  |  ERROR  |  ERROR: No records were upload to 'customers_sales' table....  
+2023-12-16 12:14:55,859  |  INFO  |  Trace filepath to highlight the root cause of the missing rows...  
+2023-12-16 12:14:55,859  |  DEBUG  |    
+2023-12-16 12:14:55,860  |  DEBUG  |  Cursor closed successfully.  
+2023-12-16 12:14:55,860  |  DEBUG  |  Session connected to Postgres database closed.  
+|  TABLE CREATION SUCCESS: Managed to create customers_sales table in initial_dw.    
+2023-12-16 12:14:55,814  |  INFO  |  SQL Query for validation check:  SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'customers_sales' );   
+2023-12-16 12:14:55,814  |  INFO  |  =============================================================================================================================================================================  
+2023-12-16 12:14:55,815  |  DEBUG  |    
+2023-12-16 12:14:55,819  |  DEBUG  |    
+2023-12-16 12:14:55,820  |  INFO  |  Rows after SQL insert in Postgres: 52924   
+2023-12-16 12:14:55,820  |  INFO  |  Total time Table Creation: 0.07724499702453613   
+2023-12-16 12:14:55,821  |  DEBUG  |    
+2023-12-16 12:14:55,856  |  INFO  |  ================================================  
+2023-12-16 12:14:55,857  |  INFO  |  Total columns in table after insertion: 5  
+2023-12-16 12:14:55,858  |  INFO  |  Columns name list in table after insertion: ['customerid', 'gender', 'location', 'product_category', 'transaction_date']  
+2023-12-16 12:14:55,858  |  ERROR  |  ERROR: No records were upload to 'customers_sales' table....  
+2023-12-16 12:14:55,859  |  INFO  |  Trace filepath to highlight the root cause of the missing rows...  
+2023-12-16 12:14:55,859  |  DEBUG  |    
+2023-12-16 12:14:55,860  |  DEBUG  |  Cursor closed successfully.  
+2023-12-16 12:14:55,860  |  DEBUG  |  Session connected to Postgres database closed.  

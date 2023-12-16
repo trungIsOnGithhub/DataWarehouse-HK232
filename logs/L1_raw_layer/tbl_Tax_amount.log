@@ -18,14 +18,14 @@
 2023-12-15 20:51:57,484  |  DEBUG  |    
 2023-12-15 20:51:57,496  |  DEBUG  |    
 2023-12-15 20:51:57,496  |  ERROR  |  ==========================================================================================================================================================================  
-2023-12-15 20:51:57,496  |  ERROR  |  TABLE DELETION FAILURE: Unable to delete stg_tax_amount. This table may have objects that depend on it (use DROP TABLE ... CASCADE to resolve) or it doesn't exist.   
-2023-12-15 20:51:57,497  |  ERROR  |  SQL Query for validation check:  SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'stg_tax_amount' );   
+2023-12-15 20:51:57,496  |  ERROR  |  TABLE DELETION FAILURE: Unable to delete tax_amount. This table may have objects that depend on it (use DROP TABLE ... CASCADE to resolve) or it doesn't exist.   
+2023-12-15 20:51:57,497  |  ERROR  |  SQL Query for validation check:  SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'tax_amount' );   
 2023-12-15 20:51:57,497  |  ERROR  |  ==========================================================================================================================================================================  
 2023-12-15 20:51:57,497  |  DEBUG  |    
 2023-12-15 20:51:57,509  |  DEBUG  |    
 2023-12-15 20:51:57,509  |  INFO  |  =============================================================================================================================================================================  
-2023-12-15 20:51:57,510  |  INFO  |  TABLE CREATION SUCCESS: Managed to create stg_tax_amount table in initial_dw.    
-2023-12-15 20:51:57,510  |  INFO  |  SQL Query for validation check:  SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'stg_tax_amount' );   
+2023-12-15 20:51:57,510  |  INFO  |  TABLE CREATION SUCCESS: Managed to create tax_amount table in initial_dw.    
+2023-12-15 20:51:57,510  |  INFO  |  SQL Query for validation check:  SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'tax_amount' );   
 2023-12-15 20:51:57,510  |  INFO  |  =============================================================================================================================================================================  
 2023-12-15 20:51:57,511  |  DEBUG  |    
 2023-12-15 20:51:57,516  |  INFO  |  Rows before SQL insert in Postgres: 0   

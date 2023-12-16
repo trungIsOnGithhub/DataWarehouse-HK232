@@ -18,14 +18,14 @@
 2023-12-15 20:49:10,026  |  DEBUG  |    
 2023-12-15 20:49:10,029  |  DEBUG  |    
 2023-12-15 20:49:10,030  |  ERROR  |  ==========================================================================================================================================================================  
-2023-12-15 20:49:10,031  |  ERROR  |  TABLE DELETION FAILURE: Unable to delete stg_discount_coupon. This table may have objects that depend on it (use DROP TABLE ... CASCADE to resolve) or it doesn't exist.   
-2023-12-15 20:49:10,032  |  ERROR  |  SQL Query for validation check:  SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'stg_discount_coupon' );   
+2023-12-15 20:49:10,031  |  ERROR  |  TABLE DELETION FAILURE: Unable to delete discount_coupon. This table may have objects that depend on it (use DROP TABLE ... CASCADE to resolve) or it doesn't exist.   
+2023-12-15 20:49:10,032  |  ERROR  |  SQL Query for validation check:  SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'discount_coupon' );   
 2023-12-15 20:49:10,042  |  ERROR  |  ==========================================================================================================================================================================  
 2023-12-15 20:49:10,043  |  DEBUG  |    
 2023-12-15 20:49:10,056  |  DEBUG  |    
 2023-12-15 20:49:10,056  |  INFO  |  =============================================================================================================================================================================  
-2023-12-15 20:49:10,056  |  INFO  |  TABLE CREATION SUCCESS: Managed to create stg_discount_coupon table in initial_dw.    
-2023-12-15 20:49:10,057  |  INFO  |  SQL Query for validation check:  SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'stg_discount_coupon' );   
+2023-12-15 20:49:10,056  |  INFO  |  TABLE CREATION SUCCESS: Managed to create discount_coupon table in initial_dw.    
+2023-12-15 20:49:10,057  |  INFO  |  SQL Query for validation check:  SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'discount_coupon' );   
 2023-12-15 20:49:10,057  |  INFO  |  =============================================================================================================================================================================  
 2023-12-15 20:49:10,058  |  DEBUG  |    
 2023-12-15 20:49:10,062  |  INFO  |  Rows before SQL insert in Postgres: 0   

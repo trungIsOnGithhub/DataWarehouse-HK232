@@ -18,14 +18,14 @@
 2023-12-15 20:49:04,934  |  DEBUG  |    
 2023-12-15 20:49:04,940  |  DEBUG  |    
 2023-12-15 20:49:04,940  |  ERROR  |  ==========================================================================================================================================================================  
-2023-12-15 20:49:04,940  |  ERROR  |  TABLE DELETION FAILURE: Unable to delete stg_customers_data. This table may have objects that depend on it (use DROP TABLE ... CASCADE to resolve) or it doesn't exist.   
-2023-12-15 20:49:04,941  |  ERROR  |  SQL Query for validation check:  SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'stg_customers_data' );   
+2023-12-15 20:49:04,940  |  ERROR  |  TABLE DELETION FAILURE: Unable to delete customers_data. This table may have objects that depend on it (use DROP TABLE ... CASCADE to resolve) or it doesn't exist.   
+2023-12-15 20:49:04,941  |  ERROR  |  SQL Query for validation check:  SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'customers_data' );   
 2023-12-15 20:49:04,941  |  ERROR  |  ==========================================================================================================================================================================  
 2023-12-15 20:49:04,941  |  DEBUG  |    
 2023-12-15 20:49:04,958  |  DEBUG  |    
 2023-12-15 20:49:04,959  |  INFO  |  =============================================================================================================================================================================  
-2023-12-15 20:49:04,959  |  INFO  |  TABLE CREATION SUCCESS: Managed to create stg_customers_data table in initial_dw.    
-2023-12-15 20:49:04,960  |  INFO  |  SQL Query for validation check:  SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'stg_customers_data' );   
+2023-12-15 20:49:04,959  |  INFO  |  TABLE CREATION SUCCESS: Managed to create customers_data table in initial_dw.    
+2023-12-15 20:49:04,960  |  INFO  |  SQL Query for validation check:  SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'customers_data' );   
 2023-12-15 20:49:04,960  |  INFO  |  =============================================================================================================================================================================  
 2023-12-15 20:49:04,961  |  DEBUG  |    
 2023-12-15 20:49:04,964  |  INFO  |  Rows before SQL insert in Postgres: 0   
