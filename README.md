@@ -20,4 +20,4 @@
 
 3. Tải các pip package cần thiết từ terminal/command prompt: ```pip install faker pandas configparser coloredlogs psycopg2 jupyter squarify seaborn scikit-learn```
 
-4. Chạy lệnh python  ```python gen_staging.py```
+4. Chạy lệnh python  ```python gen_staging.py``` tạo bảng dimension và ```python gen_fact.py``` tạo bảng fact cho data mart
