@@ -8,3 +8,5 @@ dependencies:
 - path
 - psycopg2
 - configparser
+- scikit-learn
+- seaborn
