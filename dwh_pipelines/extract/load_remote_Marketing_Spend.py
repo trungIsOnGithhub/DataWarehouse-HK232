@@ -90,7 +90,7 @@ postgres_connection.set_session(autocommit=True)
 def load_data_to_flight_schedules_table(postgres_connection):
     try:
         foreign_server                  =   config['data_filepath']['OLTP_HOST']
-        active_schema_name              =   'oltp_main'
+        active_schema_name              =   'main'
         active_db_name                  =    config['data_filepath']['OLTP_DB']
         src_table_name                  =   'marketing_spend'
         cursor      =   postgres_connection.cursor()

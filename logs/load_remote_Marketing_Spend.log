@@ -1,0 +1,17 @@
+2023-12-17 14:23:03,330  |  INFO  |    
+2023-12-17 14:23:03,330  |  INFO  |  ---------------------------------------------  
+2023-12-17 14:23:03,331  |  INFO  |  Beginning the staging process...  
+2023-12-17 14:23:03,392  |  DEBUG  |    
+2023-12-17 14:23:03,392  |  INFO  |  =================================================================================  
+2023-12-17 14:23:03,393  |  INFO  |  CONNECTION SUCCESS: Managed to connect successfully to the oltp_db database!!  
+2023-12-17 14:23:03,393  |  INFO  |  Connection details: user=postgres password=xxx dbname=oltp_db host=localhost port=5432   
+2023-12-17 14:23:03,393  |  INFO  |  =================================================================================  
+2023-12-17 14:23:03,393  |  DEBUG  |    
+2023-12-17 14:23:03,393  |  DEBUG  |  SELECT dateh, offs, ons FROM main.marketing_spend;  
+              
+2023-12-17 14:23:03,394  |  INFO  |    
+2023-12-17 14:23:03,394  |  INFO  |  Successfully IMPORTED the 'marketing_spend' virtual table from the 'localhost' server into the 'main' schema for 'oltp_db' database. Now advancing to data cleaning stage...  
+2023-12-17 14:23:03,394  |  INFO  |    
+2023-12-17 14:23:03,401  |  DEBUG  |    
+2023-12-17 14:23:03,402  |  DEBUG  |  Cursor closed successfully.  
+2023-12-17 14:23:03,402  |  DEBUG  |  Session connected to Postgres database closed.  
