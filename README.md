@@ -24,5 +24,6 @@
 
 #### Cấu tạo cơ bản của một Data Warehouse
 
- BTL này được hiện thực mô phỏng theo thiết kế dứoi đây(phương pháp Inmon), có thể không đầy đủ chi tiết ở một số lớp
-[architecture](arch.png)
+BTL này được hiện thực theo thiết kế dứoi đây(phương pháp Inmon) và sẽ không đầy đủ chi tiết ở một số lớp
+ 
+![architecture](arch.png)
