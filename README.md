@@ -2,7 +2,8 @@
 
 ### Nguyễn Việt Trung
 
-> Phiên bản Python 3.11.7 và PostgresSQL 12.17, PG Admin 7.8(nếu có)
+> Phiên bản Python 3.11.7 và PostgresSQL 12.17, PG Admin 7.8(nếu có), các
+> pip package được liệt kê chi tiết tại tệp tin tùy chỉnh
 
 ### Hướng dẫn Setup - Với Decision Suppport System
 
@@ -27,3 +28,7 @@
 BTL này được hiện thực theo thiết kế dứoi đây(phương pháp Inmon) và sẽ không đầy đủ chi tiết ở một số lớp
  
 ![architecture](arch.png)
+
+Tham khảo:
+
+1. [Stephen David William Blog](https://stephendavidwilliams.com/how-i-created-a-postgres-data-warehouse-with-python-sql)
