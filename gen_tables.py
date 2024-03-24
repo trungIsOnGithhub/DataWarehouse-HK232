@@ -5,7 +5,7 @@ import platform
 
 # # ======================== AUTOMATE CREATING DB ==============================
 # config  =   configparser.ConfigParser()
-# path    =   os.path.abspath('dwh_pipelines/local_config.ini')
+# path    =   os.path.abspath('dwh_pipelines/config.ini')
 # config.read(path)
 # host                    =   config['data_filepath']['HOST']
 # port                    =   config['data_filepath']['PORT']

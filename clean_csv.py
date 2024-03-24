@@ -2,7 +2,7 @@ import os
 import configparser
 
 config = configparser.ConfigParser()    
-config.read(os.path.abspath('dwh_pipelines/local_config.ini'))
+config.read(os.path.abspath('dwh_pipelines/config.ini'))
 level1_dir = config['data_filepath']['CSVDATA']
 common_dir = f'{os.getcwd()}{os.sep}{level1_dir}'
 

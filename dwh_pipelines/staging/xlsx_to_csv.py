@@ -19,7 +19,7 @@ def xlsx_to_json(xlsxFilePath, csvFilePath, file):
         print(err)
 
 config = configparser.ConfigParser()    
-config.read(os.path.abspath('dwh_pipelines/local_config.ini'))
+config.read(os.path.abspath('dwh_pipelines/config.ini'))
 
 for file in XLSX_FILE:
     xlsx_to_json(

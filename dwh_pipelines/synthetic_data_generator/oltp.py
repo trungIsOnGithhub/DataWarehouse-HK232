@@ -57,7 +57,7 @@ if __name__=="__main__":
 # Create a config file for storing environment variables
 config  =   configparser.ConfigParser()
 
-path    =   os.path.abspath('dwh_pipelines/local_config.ini')
+path    =   os.path.abspath('dwh_pipelines/config.ini')
 config.read(path)
 customer_info_path     =   config['data_filepath']['CSVDATA'] + os.sep + src_file
 

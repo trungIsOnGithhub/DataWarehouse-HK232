@@ -18,7 +18,7 @@ def csv_to_json(csvFilePath, jsonFilePath):
         print(err)
 
 config = configparser.ConfigParser()    
-config.read(os.path.abspath('dwh_pipelines/local_config.ini'))
+config.read(os.path.abspath('dwh_pipelines/config.ini'))
 
 CSVDATA_DIR = config['data_filepath']['CSVDATA']
 

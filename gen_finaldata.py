@@ -13,7 +13,7 @@ def json_to_csv(csvFilePath, jsonFilePath):
         print(err)
 
 config = configparser.ConfigParser()    
-config.read(os.path.abspath('dwh_pipelines/local_config.ini'))
+config.read(os.path.abspath('dwh_pipelines/config.ini'))
 
 for name in CSV_FILENAME:
     json_to_csv(

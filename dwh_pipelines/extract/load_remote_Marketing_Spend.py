@@ -56,7 +56,7 @@ if __name__=="__main__":
 # Create a config file for storing environment variables
 config  =   configparser.ConfigParser()
 # Use the local config file from the local machine 
-path    =   os.path.abspath('dwh_pipelines/local_config.ini')
+path    =   os.path.abspath('dwh_pipelines/config.ini')
 config.read(path)
 JSONDATA     =   config['data_filepath']['JSONDATA']
 
