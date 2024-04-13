@@ -12,11 +12,12 @@ def json_to_csv(csvFilePath, jsonFilePath):
     except (Exception) as err:
         print(err)
 
-config = configparser.ConfigParser()    
-config.read(os.path.abspath('dwh_pipelines/config.ini'))
+if __name__ == '__main__':
+    config = configparser.ConfigParser()    
+    config.read(os.path.abspath('dwh_pipelines/config.ini'))
 
-for name in CSV_FILENAME:
-    json_to_csv(
-        f"{os.getcwd()}{os.sep}{config['data_filepath']['CSVDATA']}{os.sep}{name}.csv",
-        f"{os.getcwd()}{os.sep}{config['data_filepath']['JSONDATA']}{os.sep}{name}.json"
-    )
+    for name in CSV_FILENAME:
+        json_to_csv(
+            f"{os.getcwd()}{os.sep}{config['data_filepath']['CSVDATA']}{os.sep}{name}.csv",
+            f"{os.getcwd()}{os.sep}{config['data_filepath']['JSONDATA']}{os.sep}{name}.json"
+        )
