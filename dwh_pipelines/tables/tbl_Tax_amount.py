@@ -1,129 +1,38 @@
-import os 
-import json
 import time 
 import random
-import psycopg2
-import configparser
 from pathlib import Path
-import logging, coloredlogs
 from datetime import datetime
-
-src_file = 'Tax_amount.csv.json'
-
-# ================================================ LOGGER ================================================
-root_logger = logging.getLogger(__name__)
-root_logger.setLevel(logging.DEBUG)
-file_handler_log_formatter      =   logging.Formatter('%(asctime)s  |  %(levelname)s  |  %(message)s  ')
-console_handler_log_formatter   =   coloredlogs.ColoredFormatter(fmt    =   '%(message)s', level_styles=dict(
-                                                                                                debug           =   dict    (color  =   'white'),
-                                                                                                info            =   dict    (color  =   'green'),
-                                                                                                warning         =   dict    (color  =   'cyan'),
-                                                                                                error           =   dict    (color  =   'red',      bold    =   True,   bright      =   True),
-                                                                                                critical        =   dict    (color  =   'black',    bold    =   True,   background  =   'red')
-                                                                                            ),
-
-                                                                                    field_styles=dict(
-                                                                                        messages            =   dict    (color  =   'white')
-                                                                                    )
-                                                                                    )
+from commons.database import get_postgres_db_connection
+from commons.logs import get_logger
+from commons.utils import *
 
 
-# Set up file handler object for logging events to file
-current_filepath    =   Path(__file__).stem
-file_handler        =   logging.FileHandler('logs/' + current_filepath + '.log', mode='w')
-file_handler.setFormatter(file_handler_log_formatter)
-
-
-# Set up console handler object for writing event logs to console in real time (i.e. streams events to stderr)
-console_handler     =   logging.StreamHandler()
-console_handler.setFormatter(console_handler_log_formatter)
-
-
-# Add the file and console handlers 
-root_logger.addHandler(file_handler)
-
-
-# Only add the console handler if the script is running directly from this location 
+root_logger = None
 if __name__=="__main__":
-    root_logger.addHandler(console_handler)
+    current_filename = Path(__file__).stem
+
+    root_logger = get_logger('layer1', current_filename)
 
 
-
-# ================================================ CONFIG ================================================
-
-
-# Create a config file for storing environment variables
-config  =   configparser.ConfigParser()
-
-path    =   os.path.abspath('dwh_pipelines/config.ini')
-config.read(path)
-customer_info_path     =   config['data_filepath']['JSONDATA'] + os.sep + src_file
-
-host                    =   config['data_filepath']['HOST']
-port                    =   config['data_filepath']['PORT']
-database                =   config['data_filepath']['DWH_DB']
-username                =   config['data_filepath']['USERNAME']
-password                =   config['data_filepath']['PASSWORD']
-postgres_connection     =   None
-cursor                  =   None
-
-
-root_logger.info("")
-
-root_logger.info("Beginning the source data extraction process...")
+root_logger.info("Start data extraction process...")
 COMPUTE_START_TIME  =  time.time()
 
+customer_info_data = load_json_file('Tax_amount.csv.json')
 
-with open(customer_info_path, 'r') as customer_info_file:    
-    try:
-        customer_info_data = json.load(customer_info_file)
-        # root_logger.info(f"Successfully located '{src_file}'")
-        root_logger.info(f"File type: '{type(customer_info_data)}'")
-        root_logger.info(str(customer_info_data))
-
-    except:
-        root_logger.error("Unable to locate source file...")
-        raise Exception("No source file located")
-    
-
-postgres_connection = psycopg2.connect(
-host        =   host,
-port        =   port,
-dbname      =   database,
-user        =   username,
-password    =   password,
-)
-postgres_connection.set_session(autocommit=True)
+postgres_connection, cursor, database = get_postgres_db_connection()
 
 def load_data_to_table(postgres_connection):
     try:
-        db_layer_name =   database
+        db_layer_name = database
         schema_name = 'main'
         table_name = 'tax_amount'
-        source_system =   ['CRM', 'ERP', 'Mobile App', 'Website', '3rd party apps', 'Company database']
-        row_counter                     =   0 
-        total_null_values_in_table      =   0 
-        successful_rows_upload_count    =   0 
-        failed_rows_upload_count        =   0
+        source_system =   ['CRM', 'ERP', 'Mobile App', 'Website', 'Database']
+        row_counter = 0 
+        total_null_values_in_table = 0 
+        successful_rows_upload_count = 0
+        failed_rows_upload_count = 0
 
-        CURRENT_TIMESTAMP = datetime.now()
-
-        cursor = postgres_connection.cursor()
-
-        if postgres_connection.closed == 0:
-            root_logger.debug(f"")
-            root_logger.info("=================================================================================")
-            root_logger.info(f"CONNECTION SUCCESS: Managed to connect successfully to the {db_layer_name} database!!")
-            root_logger.info(f"Connection details: {postgres_connection.dsn} ")
-            root_logger.info("=================================================================================")
-            root_logger.debug("")
-        elif postgres_connection.closed != 0:
-            raise ConnectionError("CONNECTION ERROR: Unable to connect to the demo_company database...") 
-
-
-
-        # ======================================= LOAD SRC TO RAW =======================================
-        
+        CURRENT_TIMESTAMP = datetime.now()        
 
         # Set up SQL statements for schema creation and validation check  
         create_schema = f'''CREATE SCHEMA IF NOT EXISTS {schema_name};'''
