@@ -14,15 +14,12 @@ if __name__=="__main__":
     root_logger = get_logger('layer1', current_filename)
 
 
-root_logger.info("Start data extraction process...")
-COMPUTE_START_TIME  =  time.time()
+def load_data_to_table(postgres_connection, cursor, database):
+        root_logger.info("Start data extraction process...")
+        COMPUTE_START_TIME  =  time.time()
 
-customer_info_data = load_json_file('CustomersData.csv.json')
+        customer_info_data = load_json_file('CustomersData.csv.json')
 
-postgres_connection, cursor, database = get_postgres_db_connection()
-
-def load_data_to_table(postgres_connection):
-    try:
         db_layer_name = database
         schema_name = 'main'
         table_name = 'customers_data'
@@ -92,7 +89,6 @@ def load_data_to_table(postgres_connection):
 
         # Create schema in Postgres
         cursor.execute(create_schema)
-
         cursor.execute(check_if_schema_exists)
 
         sql_result = cursor.fetchone()[0]
@@ -255,13 +251,6 @@ def load_data_to_table(postgres_connection):
         list_of_column_names = cursor.fetchall()
         column_names = [sql_result[0] for sql_result in list_of_column_names]   
 
-
-        # Display data profiling metrics
-        
-        # delete some null and validation profiling
-
-        # delete timming on excutuion
-
         # Add conditional statements for data profile metrics
         root_logger.info('================================================')
 
@@ -301,16 +290,8 @@ def load_data_to_table(postgres_connection):
             root_logger.info("DATA VALIDATION SUCCESS: All general DQ checks passed! ")
             root_logger.debug("")
 
-        root_logger.info("Now saving changes made by SQL statements to Postgres DB....")
-        root_logger.info("Saved successfully, now terminating cursor and current session....")
-    except Exception as e:
-            root_logger.info(e)
-    finally:
-        # Close the cursor if it exists 
-        if cursor is not None:
-            cursor.close()
-            root_logger.debug("")
-            root_logger.debug("Cursor closed successfully.")
+        
+        root_logger.info("End Of Loading Data")
 
         # Close the database connection to Postgres if it exists 
         if postgres_connection is not None:
@@ -318,4 +299,16 @@ def load_data_to_table(postgres_connection):
             # root_logger.debug("")
             root_logger.debug("Session connected to Postgres database closed.")
 
-load_data_to_table(postgres_connection)
+if __name__ == '__main__': 
+    postgres_connection, cursor, database = get_postgres_db_connection()
+
+    try:
+        load_data_to_table(postgres_connection)
+    except Exception as e:
+            root_logger.info(e)
+    finally:
+        # Close the cursor if it exists
+        if cursor is not None:
+            cursor.close()
+            root_logger.debug("Cursor closed successfully.")
+        root_logger.debug("")
