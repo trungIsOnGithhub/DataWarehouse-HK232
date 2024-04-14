@@ -27,8 +27,13 @@
 
 BTL này được hiện thực theo thiết kế dứoi đây(phương pháp Inmon) và sẽ không đầy đủ chi tiết ở một số lớp
  
-![architecture](arch.png)
+![Architecture](arch.png)
+
+### Data pipelines
+
+![Data Pipeline Components](dp.jpg)
 
 Tham khảo:
 
-1. [Stephen David William Blog](https://stephendavidwilliams.com/how-i-created-a-postgres-data-warehouse-with-python-sql)
+1. [Data piplines with Spotify's Luigi](https://dev.to/mpangrazzi/data-pipelines-with-luigi-87d)
+2. [Stephen David William Blog](https://stephendavidwilliams.com/how-i-created-a-postgres-data-warehouse-with-python-sql)
