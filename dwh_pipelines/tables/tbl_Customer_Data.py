@@ -165,25 +165,12 @@ def load_data_to_table(postgres_connection):
 
         # Add data lineage to table 
         cursor.execute(add_data_lineage_to_tbl)
+        query_result = cursor.fetchall()
 
-
-        # sql_results = cursor.fetchall()
-        
-        # if len(sql_results) == 6:
-        #     root_logger.debug(f"")
-        #     root_logger.info(f"=============================================================================================================================================================================")
-        #     root_logger.info(f"DATA LINEAGE FIELDS CREATION SUCCESS: Managed to create data lineage columns in {schema_name}.{table_name}.  ")
-        #     root_logger.info(f"SQL Query for validation check:  {check_if_data_lineage_fields_are_added_to_tbl} ")
-        #     root_logger.info(f"=============================================================================================================================================================================")
-        #     root_logger.debug(f"")
-        # else:
-        #     root_logger.debug(f"")
-        #     root_logger.error(f"==========================================================================================================================================================================")
-        #     root_logger.error(f"DATA LINEAGE FIELDS CREATION FAILURE: Unable to create data lineage columns in {schema_name}.{table_name}.... ")
-        #     root_logger.error(f"SQL Query for validation check:  {check_if_data_lineage_fields_are_added_to_tbl} ")
-        #     root_logger.error(f"==========================================================================================================================================================================")
-        #     root_logger.debug(f"")
-
+        if len(query_result) == 0:
+            root_logger.error('DATA LINEAGE CREATION FAILED!!')
+            root_logger.error('----------------------------------------------------------------------')
+            root_logger.error('')
 
 
         # Add insert rows to table 

@@ -31,7 +31,7 @@ def set_up_access_controls():
 
     # Validate the Postgres database connection
     if postgres_connection.closed != 0:
-        raise ConnectionError("CONNECTION ERROR: Unable to connect to the demo_company database...") 
+        raise ConnectionError("CONNECTION ERROR: Unable to connect to the database") 
 
     root_logger.info(f'=========================================== CREATING INDEXES =======================================')
     root_logger.info(f'')

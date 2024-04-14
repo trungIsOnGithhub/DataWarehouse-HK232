@@ -139,16 +139,9 @@ def load_data_to_table(postgres_connection):
 
         check_if_tbl_is_deleted = f'''SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = '{table_name}' );'''
 
-        # create_tbl = f'''CREATE TABLE IF NOT EXISTS {schema_name}.{table_name} (
-        #     Marketing_Spend_id SERIAL PRIMARY KEY,
-        #     Date date,
-        #     Offline_Spend integer,
-        #     Online_Spend integer
-        # );'''
-
         create_tbl = f'''CREATE TABLE {schema_name}.{table_name} AS SELECT {",".join(list_of_column_selecteds)} FROM {src_schema_name}.{dim_table1} JOIN {src_schema_name}.{dim_table2} ON {src_schema_name}.{dim_table1}.{join_col_tbl1} = {src_schema_name}.{dim_table2}.{join_col_tbl2};'''
 
-        print(create_tbl)
+        # print(create_tbl)
 
         check_if_tbl_exists = f'''SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = '{table_name}' );'''
 

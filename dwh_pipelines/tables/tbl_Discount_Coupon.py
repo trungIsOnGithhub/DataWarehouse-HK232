@@ -309,11 +309,9 @@ def load_data_to_table(postgres_connection):
             root_logger.error(f"ERROR: There are {total_duplicate_records_in_table} duplicated records in the uploads for '{table_name}' table....")
             raise ImportError("Trace filepath to highlight the root cause of the duplicated rows...")
 
-
         elif total_duplicate_records_in_table > 0:
             root_logger.error(f"ERROR: There are {total_duplicate_records_in_table} duplicated records in the uploads for '{table_name}' table....")
             raise ImportError("Trace filepath to highlight the root cause of the duplicated rows...")
-        
 
         elif total_null_values_in_table > 0:
             root_logger.error(f"ERROR: There are {total_duplicate_records_in_table} NULL values in '{table_name}' table....")
@@ -337,7 +335,7 @@ def load_data_to_table(postgres_connection):
         # Close the database connection to Postgres if it exists 
         if postgres_connection is not None:
             postgres_connection.close()
-            # root_logger.debug("")
             root_logger.debug("Session connected to Postgres database closed.")
 
-load_data_to_table(postgres_connection)
+if __name__ == '__main__':
+    load_data_to_table(postgres_connection)
