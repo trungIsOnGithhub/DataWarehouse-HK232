@@ -1,5 +1,5 @@
 import os
-from luigi import Task, Parameter, LocalTarget, IntParameter, DictParameter
+from luigi import *
 
 # INPUT_FOLDER = 'input_files'
 OUTPUT_FOLDER = 'output_files'

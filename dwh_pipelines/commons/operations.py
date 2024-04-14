@@ -42,10 +42,9 @@ def exec_query_and_check(cursor, exec_query, check_query, logger):
     measure_processing_time(CHECK_START_TIME, CHECK_END_TIME, 'Query Check', logger)
 
 
-
 def table_profiling_metrics(cursor, count_column_query, count_unique_records_query, get_column_names_query, total_rows_query, successful_rows_count, failed_rows_count, logger):
     total_rows_query = f'''SELECT COUNT(*) FROM {schema_name}.{table_name}'''
-    cursor.execute(total_rows_querye)
+    cursor.execute(total_rows_query)
     total_rows_in_table = cursor.fetchone()[0]
 
 
