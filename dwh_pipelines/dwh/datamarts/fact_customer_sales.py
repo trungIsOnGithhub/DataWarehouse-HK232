@@ -311,8 +311,8 @@ def load_data_to_table(postgres_connection):
             root_logger.info("DATA VALIDATION SUCCESS: All general DQ checks passed! ")
             root_logger.debug("")
 
-        root_logger.info("Now saving changes made by SQL statements to Postgres DB....")
-        root_logger.info("Saved successfully, now terminating cursor and current session....")
+        
+        root_logger.info("End Of Loading Data")
     except Exception as e:
             root_logger.info(e)
     finally:
