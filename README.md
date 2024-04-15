@@ -33,6 +33,9 @@ BTL này được hiện thực theo thiết kế dứoi đây(phương pháp In
 
 ![Data Pipeline Components](dp.jpg)
 
+
+### ![Ví dụ tham khảo về Data Pipeline trên Cloud - Azure Data Factory](./azureDF/README.md)
+
 Tham khảo:
 
 1. [Data piplines with Spotify's Luigi](https://dev.to/mpangrazzi/data-pipelines-with-luigi-87d)
