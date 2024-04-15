@@ -34,9 +34,33 @@ BTL này được hiện thực theo thiết kế dứoi đây(phương pháp In
 ![Data Pipeline Components](dp.jpg)
 
 
-### ![Ví dụ tham khảo về Data Pipeline trên Cloud - Azure Data Factory](./azureDF/README.md)
+### Ví dụ về Data Pipeline trên Đám Mây - Azure Data Factory
+
+
+> A simple data pipeline of type "Copy Activity" to transform from CSV to Azure SQL table
+
+##### Một số bước đáng chú ý:
+
+1. Tạo tài nguyên Blob Storage trong 1 module quản lý Account Storage
+
+![Screenshot](./upload-blob-csv.png)
+
+2. Tạo các Linked Service để kết nối đến các Dataset
+
+![Screenshot](./create-linkedservice-and-dataset-1.png)
+![Screenshot](./create-linkedservice-and-dataset-2.png)
+
+3. Tạo các Dataset Source và Sink(nguồn và đích) cho mỗi Activity
+
+![Screenshot](./create-dataset.png)
+
+4. Thêm Activity(Copy) và Import Mapping
+
+![Screenshot](./add-copy-activity-and-check-mapping.png)
+
 
 Tham khảo:
 
-1. [Data piplines with Spotify's Luigi](https://dev.to/mpangrazzi/data-pipelines-with-luigi-87d)
-2. [Stephen David William Blog](https://stephendavidwilliams.com/how-i-created-a-postgres-data-warehouse-with-python-sql)
+1. [Azure 4 Everyone](https://azure4everyone.com/)
+2. [Data piplines with Spotify's Luigi](https://dev.to/mpangrazzi/data-pipelines-with-luigi-87d)
+3. [Stephen David William Blog](https://stephendavidwilliams.com/how-i-created-a-postgres-data-warehouse-with-python-sql)
