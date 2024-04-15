@@ -43,20 +43,20 @@ BTL này được hiện thực theo thiết kế dứoi đây(phương pháp In
 
 1. Tạo tài nguyên Blob Storage trong 1 module quản lý Account Storage
 
-![Screenshot](./upload-blob-csv.png)
+![Screenshot](./azureDF/upload-blob-csv.png)
 
 2. Tạo các Linked Service để kết nối đến các Dataset
 
-![Screenshot](./create-linkedservice-and-dataset-1.png)
-![Screenshot](./create-linkedservice-and-dataset-2.png)
+![Screenshot](./azureDF/create-linkedservice-and-dataset-1.png)
+![Screenshot](./azureDF/create-linkedservice-and-dataset-2.png)
 
 3. Tạo các Dataset Source và Sink(nguồn và đích) cho mỗi Activity
 
-![Screenshot](./create-dataset.png)
+![Screenshot](./azureDF/create-dataset.png)
 
 4. Thêm Activity(Copy) và Import Mapping
 
-![Screenshot](./add-copy-activity-and-check-mapping.png)
+![Screenshot](./azureDF/add-copy-activity-and-check-mapping.png)
 
 
 Tham khảo:
