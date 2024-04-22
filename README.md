@@ -34,7 +34,31 @@ BTL này được hiện thực theo thiết kế dứoi đây(phương pháp In
 ![Data Pipeline Components](dp.jpg)
 
 
-### Ví dụ về Data Pipeline trên Đám Mây - Azure Data Factory
+### Example of Data Pipeline using Data Tools - Apache Nifi
+
+> A simple data pipeline of Generating a file and Sending to local filesystem
+
+1. Create and Setting up first Processor of type GenerateFlowFile
+
+![Screenshot](./nifi/schedule-flow-file-processor.png):
+
+
+2. Create and Setting up f2nd Processor of type PutFile:
+
+![Screenshot](./nifi/schedule-flow-file-processor.png)
+![Screenshot](./nifi/set-dest-location.png)
+
+3. Start 2 processor to run the pipeline
+
+![Screenshot](./nifi/running-pipeline-1.png)
+
+
+4.  Check Data Provenance
+
+![Screenshot](./nifi/data-provenance-on-put-file-pipeline1.png)
+
+
+### Example of Data Pipeline using Cloud Service - Azure Data Factory
 
 
 > A simple data pipeline of type "Copy Activity" to transform from CSV to Azure SQL table
@@ -64,3 +88,4 @@ Tham khảo:
 1. [Azure 4 Everyone](https://azure4everyone.com/)
 2. [Data piplines with Spotify's Luigi](https://dev.to/mpangrazzi/data-pipelines-with-luigi-87d)
 3. [Stephen David William Blog](https://stephendavidwilliams.com/how-i-created-a-postgres-data-warehouse-with-python-sql)
+4. [Arvutiteaduse instituudi kursused](https://courses.cs.ut.ee/2023/cloud/spring/Main/Practice9)
