@@ -1,35 +1,38 @@
-#### BTL Kho Dữ Liệu và Hệ hỗ trợ quyết định
+###### Assignment and Exercise for Data Warehouse Course at HCMUT
+#### Semester 2023 - 2
 
-### Nguyễn Việt Trung
+> Student: Trung Nguyen Viet - Instructor: M. Eng Duc Tien Bui
 
-> Phiên bản Python 3.11.7 và PostgresSQL 12.17, PG Admin 7.8(nếu có), các
-> pip package được liệt kê chi tiết tại tệp tin tùy chỉnh
+> Developed with Python 3.11.x, PostgresSQL 12.x - PG Admin 7.x(if needed), Apache Nifi 1.27.x,
+> following pip dependencies packages as below.
 
-### Hướng dẫn Setup - Với Decision Suppport System
+### Setup Note - Decision Suppport Module
 
-1. Tải các pip package cần thiết từ terminal/command prompt: ```pip install faker pandas configparser coloredlogs psycopg2 jupyter squarify seaborn scikit-learn```
+1. Download pip package in terminal/command line: ```pip install faker pandas configparser coloredlogs psycopg2 jupyter squarify seaborn scikit-learn```
 
-2. mở commandline - terminal và dùng lệnh ```jupyter notebook```
+2. Type in command line/terminal ```jupyter notebook```
 
-3. Chọn file Jupyter notebook và chạy như thường
+3. Run a Jupyter notebook file as usual
 
-### Hướng dẫn Setup - Với Warehouse
+### Setup Note - Data Warehouse Module
 
-1. Cập nhật thông tin kết nối DB Postgres qua file `config.ini` trong thư mục *dwh_pipelines*
+1. Update Database config and connection info in `dwh_pipelines/config.ini`
 
-2. Tạo sẵn các database theo tên trong `config.ini`
+2. Manually create databases with the same name as `config.ini` in your database instance
 
-3. Tải các pip package cần thiết từ terminal/command prompt: ```pip install faker pandas configparser coloredlogs psycopg2 jupyter squarify seaborn scikit-learn```
+3. Install dependencies: ```pip install faker pandas configparser coloredlogs psycopg2 jupyter squarify seaborn scikit-learn```
 
-4. Chạy lệnh python  ```python gen_staging.py``` tạo bảng dimension và ```python gen_fact.py``` tạo bảng fact cho data mart
+4. Run python script:  ```python gen_staging.py``` create dimension table ```python gen_fact.py``` generate fact table for data mart
 
-#### Cấu tạo cơ bản của một Data Warehouse
 
-BTL này được hiện thực theo thiết kế dứoi đây(phương pháp Inmon) và sẽ không đầy đủ chi tiết ở một số lớp
+##### Theory: Basic components of an Data Warehouse
+
+This Example use the **Inmon Approach** in designing data warehouse, some details layer would not completely follow the method.
  
 ![Architecture](arch.png)
 
-### Data pipelines
+
+##### Exercises on Data pipelines
 
 ![Data Pipeline Components](dp.jpg)
 
